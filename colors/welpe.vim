@@ -1,3 +1,11 @@
+"                 _               __      __ _____  __  __ 
+"                | |              \ \    / /|_   _||  \/  |
+" __      __ ___ | | _ __    ___   \ \  / /   | |  | \  / |
+" \ \ /\ / // _ \| || '_ \  / _ \   \ \/ /    | |  | |\/| |
+"  \ V  V /|  __/| || |_) ||  __/    \  /    _| |_ | |  | |
+"   \_/\_/  \___||_|| .__/  \___|     \/    |_____||_|  |_|
+"                   | |                                    
+"                   |_|                  
 " ------------------------------------------------------------------------------
 " File: welpe.vim
 " Description: vim colorscheme, loosely based on base16, gruvbox and new-moon
@@ -361,6 +369,8 @@ call s:H("Todo",            s:todo,           "",           "bold")
 " Vimscript
 "
 hi! link vimUserFunc Function
+hi! link vimIsCommand Statement
+hi! link vimOperParen Identifier
 
 " HTML
 
