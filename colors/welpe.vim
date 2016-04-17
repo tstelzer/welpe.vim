@@ -8,7 +8,7 @@
 "                   |_|                  
 " ------------------------------------------------------------------------------
 " File: welpe.vim
-" Description: vim colorscheme, loosely based on jellybeans, solarized, new-moon
+" Description: vim colorscheme, loosely based on jellybeans, solarized-dark
 " Author: Timm Stelzer <timmstelzer@gmail.com>
 " Source: https://github.com/tstelzer/welpe.vim
 " ------------------------------------------------------------------------------
