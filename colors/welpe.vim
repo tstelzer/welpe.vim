@@ -8,7 +8,7 @@
 "                   |_|                  
 " ------------------------------------------------------------------------------
 " File: welpe.vim
-" Description: vim colorscheme, loosely based on base16, gruvbox and new-moon
+" Description: vim colorscheme, loosely based on jellybeans, solarized, new-moon
 " Author: Timm Stelzer <timmstelzer@gmail.com>
 " Source: https://github.com/tstelzer/welpe.vim
 " ------------------------------------------------------------------------------
@@ -25,40 +25,65 @@ let colors_name = "welpe"
 if !exists('g:welpe_all_bold')
     let g:welpe_all_bold = 0
 endif
+if !exists('g:welpe_use_italics')
+    let g:welpe_use_italics = 0
+endif
 
 function! s:H(group,fg,bg,style) "{{{
+" group = Syntax Group
+" :help syntax
+" fg = Foreground Color
+" bg = Background Color
+" style = Font Style
 
     if !empty(a:fg)
+        " foreground is NOT empty
         let l:gfg = a:fg[0]
         let l:cfg = a:fg[1]
     else
+        "foreground IS empty
         let l:gfg = "NONE"
         let l:cfg = "NONE"
     endif
 
     if !empty(a:bg)
+        " background is NOT empty
         let l:gbg = a:bg[0]
         let l:cbg = a:bg[1]
     else
+        " background IS empty
         let l:gbg = "NONE"
         let l:cbg = "NONE"
     endif
 
     if g:welpe_all_bold == 1
+        " all text is rendered bold
         let l:gstyle = "bold"
         let l:cstyle = "bold"
     else
         if !empty(a:style)
-            " TODO check if style works in TERM
-            let l:gstyle = a:style
-            let l:cstyle = a:style
+            if a:style == "italic" && g:welpe_use_italics == 0
+                " no italics should be used
+                let l:gstyle = "NONE"
+                let l:cstyle = "NONE"
+            else
+                " style is NOT empty
+                let l:gstyle = a:style
+                let l:cstyle = a:style
+                " TODO check if style works in TERM
+            endif
         else
+            " style IS empty
             let l:gstyle = "NONE"
             let l:cstyle = "NONE"
         endif
     endif
 
-    exec "hi ".a:group." guifg=".l:gfg." ctermfg=".l:cfg." guibg=".l:gbg." ctermbg=".l:cbg." gui=".l:gstyle." term=".l:cstyle
+    " hi "<Syntax group>" guifg = "<fgcolor>" guibg = "<bgcolor>" 
+    " \ ctermfg = "<termfg>" ctermbg = "<termbg>" 
+    " \ gui = "<guistyle>" term = "<termstyle>"
+    exec "hi ".a:group." guifg=".l:gfg." ctermfg=".l:cfg." guibg=".l:gbg.
+                \ " ctermbg=".l:cbg." gui=".l:gstyle." term=".l:cstyle
 
 endfun
 "}}}
@@ -66,8 +91,8 @@ endfun
 " ##############################################################################
 " ### #COLORPALETTE
 " ##############################################################################
-" DO NOT CHANGE THESE VALUES, ONLY ADD NEW ONES
-" s:<name> = [ '<hex>', <256term>, <16term>, <8term> ]
+" IMPORTANT: DO NOT CHANGE THESE VALUES, ONLY ADD NEW ONES
+" Schema: s:<name> = [ '<hex>', <256term>, <16term>, <8term> ]
 
 " --- Grayscale"{{{
 " ------------------------------------------------------------------------------
@@ -102,27 +127,39 @@ let s:truewhite = [ '#FFFFFF', 15,  15, 7 ]
 "}}}
 " --- Colors {{{
 " ------------------------------------------------------------------------------
+" Important: don't use the colornames in the syntax groups,
+" use the generic color vars instead
 
 let s:roman      = [ '#d75f5f', 167, 1, 1 ]
+let s:_darkred = s:roman
 let s:sundown    = [ '#ffafaf', 217, 9, 1 ]
+let s:_lightred = s:sundown
 
 let s:laurel     = [ '#5f875f', 65, 2, 2 ]
+let s:_darkgreen = s:laurel
 let s:moss       = [ '#afd7af', 151, 10, 2 ]
+let s:_lightgreen = s:moss
 
 let s:rajah      = [ '#ffaf5f', 215, 3, 3 ]
+let s:_orange = s:rajah
 let s:canary     = [ '#ffffaf', 229, 11, 3 ]
+let s:_yellow = s:canary
 
 let s:manatee    = [ '#8787af', 103, 4, 4 ]
+let s:_darkblue = s:manatee
 let s:columbia   = [ '#afd7ff', 153, 12, 4 ]
+let s:_lightblue = s:columbia
 
 let s:londonhue  = [ '#af87af', 139, 5, 5 ]
+let s:_darkmagenta = s:londonhue
 let s:cosmos     = [ '#ffd7d7', 224, 13, 5 ]
+let s:_lightmagenta = s:cosmos
 
 let s:aquamarine = [ '#87ffd7', 122, 6, 6 ]
+let s:_darkcyan = s:aquamarine
 let s:lightcyan  = [ '#d7ffff', 195, 14, 6 ]
+let s:_lightcyan = s:lightcyan
 
-
-let s:darkred    = [ '#870000', 88, 1, 1 ] " just for testing
 " }}}
 " --- Discard Pile"{{{
 " ------------------------------------------------------------------------------
@@ -167,214 +204,401 @@ let s:salmon       = [ '#ff8787', 210, 13, 5 ]
 " ##############################################################################
 " ### #FUNCTIONAL VARIABLES
 " ##############################################################################
-" --- change the assigned variables, if you want to change the presented colors
-" ------------------------------------------------------------------------------
+" change the assigned variables, if you want to change the presented colors
 
-" --- Custom "{{{
-" ------------------------------------------------------------------------------
+" --- Custom fields {{{
+let s:lightfg = s:white 
+" lighter version of foreground
+let s:fg = s:gray22
+" default foreground
+let s:darkfg = s:gray20
+" darker version of foreground
 
-let s:foreground = s:gray22
-let s:background = s:gray2
+let s:lightbg = s:gray4
+" lighter version of foreground
+let s:bg = s:gray2
+" default background
+let s:darkbg = s:gray1
+" darker version of foreground
 
-let s:positive   = s:moss
-let s:neutral    = s:columbia
-let s:negative   = s:sundown
+let s:positive   = s:_lightgreen
+" used for anything related to adding, positive values etc
+let s:neutral    = s:_lightblue
+" neutral color, used for neither positive nor negative
+let s:negative   = s:_lightred
+" used for negative values, substraction, errors etc
+
+let s:comment        = s:gray11
+" besides comments, used for any neutral-gray
 "}}}
-" --- Defaults {{{
+
+" ##############################################################################
+" ### #HIGHLIGHTING
+" ##############################################################################
+" Schema: see function s:H()
+" s:h(<SyntaxGroup>!, <foreground>, <background>, <style>)
+" Note: if you ommit fields with "", the default fg / bg will be inherited
+" Note: entirely omitted groups fallback to their parent
+" for example "Function" inherits "Identifier" by default
+
+" --- UI Defaults {{{
+" ------------------------------------------------------------------------------
+
+call s:H("Normal",       s:fg,        s:bg,       "")
+" default values
+" omitted values inherit this 
+
+call s:H("ColorColumn",  "",          s:lightbg,  "")
+" set colorcolumn = <column numbers>
+" vertical colored line, used to align text or not go over a certain textwidth
+call s:H("Conceal",      s:_darkblue,   "",         "")
+" set conceallevel = <0-3>
+call s:H("Cursor",       s:bg,        s:fg,       "")
+" blinking cursor
+call s:H("CursorColumn", "",          s:lightbg,  "")
+" vertical highlight of current cursor position
+call s:H("CursorLine",   "",          s:lightbg,  "")
+" horizontal highlight of current cursor position
+call s:H("CursorLineNr", s:lightfg,   s:darkbg,   "bold")
+" linenumber of cursor position
+
+call s:H("DiffAdd",      s:positive,  s:lightbg,  "")
+call s:H("DiffChange",   s:neutral,   s:lightbg,  "")
+call s:H("DiffDelete",   s:negative,  s:lightbg,  "")
+" diff mode
+call s:H("Directory",    s:_lightblue,  "",         "")
+" directory names and other special names in listings
+
+call s:H("ErrorMsg",     s:_yellow,    s:negative, "")
+" generic error message
+
+call s:H("FoldColumn",   "",          s:lightbg,  "")
+" set foldcolumn = 1
+" gutter for folds
+call s:H("Folded",       s:lightfg,   s:lightbg,  "")
+" line highlight for closed folds
+
+call s:H("IncSearch",    s:_orange,     "",         "")
+" set incearch
+" highlight for search queries
+
+call s:H("LineNr",       s:comment,   s:darkbg,   "")
+" set number, and/or set relativenumber
+" number gutter
+
+call s:H("MatchParen",   s:white,     s:darkbg,   "bold")
+call s:H("ModeMsg",      s:_lightblue,  s:darkbg,   "")
+call s:H("MoreMsg",      s:_lightblue,  s:darkbg,   "")
+call s:H("NonText",      s:_orange,     "",         "")
+" set showbreak = <char>
+" characters that visualize linebreaks, tabs etc.
+
+call s:H("Pmenu",        "",          "",         "")
+" popup menu
+call s:H("PmenuSbar",    "",          s:darkbg,   "")
+" popup menu scrollbar
+call s:H("PmenuSel",     s:_orange,     s:lightbg,  "")
+" popup menu selected text
+call s:H("PmenuThumb",   "",          "",         "")
+" popup menu thumb of scrollbar
+
+call s:H("Question",     s:_lightcyan, s:darkbg,   "bold")
+" 'hit-enter' prompt and yes/no questions
+
+call s:H("Search",       s:_yellow,    "",         "")
+" set hlsearch
+" highlight of last search query
+" also used for current line in quickfix
+call s:H("SignColumn",   "",          s:darkbg,   "")
+" sign gutter
+call s:H("SpecialKey",   s:_orange,     "",         "bold")
+" :help listchars
+" non-text chars like mappings, eol-characters, nbsp etc.
+call s:H("SpelBad",      s:negative,  "",         "undercurl")
+" unrecognized by spellchecker
+call s:H("SpellRare",    s:neutral,   "",         "undercurl")
+" rare word
+call s:H("SpellCap",     s:_darkmagenta, "",         "undercurl")
+" should be starting with a capital letter
+call s:H("SpellLocal",   s:_yellow,    "",         "undercurl")
+" recognized as from another locale
+call s:H("StatusLine",   s:lightfg,   s:lightbg,  "")
+" set lastshow = <0-2>
+" statusline of current window
+call s:H("StatusLineNC", s:darkfg,    s:darkbg,   "")
+" statusline of non-current window
+
+call s:H("TabLineSel",   s:lightfg,   s:darkbg,   "bold")
+" active tabpage label
+call s:H("TabLine",      s:lightfg,   s:lightbg,  "")
+" nonactive tabpage label
+call s:H("TabLineFill",  s:darkfg,    s:lightbg,  "")
+" background of tabline, no labels
+call s:H("Title",        s:_orange,     "",         "bold")
+" titles, i guess? no idea
+" doc says 'titles for output from :set all, :autocmd etc.'
+
+call s:H("VertSplit",    s:comment,   s:darkbg,   "")
+" column separating splits
+call s:H("Visual",       s:lightfg,   s:lightbg,  "")
+" visually selected lines
+
+call s:H("WildMenu",     s:_lightmagenta,    "",         "")
+" current match in wildmenu completion
+call s:H("WarningMsg",   s:negative,  "",         "bold")
+" warning messages
+" }}}
+" --- Default Syntax Groups {{{
 " ------------------------------------------------------------------------------
 " VIM classifes MAJOR and MINOR syntax groups
 " by default, every MINOR inherits its MAJORS values
-" the variables are sorted and assigned in a way that reflects that
-" if you dont want to deal with this, delete the MINOR groups
-" see :help <group> for more information on the individual groups
+" uncomment the function call to specify the MINORS values
 
-let s:comment        = s:gray11
+call s:H("Comment",        s:comment,        "",         "italic")
 
-let s:constant       = s:roman
-let s:string         = s:moss        " MINOR of Constant
-let s:character      = s:string      " MINOR of Constant
-let s:number         = s:constant      " MINOR of Constant
-let s:boolean        = s:number      " MINOR of Constant
-let s:float          = s:number      " MINOR of Constant
-
-let s:identifier     = s:lightcyan
-let s:function       = s:canary     " MINOR of Identifier
-
-let s:statement      = s:manatee
-let s:conditional    = s:londonhue   " MINOR of Statement
-let s:repeat         = s:conditional " MINOR of Statement
-let s:label          = s:statement   " MINOR of Statement
-let s:operator       = s:conditional " MINOR of Statement
-let s:keyword        = s:statement   " MINOR of Statement
-let s:exception      = s:statement   " MINOR of Statement
-
-let s:preproc        = s:lightcyan
-let s:include        = s:preproc     " MINOR of PreProc
-let s:define         = s:preproc     " MINOR of PreProc
-let s:macro          = s:preproc     " MINOR of PreProc
-let s:precondit      = s:preproc     " MINOR of PreProc
-
-let s:type           = s:canary
-let s:storageclass   = s:type        " MINOR of Type
-let s:structure      = s:type        " MINOR of Type
-let s:typedef        = s:type        " MINOR of Type
-
-let s:special        = s:londonhue
-let s:specialchar    = s:special     " MINOR of Special
-let s:tag            = s:special     " MINOR of Special
-let s:delimiter      = s:cosmos      " MINOR of Special
-let s:specialcomment = s:truewhite   " MINOR of Special
-let s:debug          = s:special     " MINOR of Special
-
-let s:underlined     = s:foreground
-
-let s:ignore         = s:foreground
-
-let s:error          = s:darkred
-
-let s:todo           = s:truewhite
-"}}}
-
-" ##############################################################################
-" ### #SYNTAX
-" ##############################################################################
-" --- see function s:H()
-" --- s:h(<SyntaxGroup>!, <foreground>, <background>, <style>)
-" --- if fields are omitted, the parent syntaxgroups field will be inherited
-" --- for example omitting <background> in String, the <background>-field 
-" --- of Constant will be inherited
-" ------------------------------------------------------------------------------
-
-" --- Vim Defaults TODO replace generic color vars with functional vars
-" ------------------------------------------------------------------------------
-
-call s:H("Normal",          s:foreground,     s:background, "")
-
-call s:H("ColorColumn",     s:comment,        s:gray1,        "")
-call s:H("Conceal",         s:gray3,            "",           "")
-call s:H("Cursor",          s:background,     s:foreground, "")
-call s:H("CursorColumn",    "",               "",           "")
-call s:H("CursorIM",        s:background,     s:foreground, "")
-call s:H("CursorLine",      "",               s:gray1,        "")
-call s:H("CursorLineNr",    "",               s:gray1,        "bold")
-
-call s:H("DiffAdd",         "",               s:positive,   "")
-call s:H("DiffChange",      "",               s:neutral,    "")
-call s:H("DiffDelete",      "",               s:negative,   "")
-call s:H("Directory",       s:special,        "",           "")
-
-call s:H("ErrorMsg",        s:error,          s:negative,   "")
-
-call s:H("FoldColumn",      "",               s:gray3,        "")
-call s:H("Folded",          "",               s:gray3,        "")
-
-call s:H("IncSearch",       s:background,     s:foreground, "")
-
-call s:H("LineNr",          s:comment,        "",           "")
-
-call s:H("MatchParen",      s:background,     s:foreground, "bold")
-call s:H("ModeMsg",         s:special,        s:gray1,        "bold")
-call s:H("MoreMsg",         s:special,        s:gray1,        "")
-
-call s:H("NonText",         s:operator,       "",           "")
-
-call s:H("Pmenu",           "",               "",           "")
-call s:H("PmenuSbar",       "",               "",           "")
-call s:H("PmenuSel",        s:special,        s:gray1,        "")
-
-call s:H("Question",        s:special,        s:gray1,        "bold")
-
-call s:H("Search",          s:background,     s:foreground, "")
-call s:H("SignColumn",      "",               "",           "")
-call s:H("SpecialKey",      s:special,        "",           "")
-call s:H("SpelBad",         s:error,          "",           "")
-call s:H("SpellRare",       s:neutral,        "",           "")
-call s:H("StatusLine",      s:white,          s:gray1,        "")
-call s:H("StatusLineNC",    s:gray21,            s:gray1,        "")
-
-call s:H("TabLine",         "",               s:gray1,        "")
-call s:H("TabLineFill",     "",               "",           "")
-call s:H("TabLineSel",      s:gray21,            s:gray1,        "")
-call s:H("Title",           "",               "",           "")
-
-call s:H("VertSplit",       "",               "",           "")
-call s:H("Visual",          s:background,               s:foreground,        "")
-
-call s:H("WildMenu",        s:special,        "",           "")
-
-" --- Syntax
-" ------------------------------------------------------------------------------
-
-call s:H("Comment",         s:comment,        "",           "")
-
-" --- MAJOR
-call s:H("Constant",        s:constant,       "",           "")
-" --- MINORS of Constant
-call s:H("String",          s:string,         "",           "")
-call s:H("Character",       s:character,      "",           "")
-call s:H("Number",          s:number,         "",           "bold")
-call s:H("Boolean",         s:boolean,        "",           "")
-call s:H("Float",           s:float,          "",           "")
-
-" --- MAJOR
-call s:H("Identifier",      s:identifier,     "",           "")
-" --- MINORS of Identifier
-call s:H("Function",        s:function,       "",           "")
-
-" --- MAJOR
-call s:H("Statement",       s:statement,      "",           "bold")
-" --- MINORS of Identifier
-call s:H("Conditional",     s:conditional,    "",           "")
-call s:H("Repeat",          s:repeat,         "",           "")
-call s:H("Label",           s:label,          "",           "")
-call s:H("Operator",        s:operator,       "",           "")
-call s:H("Keyword",         s:keyword,        "",           "")
-call s:H("Exception",       s:exception,      "",           "")
-
-" --- MAJOR
-call s:H("PreProc",         s:preproc,        "",           "bold")
-" --- MINORS of PreProc
-call s:H("Include",         s:include,        "",           "")
-call s:H("Define",          s:define,         "",           "")
-call s:H("Macro",           s:macro,          "",           "")
-call s:H("PreCondit",       s:precondit,      "",           "")
-
-" --- MAJOR
-call s:H("Type",            s:type,           "",           "")
-" --- MINORS of Type
-call s:H("StorageClass",    s:storageclass,   "",           "")
-call s:H("Structure",       s:structure,      "",           "")
-call s:H("Typedef",         s:typedef,        "",           "")
-
-" --- MAJOR
-call s:H("Special",         s:special,        "",           "")
-" --- MINORS of Special
-call s:H("SpecialChar",     s:specialchar,    "",           "")
-call s:H("Tag",             s:tag,            "",           "")
-call s:H("Delimiter",       s:delimiter,      "",           "")
-call s:H("SpecialComment",  s:specialcomment, "",           "")
-call s:H("Debug",           s:debug,          "",           "")
-
-call s:H("Underlined",      s:underlined,     "",           "")
-
-call s:H("Ignore",          s:ignore,         "",           "")
-
-call s:H("Error",           s:error,          s:negative,   "")
-
-call s:H("Todo",            s:todo,           "",           "bold")
-
-" --- Filetype specific Syntax
-" ------------------------------------------------------------------------------
-
-" Vimscript
+call s:H("Constant",       s:_darkcyan,     "",         "")
+" --- MINORS of Constant:
 "
+call s:H("String",         s:_lightgreen,         "",         "")
+" any string
+" inherits constant by default
+"
+hi! link Character String
+" call s:H("Character",      s:character,      "",         "")
+" any single character: 'c', '\n'
+" inherits constant by default
+
+call s:H("Number",         s:_lightcyan,      "",         "bold")
+" any number, including unit
+" inherits constant by default
+
+" call s:H("Boolean",        s:boolean,        "",         "")
+" any boolean: TRUE, false
+" inherits constant by default
+
+" call s:H("Float",          s:float,          "",         "")
+hi! link Float Number
+" a floating point constant: 2.3e10
+" inherits constant by default
+
+call s:H("Identifier",     s:_darkblue,        "",         "")
+" any variable name
+" --- MINORS of Identifier:
+
+call s:H("Function",       s:_lightblue,       "",         "")
+" any function, method, class
+" inherits identifier by default
+
+call s:H("Statement",      s:_darkgreen,         "",         "")
+" any statement
+" --- MINORS of Identifier: 
+
+" call s:H("Conditional",    s:statement,      "",         "")
+" if, then, else, endif, switch, etc.
+" inherits statement by default
+
+" call s:H("Repeat",         s:repeat,         "",         "")
+" for, do, while, etc.
+" inherits statement by default
+
+" call s:H("Label",          s:label,          "",         "")
+" case, default, etc.
+" inherits statement by default
+
+" call s:H("Operator",       s:operator,       "",         "")
+" "sizeof", "+", "*", etc.
+" inherits statement by default
+
+" call s:H("Keyword",        s:keyword,        "",         "")
+" any other keyword
+" inherits statement by default
+
+" call s:H("Exception",      s:exception,      "",         "")
+" try, catch, throw
+" inherits statement by default
+
+call s:H("PreProc",        s:_lightcyan,      "",         "italic")
+" generic preprocessor
+" --- MINORS of PreProc:
+
+" call s:H("Include",        s:include,        "",         "")
+" inherits preproc by default
+
+" call s:H("Define",         s:define,         "",         "")
+" inherits preproc by default
+
+" call s:H("Macro",          s:macro,          "",         "")
+" inherits preproc by default
+
+" call s:H("PreCondit",      s:precondit,      "",         "")
+" inherits preproc by default
+
+call s:H("Type",           s:_yellow,         "",         "")
+" int, long, char, etc.
+" --- MINORS of Type:
+
+" call s:H("StorageClass",   s:storageclass,   "",         "")
+" static, register, volatile, etc.
+" inherits type by default
+
+" call s:H("Structure",      s:structure,      "",         "")
+" struct, union, enum, etc.
+" inherits type by default
+
+" call s:H("Typedef",        s:typedef,        "",         "")
+" A typedef
+" inherits type by default
+
+call s:H("Special",        s:_orange,          "",         "")
+" any special symbol
+" --- MINORS of Special
+
+" call s:H("SpecialChar",    s:specialchar,    "",         "")
+" inherits special by default
+
+" call s:H("Tag",            s:tag,            "",         "")
+" inherits special by default
+
+" call s:H("Delimiter",      s:delimiter,      "",         "")
+" inherits special by default
+
+" call s:H("SpecialComment", s:specialcomment, "",         "")
+" inherits special by default
+
+call s:H("Debug",          s:debug,          "",         "")
+" inherits special by default
+
+call s:H("Underlined",     s:_lightmagenta,         "",         "")
+
+call s:H("Ignore",         "",               "",         "")
+
+call s:H("Error",          s:_yellow,         s:negative, "bold")
+
+call s:H("Todo",           s:lightfg,        s:lightbg,  "bold")
+" }}}
+" --- Filetype specific Syntax {{{
+" ------------------------------------------------------------------------------
+" Vimscript"{{{
+"
+hi! link vimVar Identifier
+hi! link vimFunc Function
 hi! link vimUserFunc Function
 hi! link vimIsCommand Statement
 hi! link vimOperParen Identifier
-
-" HTML
-
+hi! link helpSpecial Special
+hi! link vimSet Normal
+hi! link vimSetEqual Normal
+" vimCommentString  
+" vimCommand       
+" vimCmdSep        
+" helpExample      
+" helpOption       
+" helpNote         
+" helpVim          
+" helpHyperTextJump
+" helpHyperTextEntry
+" vimIsCommand     
+" vimSynMtchOpt    
+" vimSynType       
+" vimHiLink        
+" vimHiGroup       
+" vimGroup         
+"}}}
+" HTML"{{{
 call s:H("htmlBold",        "",               "",           "bold")
 call s:H("htmlItalic",      "",               "",           "italic")
+" htmlTag          
+" htmlEndTag       
+" htmlTagN         
+" htmlTagName      
+" htmlSpecialTagName
+" htmlArg          
+" javaScript       
+" }}}
+" Autohotkey {{{
+" hi def link autohotkeyHotkey              Type
+" hi def link autohotkeyKey                 Type
+" hi def link autohotkeyDelimiter           Delimiter
+" hi def link autohotkeyHotstringDefinition Type
+" hi def link autohotkeyHotstring           Type
+" hi def link autohotkeyHotstringDelimiter  autohotkeyDelimiter
+" hi def link autohotkeyHotstringOptions    Special
+" hi def link autohotkeyString              String
+" hi def link autohotkeyStringDelimiter     autohotkeyString
+" hi def link autohotkeyVariable            Identifier
+" hi def link autohotkeyVariableDelimiter   autohotkeyVariable
+" hi def link autohotkeyBuiltinVariable     Macro
+" hi def link autohotkeyCommand             Keyword
+" hi def link autohotkeyFunction            Function
+" hi def link autohotkeyStatement           autohotkeyCommand
+" hi def link autohotkeyRepeat              Repeat
+" hi def link autohotkeyConditional         Conditional
+" hi def link autohotkeyPreProcStart        PreProc
+" hi def link autohotkeyInclude             Include
+" hi def link autohotkeyPreProc             PreProc
+" hi def link autohotkeyMatchClass          Typedef
+" hi def link autohotkeyNumber              Number
+" hi def link autohotkeyInteger             autohotkeyNumber
+" hi def link autohotkeyFloat               autohotkeyNumber
+" hi def link autohotkeyType                Type
+" hi def link autohotkeyBoolean             Boolean
+"}}}
+" diff highlighting "{{{
+" ---------------------------------------------------------------------
+hi! link diffAdded Statement
+hi! link diffLine Identifier
+"}}}
+" git & gitcommit highlighting "{{{
 
+" gitDateHeader
+" gitIdentityHeader
+" gitIdentityKeyword
+" gitNotesHeader
+" gitReflogHeader
+" gitKeyword
+" gitIdentity
+" gitEmailDelimiter
+" gitEmail
+" gitDate
+" gitMode
+" gitHashAbbrev
+" gitHash
+" gitReflogMiddle
+" gitReference
+" gitStage
+" gitType
+" gitDiffAdded
+" gitDiffRemoved
+" gitcommit
+" gitcommitSummary
+" gitcommitComment
+" gitcommitUntracked 
+" gitcommitDiscarded 
+" gitcommitSelected  
+" gitcommitUnmerged
+" gitcommitOnBranch
+" gitcommitBranch
+" gitcommitNoBranch
+" gitcommitDiscardedType
+" gitcommitSelectedType
+" gitcommitUnmergedType
+" gitcommitType
+" gitcommitNoChanges
+" gitcommitHeader
+" gitcommitHeader
+" gitcommitUntrackedFile
+" gitcommitDiscardedFile
+" gitcommitSelectedFile
+" gitcommitUnmergedFile
+" gitcommitFile
+" gitcommitDiscardedArrow
+" gitcommitSelectedArrow 
+" gitcommitUnmergedArrow 
+" gitcommitArrow
+" gitcommitOverflow
+" gitcommitBlank
+" }}}
+" }}}
+ 
 delf s:H
+" delete highlight function
