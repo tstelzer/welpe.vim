@@ -190,15 +190,15 @@ let s:negative   = s:sundown
 
 let s:comment        = s:gray11
 
-let s:constant       = s:laurel
+let s:constant       = s:roman
 let s:string         = s:moss        " MINOR of Constant
 let s:character      = s:string      " MINOR of Constant
-let s:number         = s:canary      " MINOR of Constant
+let s:number         = s:constant      " MINOR of Constant
 let s:boolean        = s:number      " MINOR of Constant
 let s:float          = s:number      " MINOR of Constant
 
-let s:identifier     = s:rajah
-let s:function       = s:manatee     " MINOR of Identifier
+let s:identifier     = s:lightcyan
+let s:function       = s:canary     " MINOR of Identifier
 
 let s:statement      = s:manatee
 let s:conditional    = s:londonhue   " MINOR of Statement
@@ -214,7 +214,7 @@ let s:define         = s:preproc     " MINOR of PreProc
 let s:macro          = s:preproc     " MINOR of PreProc
 let s:precondit      = s:preproc     " MINOR of PreProc
 
-let s:type           = s:columbia
+let s:type           = s:canary
 let s:storageclass   = s:type        " MINOR of Type
 let s:structure      = s:type        " MINOR of Type
 let s:typedef        = s:type        " MINOR of Type
@@ -312,7 +312,7 @@ call s:H("Constant",        s:constant,       "",           "")
 " --- MINORS of Constant
 call s:H("String",          s:string,         "",           "")
 call s:H("Character",       s:character,      "",           "")
-call s:H("Number",          s:number,         "",           "")
+call s:H("Number",          s:number,         "",           "bold")
 call s:H("Boolean",         s:boolean,        "",           "")
 call s:H("Float",           s:float,          "",           "")
 
