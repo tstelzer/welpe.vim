@@ -248,7 +248,7 @@ call s:H("Normal",       s:fg,        s:bg,       "")
 " default values
 " omitted values inherit this 
 
-call s:H("ColorColumn",  "",          s:lightbg,  "")
+call s:H("ColorColumn",  "",          s:darkbg,  "")
 " set colorcolumn = <column numbers>
 " vertical colored line, used to align text or not go over a certain textwidth
 call s:H("Conceal",      s:_darkblue,   "",         "")
@@ -465,7 +465,7 @@ call s:H("Special",        s:_orange,          "",         "")
 " call s:H("SpecialComment", s:specialcomment, "",         "")
 " inherits special by default
 
-call s:H("Debug",          s:debug,          "",         "")
+call s:H("Debug",          s:neutral,          "",         "")
 " inherits special by default
 
 call s:H("Underlined",     s:_lightmagenta,         "",         "")
