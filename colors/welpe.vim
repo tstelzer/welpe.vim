@@ -12,6 +12,12 @@
 " Author: Timm Stelzer <timmstelzer@gmail.com>
 " Source: https://github.com/tstelzer/welpe.vim
 " ------------------------------------------------------------------------------
+"  TODO more warm colors
+"  TODO brighter colors
+"  TODO lighter foreground
+"  TODO visual too dark
+"  TODO error unreadable
+"  TODO statusline too bright
 
 set background=dark
 
@@ -91,7 +97,7 @@ endfun
 " ##############################################################################
 " ### #COLORPALETTE
 " ##############################################################################
-" IMPORTANT: DO NOT CHANGE THESE VALUES, ONLY ADD NEW ONES
+" Important: DO NOT CHANGE THESE VALUES, ONLY ADD NEW ONES
 " Schema: s:<name> = [ '<hex>', <256term>, <16term>, <8term> ]
 
 " --- Grayscale"{{{
@@ -127,7 +133,7 @@ let s:truewhite = [ '#FFFFFF', 15,  15, 7 ]
 "}}}
 " --- Colors {{{
 " ------------------------------------------------------------------------------
-" Important: don't use the colornames in the syntax groups,
+" Important: DON'T USE THE COLORNAMES IN THE SYNTAX GROUPS,
 " use the generic color vars instead
 
 let s:roman      = [ '#d75f5f', 167, 1, 1 ]
@@ -145,15 +151,15 @@ let s:_orange = s:rajah
 let s:canary     = [ '#ffffaf', 229, 11, 3 ]
 let s:_yellow = s:canary
 
-let s:manatee    = [ '#8787af', 103, 4, 4 ]
-let s:_darkblue = s:manatee
+let s:cornflower   = [ '#5f87ff', 69, 4, 4 ]
+let s:_darkblue = s:cornflower
 let s:columbia   = [ '#afd7ff', 153, 12, 4 ]
 let s:_lightblue = s:columbia
 
-let s:londonhue  = [ '#af87af', 139, 5, 5 ]
-let s:_darkmagenta = s:londonhue
-let s:cosmos     = [ '#ffd7d7', 224, 13, 5 ]
-let s:_lightmagenta = s:cosmos
+let s:darkviolet = [ '#8700df', 92, 5, 5 ]
+let s:_darkmagenta = s:darkviolet
+let s:thistle      = [ '#d7afd7', 182, 13, 5 ]
+let s:_lightmagenta = s:thistle
 
 let s:aquamarine = [ '#87ffd7', 122, 6, 6 ]
 let s:_darkcyan = s:aquamarine
@@ -163,16 +169,16 @@ let s:_lightcyan = s:lightcyan
 " }}}
 " --- Discard Pile"{{{
 " ------------------------------------------------------------------------------
-let s:thistle      = [ '#d7afd7', 182, 13, 5 ]
 let s:lavenderrose = [ '#ffafff', 219, 13, 5 ]
+let s:cosmos     = [ '#ffd7d7', 224, 13, 5 ]
 let s:mariner      = [ '#5f5faf', 61, 5, 5 ]
 let s:mauve        = [ '#d7afff', 183, 13, 5 ]
 let s:lavender     = [ '#afafd7', 146, 13, 5 ]
 let s:maya         = [ '#87afff', 111, 4, 4 ]
-let s:cornflower   = [ '#5f87ff', 69, 4, 4 ]
 let s:fountain     = [ '#5fafaf', 73, 4, 4 ]
 let s:ziggurat     = [ '#87afaf', 109, 4, 4 ]
 let s:quartz       = [ '#d7d7ff', 189, 13, 5 ]
+let s:londonhue  = [ '#af87af', 139, 5, 5 ]
 let s:jade         = [ '#00af5f', 35, 2, 2 ]
 let s:sinbad       = [ '#afd7d7', 152, 4, 4 ]
 let s:chill        = [ '#5f8787', 66, 6, 6 ]
@@ -187,6 +193,7 @@ let s:orange       = [ '#ffaf00', 214, 3, 3 ]
 let s:tapestry     = [ '#af5f87', 132, 13, 5 ]
 let s:maroon       = [ '#5f0000', 52, 1, 7 ]
 let s:darkviolet   = [ '#af00d7', 128, 5, 5 ]
+let s:manatee    = [ '#8787af', 103, 4, 4 ]
 let s:pumpkin      = [ '#ff8700', 208, 3, 3 ]
 let s:mosque       = [ '#005f5f', 23, 10, 2 ]
 let s:gold         = [ '#ffd700', 220, 11, 3 ]
@@ -381,7 +388,7 @@ hi! link Float Number
 " a floating point constant: 2.3e10
 " inherits constant by default
 
-call s:H("Identifier",     s:_darkblue,        "",         "")
+call s:H("Identifier",     s:_lightmagenta,        "",         "")
 " any variable name
 " --- MINORS of Identifier:
 
@@ -389,7 +396,7 @@ call s:H("Function",       s:_lightblue,       "",         "")
 " any function, method, class
 " inherits identifier by default
 
-call s:H("Statement",      s:_darkgreen,         "",         "")
+call s:H("Statement",      s:_darkblue,         "",         "")
 " any statement
 " --- MINORS of Identifier: 
 
@@ -459,7 +466,7 @@ call s:H("Special",        s:_orange,          "",         "")
 " call s:H("Tag",            s:tag,            "",         "")
 " inherits special by default
 
-" call s:H("Delimiter",      s:delimiter,      "",         "")
+call s:H("Delimiter",      s:_darkred,      "",         "")
 " inherits special by default
 
 " call s:H("SpecialComment", s:specialcomment, "",         "")
@@ -480,15 +487,16 @@ call s:H("Todo",           s:lightfg,        s:lightbg,  "bold")
 " ------------------------------------------------------------------------------
 " Vimscript"{{{
 "
+hi! link vimSet Normal
+hi! link vimSetEqual Normal
 hi! link vimVar Identifier
 hi! link vimFunc Function
 hi! link vimUserFunc Function
 hi! link vimIsCommand Statement
 hi! link vimOperParen Identifier
 hi! link helpSpecial Special
-hi! link vimSet Normal
-hi! link vimSetEqual Normal
-" vimCommentString  
+hi! link vimCommentString String
+hi! link vimCommentTitle Title
 " vimCommand       
 " vimCmdSep        
 " helpExample      
@@ -514,6 +522,131 @@ call s:H("htmlItalic",      "",               "",           "italic")
 " htmlSpecialTagName
 " htmlArg          
 " javaScript       
+" }}}
+" CSS / SASS {{{
+" ------------------------------------------------------------------------------
+"HiLink cssComment Comment
+hi! link cssVendor cssProp
+"HiLink cssHacks Comment
+"HiLink cssTagName Statement
+"HiLink cssDeprecated Error
+"HiLink cssSelectorOp Special
+"HiLink cssSelectorOp2 Special
+"HiLink cssAttrComma Special
+
+"HiLink cssAnimationProp cssProp
+"HiLink cssBackgroundProp cssProp
+"HiLink cssBorderProp cssProp
+"HiLink cssBoxProp cssProp
+"HiLink cssColorProp cssProp
+"HiLink cssContentForPagedMediaProp cssProp
+"HiLink cssDimensionProp cssProp
+"HiLink cssFlexibleBoxProp cssProp
+"HiLink cssFontProp cssProp
+"HiLink cssGeneratedContentProp cssProp
+"HiLink cssGridProp cssProp
+"HiLink cssHyerlinkProp cssProp
+"HiLink cssLineboxProp cssProp
+"HiLink cssListProp cssProp
+"HiLink cssMarqueeProp cssProp
+"HiLink cssMultiColumnProp cssProp
+"HiLink cssPagedMediaProp cssProp
+"HiLink cssPositioningProp cssProp
+"HiLink cssPrintProp cssProp
+"HiLink cssRubyProp cssProp
+"HiLink cssSpeechProp cssProp
+"HiLink cssTableProp cssProp
+"HiLink cssTextProp cssProp
+"HiLink cssTransformProp cssProp
+"HiLink cssTransitionProp cssProp
+"HiLink cssUIProp cssProp
+"HiLink cssIEUIProp cssProp
+"HiLink cssAuralProp cssProp
+"HiLink cssRenderProp cssProp
+"HiLink cssMobileTextProp cssProp
+
+"HiLink cssAnimationAttr cssAttr
+"HiLink cssBackgroundAttr cssAttr
+"HiLink cssBorderAttr cssAttr
+"HiLink cssBoxAttr cssAttr
+"HiLink cssContentForPagedMediaAttr cssAttr
+"HiLink cssDimensionAttr cssAttr
+"HiLink cssFlexibleBoxAttr cssAttr
+"HiLink cssFontAttr cssAttr
+"HiLink cssGeneratedContentAttr cssAttr
+"HiLink cssGridAttr cssAttr
+"HiLink cssHyerlinkAttr cssAttr
+"HiLink cssLineboxAttr cssAttr
+"HiLink cssListAttr cssAttr
+"HiLink cssMarginAttr cssAttr
+"HiLink cssMarqueeAttr cssAttr
+"HiLink cssMultiColumnAttr cssAttr
+"HiLink cssPaddingAttr cssAttr
+"HiLink cssPagedMediaAttr cssAttr
+"HiLink cssPositioningAttr cssAttr
+"HiLink cssGradientAttr cssAttr
+"HiLink cssPrintAttr cssAttr
+"HiLink cssRubyAttr cssAttr
+"HiLink cssSpeechAttr cssAttr
+"HiLink cssTableAttr cssAttr
+"HiLink cssTextAttr cssAttr
+"HiLink cssTransformAttr cssAttr
+"HiLink cssTransitionAttr cssAttr
+"HiLink cssUIAttr cssAttr
+"HiLink cssIEUIAttr cssAttr
+"HiLink cssAuralAttr cssAttr
+"HiLink cssRenderAttr cssAttr
+"HiLink cssCommonAttr cssAttr
+
+"HiLink cssPseudoClassId PreProc
+"HiLink cssPseudoClassLang Constant
+"HiLink cssValueLength Number
+"HiLink cssValueInteger Number
+"HiLink cssValueNumber Number
+"HiLink cssValueAngle Number
+"HiLink cssValueTime Number
+"HiLink cssValueFrequency Number
+"HiLink cssFunction Constant
+"HiLink cssURL String
+"HiLink cssFunctionName Function
+"HiLink cssFunctionComma Function
+"HiLink cssColor Constant
+"HiLink cssIdentifier Function
+"HiLink cssInclude Include
+"HiLink cssIncludeKeyword atKeyword
+"HiLink cssImportant Special
+"HiLink cssBraces Function
+"HiLink cssBraceError Error
+"HiLink cssError Error
+"HiLink cssUnicodeEscape Special
+"HiLink cssStringQQ String
+"HiLink cssStringQ String
+"HiLink cssAttributeSelector String
+"HiLink cssMedia atKeyword
+"HiLink cssMediaType Special
+"HiLink cssMediaComma Normal
+"HiLink cssMediaKeyword Statement
+"HiLink cssMediaProp cssProp
+"HiLink cssMediaAttr cssAttr
+"HiLink cssPage atKeyword
+"HiLink cssPagePseudo PreProc
+"HiLink cssPageMargin atKeyword
+"HiLink cssPageProp cssProp
+"HiLink cssKeyFrame atKeyword
+"HiLink cssKeyFrameSelector Constant
+"HiLink cssFontDescriptor Special
+"HiLink cssFontDescriptorFunction Constant
+"HiLink cssFontDescriptorProp cssProp
+"HiLink cssFontDescriptorAttr cssAttr
+"HiLink cssUnicodeRange Constant
+"HiLink cssClassName Function
+"HiLink cssClassNameDot Function
+"HiLink cssProp StorageClass
+"HiLink cssAttr Constant
+hi! link cssUnitDecorators Delimiter
+"HiLink cssNoise Noise
+"HiLink atKeyword PreProc
+
 " }}}
 " Autohotkey {{{
 " hi def link autohotkeyHotkey              Type
