@@ -12,12 +12,12 @@
 " Author: Timm Stelzer <timmstelzer@gmail.com>
 " Source: https://github.com/tstelzer/welpe.vim
 " ------------------------------------------------------------------------------
-"  TODO more warm colors
-"  TODO brighter colors
 "  TODO lighter foreground
 "  TODO visual too dark
 "  TODO error unreadable
 "  TODO statusline too bright
+"  TODO differentiate operators 
+"  TODO lightline colorscheme
 
 set background=dark
 
@@ -42,12 +42,26 @@ function! s:H(group,fg,bg,style) "{{{
 " bg = Background Color
 " style = Font Style
 
+if &t_Co == 8
+
+    let l:cbg = 0
+
+    if !empty(a:fg)
+        " foreground is NOT empty
+        let l:cfg = a:fg[2]
+    else 
+        "foreground IS empty
+        let l:cfg = "NONE"
+    endif
+    exec "hi ".a:group." ctermfg = ".l:cfg." ctermbg = ".l:cbg
+
+else
+
     if !empty(a:fg)
         " foreground is NOT empty
         let l:gfg = a:fg[0]
         let l:cfg = a:fg[1]
     else
-        "foreground IS empty
         let l:gfg = "NONE"
         let l:cfg = "NONE"
     endif
@@ -84,13 +98,12 @@ function! s:H(group,fg,bg,style) "{{{
             let l:cstyle = "NONE"
         endif
     endif
-
     " hi "<Syntax group>" guifg = "<fgcolor>" guibg = "<bgcolor>" 
     " \ ctermfg = "<termfg>" ctermbg = "<termbg>" 
     " \ gui = "<guistyle>" term = "<termstyle>"
     exec "hi ".a:group." guifg=".l:gfg." ctermfg=".l:cfg." guibg=".l:gbg.
                 \ " ctermbg=".l:cbg." gui=".l:gstyle." term=".l:cstyle
-
+endif
 endfun
 "}}}
 
@@ -732,6 +745,6 @@ hi! link diffLine Identifier
 " gitcommitBlank
 " }}}
 " }}}
- 
+
 delf s:H
 " delete highlight function
