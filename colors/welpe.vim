@@ -13,10 +13,10 @@
 " Source: https://github.com/tstelzer/welpe.vim
 " ------------------------------------------------------------------------------
 "  TODO lighter foreground
-"  TODO visual too dark
 "  TODO error unreadable
 "  TODO statusline too bright
 "  TODO differentiate operators 
+"  TODO t16 and t8 cursorcolor (fg)
 "  TODO lightline colorscheme
 
 set background=dark
@@ -42,7 +42,7 @@ function! s:H(group,fg,bg,style) "{{{
 " bg = Background Color
 " style = Font Style
 
-if &t_Co == 8
+if &t_Co == 8 && exists(a:fg[2]) && exists(a:bg[2])
 
     let l:cbg = 0
 
@@ -231,10 +231,10 @@ let s:lightfg = s:white
 " lighter version of foreground
 let s:fg = s:gray22
 " default foreground
-let s:darkfg = s:gray20
+let s:darkfg = s:gray18
 " darker version of foreground
 
-let s:lightbg = s:gray4
+let s:lightbg = s:gray5
 " lighter version of foreground
 let s:bg = s:gray2
 " default background
@@ -273,7 +273,7 @@ call s:H("ColorColumn",  "",          s:darkbg,  "")
 " vertical colored line, used to align text or not go over a certain textwidth
 call s:H("Conceal",      s:_darkblue,   "",         "")
 " set conceallevel = <0-3>
-call s:H("Cursor",       s:bg,        s:fg,       "")
+call s:H("Cursor",       s:darkbg,        s:lightfg,       "")
 " blinking cursor
 call s:H("CursorColumn", "",          s:lightbg,  "")
 " vertical highlight of current cursor position
@@ -360,7 +360,7 @@ call s:H("Title",        s:_orange,     "",         "bold")
 
 call s:H("VertSplit",    s:comment,   s:darkbg,   "")
 " column separating splits
-call s:H("Visual",       s:lightfg,   s:lightbg,  "")
+call s:H("Visual",       s:darkbg,   s:darkfg,  "")
 " visually selected lines
 
 call s:H("WildMenu",     s:_lightmagenta,    "",         "")
@@ -743,6 +743,10 @@ hi! link diffLine Identifier
 " gitcommitArrow
 " gitcommitOverflow
 " gitcommitBlank
+" }}}
+" NERDTree {{{
+" ------------------------------------------------------------------------------
+
 " }}}
 " }}}
 
