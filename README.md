@@ -1,4 +1,4 @@
-# welpe.vim
+# welpe.vim ![Logo](img/welpe_logo.jpg)
 
 ##vim colorscheme loosely based on jellybeans and solarized dark
 
@@ -7,5 +7,5 @@
 - filetype specific syntax for now very limited
 - closeterm goals: better webdev-file-related colors
 
-![Preview 1](welpepreview1.jpg)
-![Preview 2](welpepreview2.jpg)
+![Preview 1](img/welpe_preview1.jpg)
+![Preview 2](img/welpe_preview2.jpg)
