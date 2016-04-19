@@ -1,4 +1,5 @@
-# welpe.vim ![Logo](img/welpe_logo.jpg)
+<p align="center"><img src="img/welpe_logo.jpg"></img></p>
+# welpe.vim 
 
 ##vim colorscheme loosely based on jellybeans and solarized dark
 
