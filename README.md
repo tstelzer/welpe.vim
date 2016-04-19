@@ -1,4 +1,4 @@
-<p align="center"><img src="img/welpe_logo.jpg"></img></p>
+<p align="center"><img src="img/welpe_logo.png"></img></p>
 # welpe.vim 
 
 ##vim colorscheme loosely based on jellybeans and solarized dark
