@@ -1,5 +1,6 @@
-<p align="center"><img src="img/welpe_logo.png"></img></p>
+<p align="center"><img src="img/welpe_logo.jpg"></img></p>
 # welpe.vim 
+-----------
 
 ##vim colorscheme loosely based on jellybeans and solarized dark
 
@@ -7,6 +8,9 @@
 - works *allegedly* in 16term and 8term 
 - filetype specific syntax for now very limited
 - closeterm goals: better webdev-file-related colors
+
+# preview
+---------
 
 ![Preview 1](img/welpe_preview1.jpg)
 ![Preview 2](img/welpe_preview2.jpg)
