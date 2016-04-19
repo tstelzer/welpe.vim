@@ -628,7 +628,7 @@ hi! link cssVendor cssProp
 "HiLink cssInclude Include
 "HiLink cssIncludeKeyword atKeyword
 "HiLink cssImportant Special
-"HiLink cssBraces Function
+hi! link cssBraces Delimiter " test
 "HiLink cssBraceError Error
 "HiLink cssError Error
 "HiLink cssUnicodeEscape Special
