@@ -12,6 +12,7 @@
 " Author: Timm Stelzer <timmstelzer@gmail.com>
 " Source: https://github.com/tstelzer/welpe.vim
 " ------------------------------------------------------------------------------
+"  TODO make hlsearch orange
 "  TODO lighter foreground
 "  TODO error unreadable
 "  TODO statusline too bright
@@ -118,29 +119,29 @@ endfun
 
 let s:trueblack = [ '#000000', 16,  0,  0 ]
 let s:black     = [ '#080808', 232, 0,  0 ]
-let s:gray1     = [ '#121212', 233, 0,  7 ]
-let s:gray2     = [ '#1c1c1c', 234, 0,  7 ]
-let s:gray3     = [ '#262626', 235, 0,  7 ]
-let s:gray4     = [ '#303030', 236, 8,  7 ]
-let s:gray5     = [ '#3a3a3a', 237, 8,  7 ]
-let s:gray6     = [ '#444444', 238, 8,  7 ]
-let s:gray7     = [ '#4e4e4e', 239, 8,  7 ]
-let s:gray8     = [ '#606060', 241, 8,  7 ]
-let s:gray9     = [ '#666666', 242, 8,  7 ]
-let s:gray10    = [ '#767676', 243, 8,  7 ]
-let s:gray11    = [ '#808080', 244, 8,  7 ]
-let s:gray12    = [ '#8a8a8a', 245, 7,  7 ]
-let s:gray13    = [ '#949494', 245, 7,  7 ]
-let s:gray14    = [ '#9e9e9e', 246, 7,  7 ]
-let s:gray15    = [ '#9e9e9e', 247, 7,  7 ]
-let s:gray16    = [ '#a8a8a8', 248, 7,  7 ]
-let s:gray17    = [ '#b2b2b2', 249, 7,  7 ]
-let s:gray18    = [ '#bcbcbc', 250, 7,  7 ]
-let s:gray19    = [ '#c0c0c0', 7,   7,  7 ]
-let s:gray20    = [ '#c6c6c6', 251, 7,  7 ]
-let s:gray21    = [ '#d0d0d0', 252, 15, 7 ]
-let s:gray22    = [ '#dadada', 253, 15, 7 ]
-let s:gray23    = [ '#e4e4e4', 254, 15, 7 ]
+let s:gray0     = [ '#121212', 233, 0,  7 ]
+let s:gray1     = [ '#1c1c1c', 234, 0,  7 ]
+let s:gray2     = [ '#262626', 235, 0,  7 ]
+let s:gray3     = [ '#303030', 236, 8,  7 ]
+let s:gray4     = [ '#3a3a3a', 237, 8,  7 ]
+let s:gray5     = [ '#444444', 238, 8,  7 ]
+let s:gray6     = [ '#4e4e4e', 239, 8,  7 ]
+let s:gray7     = [ '#606060', 241, 8,  7 ]
+let s:gray8     = [ '#666666', 242, 8,  7 ]
+let s:gray9    = [ '#767676', 243, 8,  7 ]
+let s:gray10    = [ '#808080', 244, 8,  7 ]
+let s:gray11    = [ '#8a8a8a', 245, 7,  7 ]
+let s:gray12    = [ '#949494', 245, 7,  7 ]
+let s:gray13    = [ '#9e9e9e', 246, 7,  7 ]
+let s:gray14    = [ '#9e9e9e', 247, 7,  7 ]
+let s:gray15    = [ '#a8a8a8', 248, 7,  7 ]
+let s:gray16    = [ '#b2b2b2', 249, 7,  7 ]
+let s:gray17    = [ '#bcbcbc', 250, 7,  7 ]
+let s:gray18    = [ '#c0c0c0', 7,   7,  7 ]
+let s:gray19    = [ '#c6c6c6', 251, 7,  7 ]
+let s:gray20    = [ '#d0d0d0', 252, 15, 7 ]
+let s:gray21    = [ '#dadada', 253, 15, 7 ]
+let s:gray22    = [ '#e4e4e4', 254, 15, 7 ]
 let s:white     = [ '#eeeeee', 255, 15, 7 ]
 let s:truewhite = [ '#FFFFFF', 15,  15, 7 ]
 "}}}
@@ -229,16 +230,16 @@ let s:salmon       = [ '#ff8787', 210, 13, 5 ]
 " --- Custom fields {{{
 let s:lightfg = s:white 
 " lighter version of foreground
-let s:fg = s:gray22
+let s:fg = s:gray21
 " default foreground
-let s:darkfg = s:gray18
+let s:darkfg = s:gray17
 " darker version of foreground
 
-let s:lightbg = s:gray5
+let s:lightbg = s:gray3
 " lighter version of foreground
-let s:bg = s:gray2
+let s:bg = s:gray1
 " default background
-let s:darkbg = s:gray1
+let s:darkbg = s:gray0
 " darker version of foreground
 
 let s:positive   = s:_lightgreen
@@ -248,7 +249,7 @@ let s:neutral    = s:_lightblue
 let s:negative   = s:_lightred
 " used for negative values, substraction, errors etc
 
-let s:comment        = s:gray11
+let s:comment        = s:gray10
 " besides comments, used for any neutral-gray
 "}}}
 
@@ -298,7 +299,7 @@ call s:H("FoldColumn",   "",          s:lightbg,  "")
 call s:H("Folded",       s:lightfg,   s:lightbg,  "")
 " line highlight for closed folds
 
-call s:H("IncSearch",    s:_orange,     "",         "")
+call s:H("IncSearch",    s:darkbg,     s:_orange,         "")
 " set incearch
 " highlight for search queries
 
@@ -325,7 +326,7 @@ call s:H("PmenuThumb",   "",          "",         "")
 call s:H("Question",     s:_lightcyan, s:darkbg,   "bold")
 " 'hit-enter' prompt and yes/no questions
 
-call s:H("Search",       s:_yellow,    "",         "")
+call s:H("Search",       s:darkbg,    s:_orange,         "")
 " set hlsearch
 " highlight of last search query
 " also used for current line in quickfix
