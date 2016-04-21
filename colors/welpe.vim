@@ -109,7 +109,7 @@ endfun
 "}}}
 
 " ##############################################################################
-" ### #COLORPALETTE
+" ### #GENERIC COLORNAMES
 " ##############################################################################
 " Important: DO NOT CHANGE THESE VALUES, ONLY ADD NEW ONES
 " Schema: s:<name> = [ '<hex>', <256term>, <16term>, <8term> ]
@@ -117,140 +117,131 @@ endfun
 " --- Grayscale"{{{
 " ------------------------------------------------------------------------------
 
-let s:trueblack = [ '#000000', 16,  0,  0 ]
-let s:black     = [ '#080808', 232, 0,  0 ]
-let s:gray0     = [ '#121212', 233, 0,  7 ]
-let s:gray1     = [ '#1c1c1c', 234, 0,  7 ]
-let s:gray2     = [ '#262626', 235, 0,  7 ]
-let s:gray3     = [ '#303030', 236, 8,  7 ]
-let s:gray4     = [ '#3a3a3a', 237, 8,  7 ]
-let s:gray5     = [ '#444444', 238, 8,  7 ]
-let s:gray6     = [ '#4e4e4e', 239, 8,  7 ]
-let s:gray7     = [ '#606060', 241, 8,  7 ]
-let s:gray8     = [ '#666666', 242, 8,  7 ]
-let s:gray9    = [ '#767676', 243, 8,  7 ]
-let s:gray10    = [ '#808080', 244, 8,  7 ]
-let s:gray11    = [ '#8a8a8a', 245, 7,  7 ]
-let s:gray12    = [ '#949494', 245, 7,  7 ]
-let s:gray13    = [ '#9e9e9e', 246, 7,  7 ]
-let s:gray14    = [ '#9e9e9e', 247, 7,  7 ]
-let s:gray15    = [ '#a8a8a8', 248, 7,  7 ]
-let s:gray16    = [ '#b2b2b2', 249, 7,  7 ]
-let s:gray17    = [ '#bcbcbc', 250, 7,  7 ]
-let s:gray18    = [ '#c0c0c0', 7,   7,  7 ]
-let s:gray19    = [ '#c6c6c6', 251, 7,  7 ]
-let s:gray20    = [ '#d0d0d0', 252, 15, 7 ]
-let s:gray21    = [ '#dadada', 253, 15, 7 ]
-let s:gray22    = [ '#e4e4e4', 254, 15, 7 ]
-let s:white     = [ '#eeeeee', 255, 15, 7 ]
-let s:truewhite = [ '#FFFFFF', 15,  15, 7 ]
+let s:_trueblack = [ '#000000', 16,  0,  0 ]
+let s:_black     = [ '#080808', 232, 0,  0 ]
+let s:_gray0     = [ '#121212', 233, 0,  7 ]
+let s:_gray1     = [ '#1c1c1c', 234, 0,  7 ]
+let s:_gray2     = [ '#262626', 235, 0,  7 ]
+let s:_gray3     = [ '#303030', 236, 8,  7 ]
+let s:_gray4     = [ '#3a3a3a', 237, 8,  7 ]
+let s:_gray5     = [ '#444444', 238, 8,  7 ]
+let s:_gray6     = [ '#4e4e4e', 239, 8,  7 ]
+let s:_gray7     = [ '#606060', 241, 8,  7 ]
+let s:_gray8     = [ '#666666', 242, 8,  7 ]
+let s:_gray9    = [ '#767676', 243, 8,  7 ]
+let s:_gray10    = [ '#808080', 244, 8,  7 ]
+let s:_gray11    = [ '#8a8a8a', 245, 7,  7 ]
+let s:_gray12    = [ '#949494', 245, 7,  7 ]
+let s:_gray13    = [ '#9e9e9e', 246, 7,  7 ]
+let s:_gray14    = [ '#9e9e9e', 247, 7,  7 ]
+let s:_gray15    = [ '#a8a8a8', 248, 7,  7 ]
+let s:_gray16    = [ '#b2b2b2', 249, 7,  7 ]
+let s:_gray17    = [ '#bcbcbc', 250, 7,  7 ]
+let s:_gray18    = [ '#c0c0c0', 7,   7,  7 ]
+let s:_gray19    = [ '#c6c6c6', 251, 7,  7 ]
+let s:_gray20    = [ '#d0d0d0', 252, 15, 7 ]
+let s:_gray21    = [ '#dadada', 253, 15, 7 ]
+let s:_gray22    = [ '#e4e4e4', 254, 15, 7 ]
+let s:_white     = [ '#eeeeee', 255, 15, 7 ]
+let s:_truewhite = [ '#FFFFFF', 15,  15, 7 ]
 "}}}
 " --- Colors {{{
 " ------------------------------------------------------------------------------
 " Important: DON'T USE THE COLORNAMES IN THE SYNTAX GROUPS,
 " use the generic color vars instead
 
-let s:roman      = [ '#d75f5f', 167, 1, 1 ]
-let s:_darkred = s:roman
-let s:sundown    = [ '#ffafaf', 217, 9, 1 ]
-let s:_lightred = s:sundown
-
-let s:laurel     = [ '#5f875f', 65, 2, 2 ]
-let s:_darkgreen = s:laurel
-let s:moss       = [ '#afd7af', 151, 10, 2 ]
-let s:_lightgreen = s:moss
-
-let s:rajah      = [ '#ffaf5f', 215, 3, 3 ]
-let s:_orange = s:rajah
-let s:canary     = [ '#ffffaf', 229, 11, 3 ]
-let s:_yellow = s:canary
-
-let s:cornflower   = [ '#5f87ff', 69, 4, 4 ]
-let s:_darkblue = s:cornflower
-let s:columbia   = [ '#afd7ff', 153, 12, 4 ]
-let s:_lightblue = s:columbia
-
-let s:darkviolet = [ '#8700df', 92, 5, 5 ]
-let s:_darkmagenta = s:darkviolet
-let s:thistle      = [ '#d7afd7', 182, 13, 5 ]
-let s:_lightmagenta = s:thistle
-
-let s:aquamarine = [ '#87ffd7', 122, 6, 6 ]
-let s:_darkcyan = s:aquamarine
-let s:lightcyan  = [ '#d7ffff', 195, 14, 6 ]
-let s:_lightcyan = s:lightcyan
+let s:_darkblue     = [ '#000087', 18, 4, 4 ]
+let s:_darkgreen    = [ '#005F00', 22, 2, 2 ]
+let s:_mosque       = [ '#005f5f', 23, 10, 2 ]
+let s:_lagoon       = [ '#005f87', 24, 12, 4 ]
+let s:_green        = [ '#008700', 28, 10, 2 ]
+let s:_forest       = [ '#00875F', 29, 10, 2 ]
+let s:_jade         = [ '#00af5f', 35, 2, 2 ]
+let s:_maroon       = [ '#5f0000', 52, 1, 7 ]
+let s:_mariner      = [ '#5f5faf', 61, 5, 5 ]
+let s:_chill        = [ '#5f8787', 66, 6, 6 ]
+let s:_fountain     = [ '#5fafaf', 73, 4, 4 ]
+let s:_turqoise = [ '#5fd7ff', 81, 14, 6 ]
+let s:_manatee      = [ '#8787af', 103, 4, 4 ]
+let s:_ziggurat     = [ '#87afaf', 109, 4, 4 ]
+let s:_maya         = [ '#87afff', 111, 4, 4 ]
+let s:_mantis       = [ '#87d75f', 113, 10, 2 ]
+let s:_lightgreen = [ '#87ff87', 120, 10, 2 ]
+let s:_freespeech   = [ '#af0000', 124, 9, 1 ]
+let s:_darkviolet   = [ '#af00d7', 128, 5, 5 ]
+let s:_goldenbrown  = [ '#af5f00', 130, 13, 5 ]
+let s:_tapestry     = [ '#af5f87', 132, 13, 5 ]
+let s:_londonhue    = [ '#af87af', 139, 5, 5 ]
+let s:_biloba       = [ '#af87d7', 140, 5, 5 ]
+let s:_citrus       = [ '#afaf00', 142, 3, 3 ]
+let s:_olive        = [ '#afaf5f', 143, 10, 2 ]
+let s:_lavender     = [ '#afafd7', 146, 13, 5 ]
+let s:_sinbad       = [ '#afd7d7', 152, 4, 4 ]
+let s:_mint         = [ '#afff87', 156, 10, 2 ]
+let s:_venetian     = [ '#d70000', 160, 9, 1 ]
+let s:_mauve        = [ '#d7afff', 183, 13, 5 ]
+let s:_quartz       = [ '#d7d7ff', 189, 13, 5 ]
+let s:_bittersweet  = [ '#ff5f5f', 203, 9, 1 ]
+let s:_darkorange   = [ '#ff8700', 208, 3, 3 ]
+let s:_salmon       = [ '#ff8787', 210, 13, 5 ]
+let s:_orange       = [ '#ffaf00', 214, 3, 3 ]
+let s:_lavenderrose = [ '#ffafff', 219, 13, 5 ]
+let s:_gold         = [ '#ffd700', 220, 11, 3 ]
+let s:_cosmos       = [ '#ffd7d7', 224, 13, 5 ]
+let s:_aquamarine = [ '#87ffd7', 122, 6, 6 ]
+let s:_canary     = [ '#ffffaf', 229, 11, 3 ]
+let s:_columbia   = [ '#afd7ff', 153, 12, 4 ]
+let s:_cornflower   = [ '#5f87ff', 69, 4, 4 ]
+let s:_darkviolet = [ '#8700df', 92, 5, 5 ]
+let s:_laurel     = [ '#5f875f', 65, 2, 2 ]
+let s:_lightcyan  = [ '#d7ffff', 195, 14, 6 ]
+let s:_moss       = [ '#afd7af', 151, 10, 2 ]
+let s:_rajah      = [ '#ffaf5f', 215, 3, 3 ]
+let s:_roman      = [ '#d75f5f', 167, 1, 1 ]
+let s:_sundown    = [ '#ffafaf', 217, 9, 1 ]
+let s:_thistle      = [ '#d7afd7', 182, 13, 5 ]
 
 " }}}
-" --- Discard Pile"{{{
-" ------------------------------------------------------------------------------
-let s:lavenderrose = [ '#ffafff', 219, 13, 5 ]
-let s:cosmos     = [ '#ffd7d7', 224, 13, 5 ]
-let s:mariner      = [ '#5f5faf', 61, 5, 5 ]
-let s:mauve        = [ '#d7afff', 183, 13, 5 ]
-let s:lavender     = [ '#afafd7', 146, 13, 5 ]
-let s:maya         = [ '#87afff', 111, 4, 4 ]
-let s:fountain     = [ '#5fafaf', 73, 4, 4 ]
-let s:ziggurat     = [ '#87afaf', 109, 4, 4 ]
-let s:quartz       = [ '#d7d7ff', 189, 13, 5 ]
-let s:londonhue  = [ '#af87af', 139, 5, 5 ]
-let s:jade         = [ '#00af5f', 35, 2, 2 ]
-let s:sinbad       = [ '#afd7d7', 152, 4, 4 ]
-let s:chill        = [ '#5f8787', 66, 6, 6 ]
-let s:forest       = [ '#00875F', 29, 10, 2 ]
-let s:biloba       = [ '#af87d7', 140, 5, 5 ]
-let s:mantis       = [ '#87d75f', 113, 10, 2 ]
-let s:olive        = [ '#afaf5f', 143, 10, 2 ]
-let s:darkgreen    = [ '#005F00', 22, 2, 2 ]
-let s:mint         = [ '#afff87', 156, 10, 2 ]
-let s:lagoon       = [ '#005f87', 24, 12, 4 ]
-let s:orange       = [ '#ffaf00', 214, 3, 3 ]
-let s:tapestry     = [ '#af5f87', 132, 13, 5 ]
-let s:maroon       = [ '#5f0000', 52, 1, 7 ]
-let s:darkviolet   = [ '#af00d7', 128, 5, 5 ]
-let s:manatee    = [ '#8787af', 103, 4, 4 ]
-let s:pumpkin      = [ '#ff8700', 208, 3, 3 ]
-let s:mosque       = [ '#005f5f', 23, 10, 2 ]
-let s:gold         = [ '#ffd700', 220, 11, 3 ]
-let s:bittersweet  = [ '#ff5f5f', 203, 9, 1 ]
-let s:freespeech   = [ '#af0000', 124, 9, 1 ]
-let s:venetian     = [ '#d70000', 160, 9, 1 ]
-let s:citrus       = [ '#afaf00', 142, 3, 3 ]
-let s:goldenbrown  = [ '#af5f00', 130, 13, 5 ]
-let s:green        = [ '#008700', 28, 10, 2 ]
-let s:darkblue     = [ '#000087', 18, 4, 4 ]
-let s:salmon       = [ '#ff8787', 210, 13, 5 ]
-"}}}
-
 
 " ##############################################################################
-" ### #FUNCTIONAL VARIABLES
+" ### #PALETTE VARIABLES
 " ##############################################################################
 " change the assigned variables, if you want to change the presented colors
 
-" --- Custom fields {{{
-let s:lightfg = s:white 
-" lighter version of foreground
-let s:fg = s:gray21
-" default foreground
-let s:darkfg = s:gray17
-" darker version of foreground
+" --- Palette {{{
 
-let s:lightbg = s:gray3
-" lighter version of foreground
-let s:bg = s:gray1
-" default background
-let s:darkbg = s:gray0
-" darker version of foreground
+let s:lightfg      = s:_white
+let s:fg           = s:_gray21
+let s:darkfg       = s:_gray19
 
-let s:positive   = s:_lightgreen
-" used for anything related to adding, positive values etc
-let s:neutral    = s:_lightblue
-" neutral color, used for neither positive nor negative
-let s:negative   = s:_lightred
-" used for negative values, substraction, errors etc
+let s:lightbg      = s:_gray4
+let s:bg           = s:_gray2
+let s:darkbg       = s:_gray0
 
-let s:comment        = s:gray10
-" besides comments, used for any neutral-gray
+let s:comment      = s:_gray10
+
+let s:darkred      = s:_roman
+let s:lightred     = s:_sundown
+
+let s:darkgreen    = s:_laurel
+let s:lightgreen   = s:_moss
+
+let s:orange       = s:_rajah
+let s:yellow       = s:_canary
+
+let s:darkblue     = s:_cornflower
+let s:lightblue    = s:_columbia
+
+let s:darkmagenta  = s:_darkviolet
+let s:lightmagenta = s:_thistle
+
+let s:darkcyan     = s:_aquamarine
+let s:lightcyan    = s:_lightcyan
+
+let s:positive     = s:lightgreen
+let s:neutral      = s:lightblue
+let s:negative     = s:lightred
+
 "}}}
 
 " ##############################################################################
@@ -272,7 +263,7 @@ call s:H("Normal",       s:fg,        s:bg,       "")
 call s:H("ColorColumn",  "",          s:darkbg,  "")
 " set colorcolumn = <column numbers>
 " vertical colored line, used to align text or not go over a certain textwidth
-call s:H("Conceal",      s:_darkblue,   "",         "")
+call s:H("Conceal",      s:darkblue,   "",         "")
 " set conceallevel = <0-3>
 call s:H("Cursor",       s:darkbg,        s:lightfg,       "")
 " blinking cursor
@@ -287,10 +278,10 @@ call s:H("DiffAdd",      s:positive,  s:lightbg,  "")
 call s:H("DiffChange",   s:neutral,   s:lightbg,  "")
 call s:H("DiffDelete",   s:negative,  s:lightbg,  "")
 " diff mode
-call s:H("Directory",    s:_lightblue,  "",         "")
+call s:H("Directory",    s:lightblue,  "",         "")
 " directory names and other special names in listings
 
-call s:H("ErrorMsg",     s:_yellow,    s:negative, "")
+call s:H("ErrorMsg",     s:yellow,    s:negative, "")
 " generic error message
 
 call s:H("FoldColumn",   "",          s:lightbg,  "")
@@ -299,7 +290,7 @@ call s:H("FoldColumn",   "",          s:lightbg,  "")
 call s:H("Folded",       s:lightfg,   s:lightbg,  "")
 " line highlight for closed folds
 
-call s:H("IncSearch",    s:darkbg,     s:_orange,         "")
+call s:H("IncSearch",    s:darkbg,     s:orange,         "")
 " set incearch
 " highlight for search queries
 
@@ -307,10 +298,10 @@ call s:H("LineNr",       s:comment,   s:darkbg,   "")
 " set number, and/or set relativenumber
 " number gutter
 
-call s:H("MatchParen",   s:white,     s:darkbg,   "bold")
-call s:H("ModeMsg",      s:_lightblue,  s:darkbg,   "")
-call s:H("MoreMsg",      s:_lightblue,  s:darkbg,   "")
-call s:H("NonText",      s:_orange,     "",         "")
+call s:H("MatchParen",   s:lightfg,     s:darkbg,   "bold")
+call s:H("ModeMsg",      s:lightblue,  s:darkbg,   "")
+call s:H("MoreMsg",      s:lightblue,  s:darkbg,   "")
+call s:H("NonText",      s:orange,     "",         "")
 " set showbreak = <char>
 " characters that visualize linebreaks, tabs etc.
 
@@ -318,30 +309,30 @@ call s:H("Pmenu",        "",          "",         "")
 " popup menu
 call s:H("PmenuSbar",    "",          s:darkbg,   "")
 " popup menu scrollbar
-call s:H("PmenuSel",     s:_orange,     s:lightbg,  "")
+call s:H("PmenuSel",     s:orange,     s:lightbg,  "")
 " popup menu selected text
 call s:H("PmenuThumb",   "",          "",         "")
 " popup menu thumb of scrollbar
 
-call s:H("Question",     s:_lightcyan, s:darkbg,   "bold")
+call s:H("Question",     s:lightcyan, s:darkbg,   "bold")
 " 'hit-enter' prompt and yes/no questions
 
-call s:H("Search",       s:darkbg,    s:_orange,         "")
+call s:H("Search",       s:darkbg,    s:orange,         "")
 " set hlsearch
 " highlight of last search query
 " also used for current line in quickfix
 call s:H("SignColumn",   "",          s:darkbg,   "")
 " sign gutter
-call s:H("SpecialKey",   s:_orange,     "",         "bold")
+call s:H("SpecialKey",   s:orange,     "",         "bold")
 " :help listchars
 " non-text chars like mappings, eol-characters, nbsp etc.
 call s:H("SpelBad",      s:negative,  "",         "undercurl")
 " unrecognized by spellchecker
 call s:H("SpellRare",    s:neutral,   "",         "undercurl")
 " rare word
-call s:H("SpellCap",     s:_darkmagenta, "",         "undercurl")
+call s:H("SpellCap",     s:darkmagenta, "",         "undercurl")
 " should be starting with a capital letter
-call s:H("SpellLocal",   s:_yellow,    "",         "undercurl")
+call s:H("SpellLocal",   s:yellow,    "",         "undercurl")
 " recognized as from another locale
 call s:H("StatusLine",   s:lightfg,   s:lightbg,  "")
 " set lastshow = <0-2>
@@ -355,7 +346,7 @@ call s:H("TabLine",      s:lightfg,   s:lightbg,  "")
 " nonactive tabpage label
 call s:H("TabLineFill",  s:darkfg,    s:lightbg,  "")
 " background of tabline, no labels
-call s:H("Title",        s:_orange,     "",         "bold")
+call s:H("Title",        s:orange,     "",         "bold")
 " titles, i guess? no idea
 " doc says 'titles for output from :set all, :autocmd etc.'
 
@@ -364,7 +355,7 @@ call s:H("VertSplit",    s:comment,   s:darkbg,   "")
 call s:H("Visual",       s:darkbg,   s:darkfg,  "")
 " visually selected lines
 
-call s:H("WildMenu",     s:_lightmagenta,    "",         "")
+call s:H("WildMenu",     s:lightmagenta,    "",         "")
 " current match in wildmenu completion
 call s:H("WarningMsg",   s:negative,  "",         "bold")
 " warning messages
@@ -377,10 +368,10 @@ call s:H("WarningMsg",   s:negative,  "",         "bold")
 
 call s:H("Comment",        s:comment,        "",         "italic")
 
-call s:H("Constant",       s:_darkcyan,     "",         "")
+call s:H("Constant",       s:darkcyan,     "",         "")
 " --- MINORS of Constant:
 "
-call s:H("String",         s:_lightgreen,         "",         "")
+call s:H("String",         s:lightgreen,         "",         "")
 " any string
 " inherits constant by default
 "
@@ -389,7 +380,7 @@ hi! link Character String
 " any single character: 'c', '\n'
 " inherits constant by default
 
-call s:H("Number",         s:_lightcyan,      "",         "bold")
+call s:H("Number",         s:lightcyan,      "",         "bold")
 " any number, including unit
 " inherits constant by default
 
@@ -402,15 +393,15 @@ hi! link Float Number
 " a floating point constant: 2.3e10
 " inherits constant by default
 
-call s:H("Identifier",     s:_lightmagenta,        "",         "")
+call s:H("Identifier",     s:lightmagenta,        "",         "")
 " any variable name
 " --- MINORS of Identifier:
 
-call s:H("Function",       s:_lightblue,       "",         "")
+call s:H("Function",       s:lightblue,       "",         "")
 " any function, method, class
 " inherits identifier by default
 
-call s:H("Statement",      s:_darkblue,         "",         "")
+call s:H("Statement",      s:darkblue,         "",         "")
 " any statement
 " --- MINORS of Identifier: 
 
@@ -438,7 +429,7 @@ call s:H("Statement",      s:_darkblue,         "",         "")
 " try, catch, throw
 " inherits statement by default
 
-call s:H("PreProc",        s:_lightcyan,      "",         "italic")
+call s:H("PreProc",        s:lightcyan,      "",         "italic")
 " generic preprocessor
 " --- MINORS of PreProc:
 
@@ -454,7 +445,7 @@ call s:H("PreProc",        s:_lightcyan,      "",         "italic")
 " call s:H("PreCondit",      s:precondit,      "",         "")
 " inherits preproc by default
 
-call s:H("Type",           s:_yellow,         "",         "")
+call s:H("Type",           s:yellow,         "",         "")
 " int, long, char, etc.
 " --- MINORS of Type:
 
@@ -470,7 +461,7 @@ call s:H("Type",           s:_yellow,         "",         "")
 " A typedef
 " inherits type by default
 
-call s:H("Special",        s:_orange,          "",         "")
+call s:H("Special",        s:orange,          "",         "")
 " any special symbol
 " --- MINORS of Special
 
@@ -480,7 +471,7 @@ call s:H("Special",        s:_orange,          "",         "")
 " call s:H("Tag",            s:tag,            "",         "")
 " inherits special by default
 
-call s:H("Delimiter",      s:_darkred,      "",         "")
+call s:H("Delimiter",      s:darkred,      "",         "")
 " inherits special by default
 
 " call s:H("SpecialComment", s:specialcomment, "",         "")
@@ -489,11 +480,11 @@ call s:H("Delimiter",      s:_darkred,      "",         "")
 call s:H("Debug",          s:neutral,          "",         "")
 " inherits special by default
 
-call s:H("Underlined",     s:_lightmagenta,         "",         "")
+call s:H("Underlined",     s:lightmagenta,         "",         "")
 
 call s:H("Ignore",         "",               "",         "")
 
-call s:H("Error",          s:_yellow,         s:negative, "bold")
+call s:H("Error",          s:yellow,         s:negative, "bold")
 
 call s:H("Todo",           s:lightfg,        s:lightbg,  "bold")
 " }}}
