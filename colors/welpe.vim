@@ -50,7 +50,7 @@ if &t_Co == 8 && exists(a:fg[2]) && exists(a:bg[2])
         "foreground IS empty
         let l:cfg = "NONE"
     endif
-    exec "hi ".a:group." ctermfg = ".l:cfg." ctermbg = ".l:cbg
+    execute "hi ".a:group." ctermfg = ".l:cfg." ctermbg = ".l:cbg
 
 else
 
@@ -98,7 +98,7 @@ else
     " hi "<Syntax group>" guifg = "<fgcolor>" guibg = "<bgcolor>" 
     " \ ctermfg = "<termfg>" ctermbg = "<termbg>" 
     " \ gui = "<guistyle>" term = "<termstyle>"
-    exec "hi ".a:group." guifg=".l:gfg." ctermfg=".l:cfg." guibg=".l:gbg.
+    execute "hi ".a:group." guifg=".l:gfg." ctermfg=".l:cfg." guibg=".l:gbg.
                 \ " ctermbg=".l:cbg." gui=".l:gstyle." term=".l:cstyle
 endif
 endfun
