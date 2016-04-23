@@ -40,4 +40,5 @@ As it is still in development, things might still radically change.
 # PREVIEW
 ---------
 
-TODO
+![GVIM preview 1](welpeGVIM_preview.jpg)
+![GVIM preview 2](welpeGVIM_preview2.jpg)
