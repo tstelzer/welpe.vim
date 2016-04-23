@@ -4,43 +4,7 @@
 -----------
 
 Dark colorscheme for vim, with a mixture of bright, saturated highlights
-and pale, low-key colors for non-keyword syntax groups.
-
-### INSTALLATION
-----------------
-
-###### via vundle
-
-`Plugin 'tstelzer/welpe.vim'`
-
-`:PluginInstall`
-
-###### via vimplug
-
-`Plug 'tstelzer/welpe.vim'`
-
-`:PlugInstall`
-
-###### manual download
-
-- place [welpe.vim/master/colors/welpe.vim](https://raw.githubusercontent.com/tstelzer/welpe.vim/master/colors/welpe.vim) in `~/<yourvimdir>/colors/`
-- if you want lightline support, place [welpe.vim/master/autoload/lightline/colorscheme/welpe.vim](https://raw.githubusercontent.com/tstelzer/welpe.vim/master/autoload/lightline/colorscheme/welpe.vim) in `~/<yourvimdir>/autoload/`
-
-###### enable colorscheme
-
-add the following line *after* `:syntax on`
-
-`colorscheme welpe`
-
-###### using lightline?
-
-find your lightline settings and add `'colorscheme': 'welpe',` to the top, like:
-
-```
-let g:lightline = {
-    \ 'colorscheme': 'welpe',
-    // more lightline settings
-```
+and pale, low-key colors for non-keyword syntax groups. Uses excusively colors from the 256-color-range, so it should look identical in gvim and vim.
 
 ### PALETTE
 -----------
@@ -83,6 +47,42 @@ let g:lightline = {
 ![GVIM preview 1](img/welpeGVIM_preview.jpg)
 ![GVIM preview 2](img/welpeGVIM_preview2.jpg)
 
+
+### INSTALLATION
+----------------
+
+###### via vundle
+
+`Plugin 'tstelzer/welpe.vim'`
+
+`:PluginInstall`
+
+###### via vimplug
+
+`Plug 'tstelzer/welpe.vim'`
+
+`:PlugInstall`
+
+###### manual download
+
+- place [welpe.vim/master/colors/welpe.vim](https://raw.githubusercontent.com/tstelzer/welpe.vim/master/colors/welpe.vim) in `~/<yourvimdir>/colors/`
+- if you want lightline support, place [welpe.vim/master/autoload/lightline/colorscheme/welpe.vim](https://raw.githubusercontent.com/tstelzer/welpe.vim/master/autoload/lightline/colorscheme/welpe.vim) in `~/<yourvimdir>/autoload/`
+
+###### enable colorscheme
+
+add the following line *after* `:syntax on`
+
+`colorscheme welpe`
+
+###### using lightline?
+
+find your lightline settings and add `'colorscheme': 'welpe',` to the top, like:
+
+```
+let g:lightline = {
+    \ 'colorscheme': 'welpe',
+    // more lightline settings
+```
 ### KNOWN 'BUGS'
 
 1. 8 and 16 terminal colors might not work for now
