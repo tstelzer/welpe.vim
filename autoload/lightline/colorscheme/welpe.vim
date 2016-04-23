@@ -84,4 +84,6 @@ let s:p.tabline.right   = [ [ s:fg, s:lightbg ] ]
 let s:p.normal.error    = [ [ s:lightbg,  s:lightred] ]
 let s:p.normal.warning  = [ [ s:darkbg,  s:yellow ] ]
 
-let g:lightline#colorscheme#welpe#palette = lightline#colorscheme#flatten(s:p)
+if exists('g:lightline')
+    let g:lightline#colorscheme#welpe#palette = lightline#colorscheme#flatten(s:p)
+endif
