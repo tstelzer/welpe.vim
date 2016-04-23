@@ -15,44 +15,38 @@ As it is still in development, things might still radically change.
 
 ## PALETTE
 ----------
-![](img/)
 
-- `black #080808 (232)`
-![black](img/_black.png)
+![black](img/_black.png) `black #080808 (232)`
 
-- `gray0 #121212 (233)`
-![gray0](img/_gray0.png)
-- `gray2 #262626 (235)`
-![gray2](img/_gray2.png)
-- `gray4 #3a3a3a (237)`
-![gray4](img/_gray4.png)
+![gray0](img/_gray0.png) `gray0 #121212 (233)`
 
-- `cornflower #5f87ff (69)`
-![cornflower](img/_cornflower.png)
-- `darkred #870000 (88)`
-![darkred](img/_darkred.png)
-- `medium orchid #af5fd7 (134)`
-![mediumorchid](img/_mediumorchid.png)
-- `moss #afd7af (151)`
-![moss](img/_moss.png)
-- `pale turquoise #afffff (159)`
-![paleturqoise](img/_paleturquoise.png)
-- `roman #d75f5f (160)`
-![roman](img/_roman.png)
-- `orange #ffaf00 (214)`
-![orange](img/_orange.png)
-- `shalimar #ffffaf (229)`
-![shalimar](img/_shalimar.png)
+![gray2](img/_gray2.png) `gray2 #262626 (235)`
 
-- `gray10 #808080 (244)`
-![gray10](img/_gray10.png)
-- `gray21 #dadada (253)`
-![gray21](img/_gray21.png)
-- `white #eeeeee (255)`
-![white](img/_white.png)
+![gray4](img/_gray4.png) `gray4 #3a3a3a (237)`
 
-- `truewhite #ffffff (15)`
-![truewhite](img/_truewhite.png)
+![cornflower](img/_cornflower.png) `cornflower #5f87ff (69)`
+
+![darkred](img/_darkred.png) `darkred #870000 (88)`
+
+![mediumorchid](img/_mediumorchid.png) `medium orchid #af5fd7 (134)`
+
+![moss](img/_moss.png) `moss #afd7af (151)`
+
+![paleturqoise](img/_paleturquoise.png) `pale turquoise #afffff (159)`
+
+![roman](img/_roman.png) `roman #d75f5f (160)`
+
+![orange](img/_orange.png) `orange #ffaf00 (214)`
+
+![shalimar](img/_shalimar.png) `shalimar #ffffaf (229)`
+
+![gray10](img/_gray10.png) `gray10 #808080 (244)`
+
+![gray21](img/_gray21.png) `gray21 #dadada (253)`
+
+![white](img/_white.png) `white #eeeeee (255)`
+
+![truewhite](img/_truewhite.png) `truewhite #ffffff (15)`
 
 # PREVIEW
 ---------
