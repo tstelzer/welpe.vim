@@ -1,13 +1,12 @@
 ![Welpe Colorwheel](img/colorwheel.png)
 
-# WELPE.vim 
------------
+WELPE.vim 
+===========
 
 Dark colorscheme for vim, with a mixture of bright, saturated highlights
 and pale, low-key colors for non-keyword syntax groups. Uses excusively colors from the 256-color-range, so it should look identical in gvim and vim.
 
-### PALETTE
------------
+## PALETTE
 
 ![black](img/_black.png) `black #080808 (232)`
 
@@ -41,40 +40,38 @@ and pale, low-key colors for non-keyword syntax groups. Uses excusively colors f
 
 ![truewhite](img/_truewhite.png) `truewhite #ffffff (15)`
 
-### PREVIEW
------------
+## PREVIEW
 
 ![GVIM preview 1](img/welpeGVIM_preview.jpg)
 ![GVIM preview 2](img/welpeGVIM_preview2.jpg)
 
 
-### INSTALLATION
-----------------
+## INSTALLATION
 
-###### via vundle
+#### via vundle
 
 `Plugin 'tstelzer/welpe.vim'`
 
 `:PluginInstall`
 
-###### via vimplug
+#### via vimplug
 
 `Plug 'tstelzer/welpe.vim'`
 
 `:PlugInstall`
 
-###### manual download
+#### manual download
 
 - place [welpe.vim/master/colors/welpe.vim](https://raw.githubusercontent.com/tstelzer/welpe.vim/master/colors/welpe.vim) in `~/<yourvimdir>/colors/`
 - if you want lightline support, place [welpe.vim/master/autoload/lightline/colorscheme/welpe.vim](https://raw.githubusercontent.com/tstelzer/welpe.vim/master/autoload/lightline/colorscheme/welpe.vim) in `~/<yourvimdir>/autoload/`
 
-###### enable colorscheme
+#### enable colorscheme
 
 add the following line *after* `:syntax on`
 
 `colorscheme welpe`
 
-###### using lightline?
+#### using lightline?
 
 find your lightline settings and add `'colorscheme': 'welpe',` to the top, like:
 
@@ -83,27 +80,37 @@ let g:lightline = {
     \ 'colorscheme': 'welpe',
     // more lightline settings
 ```
-### KNOWN 'BUGS'
+
+#### additional options
+
+all-bold
+
+`let g:welpe_all_bold = 1`
+
+use italics
+
+`let g:welpe_use_italics = 1`
+
+## KNOWN 'BUGS'
 
 1. 8 and 16 terminal colors might not work for now
 2. vim / fugitive diff unreadable
 
-### TODO
---------
+## TODO
 
-###### plugin
+#### plugin
 
 - [X] Lightline
 - [ ] better NERDtree colors
 - [ ] readable diff colors (native + fugitive)
 
-###### shortterm
+#### shortterm
 
 - [ ] HTML
 - [ ] CSS / SASS
 - [ ] JS
 
-###### longterm
+#### longterm
 *as I'm not coding in these, might take a while ...*
 
 - [ ] C-family
