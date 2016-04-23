@@ -16,28 +16,26 @@ As it is still in development, things might still radically change.
 ## PALETTE
 ----------
 
-```css
-black          #080808 (232)
+- `black          #080808 (232)`
 
-gray0          #121212 (233)
-gray2          #262626 (235)
-gray4          #3a3a3a (237)
+- `gray0          #121212 (233)`
+- `gray2          #262626 (235)`
+- `gray4          #3a3a3a (237)`
 
-cornflower     #5f87ff (69)
-darkred        #870000 (88)
-medium orchid  #af5fd7 (134)
-moss           #afd7af (151)
-pale turquoise #afffff (159)
-roman          #d70000 (160)
-orange         #ffaf00 (214)
-shalimar       #ffffaf (229)
+- `cornflower     #5f87ff (69)`
+- `darkred        #870000 (88)`
+- `medium orchid  #af5fd7 (134)`
+- `moss           #afd7af (151)`
+- `pale turquoise #afffff (159)`
+- `roman          #d75f5f (160)`
+- `orange         #ffaf00 (214)`
+- `shalimar       #ffffaf (229)`
 
-gray10         #808080 (244)
-gray21         #dadada (253)
-white          #eeeeee (255)
+- `gray10         #808080 (244)`
+- `gray21         #dadada (253)`
+- `white          #eeeeee (255)`
 
-truewhite      #ffffff (15)
-```
+- `truewhite      #ffffff (15)`
 
 # PREVIEW
 ---------
