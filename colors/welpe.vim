@@ -8,13 +8,14 @@
 "                   |_|                  
 " ------------------------------------------------------------------------------
 " File: welpe.vim
-" Description: vim colorscheme, loosely based on jellybeans, solarized-dark
+" Description: 16color scheme for vim
 " Author: Timm Stelzer <timmstelzer@gmail.com>
 " Source: https://github.com/tstelzer/welpe.vim
 " ------------------------------------------------------------------------------
+"  TODO make sel tab brighter
 "  TODO make hlsearch orange
 "  TODO lighter foreground
-"  TODO error unreadable
+"  TODO error unreadable !!!
 "  TODO statusline too bright
 "  TODO differentiate operators 
 "  TODO t16 and t8 cursorcolor (fg)
@@ -128,7 +129,7 @@ let s:_gray5     = [ '#444444', 238, 8,  7 ]
 let s:_gray6     = [ '#4e4e4e', 239, 8,  7 ]
 let s:_gray7     = [ '#606060', 241, 8,  7 ]
 let s:_gray8     = [ '#666666', 242, 8,  7 ]
-let s:_gray9    = [ '#767676', 243, 8,  7 ]
+let s:_gray9     = [ '#767676', 243, 8,  7 ]
 let s:_gray10    = [ '#808080', 244, 8,  7 ]
 let s:_gray11    = [ '#8a8a8a', 245, 7,  7 ]
 let s:_gray12    = [ '#949494', 245, 7,  7 ]
@@ -144,6 +145,7 @@ let s:_gray21    = [ '#dadada', 253, 15, 7 ]
 let s:_gray22    = [ '#e4e4e4', 254, 15, 7 ]
 let s:_white     = [ '#eeeeee', 255, 15, 7 ]
 let s:_truewhite = [ '#FFFFFF', 15,  15, 7 ]
+
 "}}}
 " --- Colors {{{
 " ------------------------------------------------------------------------------
@@ -158,48 +160,53 @@ let s:_green        = [ '#008700', 28, 10, 2 ]
 let s:_forest       = [ '#00875F', 29, 10, 2 ]
 let s:_jade         = [ '#00af5f', 35, 2, 2 ]
 let s:_maroon       = [ '#5f0000', 52, 1, 7 ]
-let s:_mariner      = [ '#5f5faf', 61, 5, 5 ]
+let s:_richblue     = [ '#5f5faf', 61, 5, 5 ]
+let s:_laurel       = [ '#5f875f', 65, 2, 2 ]
 let s:_chill        = [ '#5f8787', 66, 6, 6 ]
+let s:_cornflower   = [ '#5f87ff', 69, 4, 4 ]
+let s:_fern          = [ '#5faf5f', 71, 10, 2 ]
 let s:_fountain     = [ '#5fafaf', 73, 4, 4 ]
-let s:_turqoise = [ '#5fd7ff', 81, 14, 6 ]
+let s:_turqoise     = [ '#5fd7ff', 81, 14, 6 ]
+let s:_darkred = [ '#870000', 88, 1, 1 ]
+let s:_darkviolet   = [ '#8700df', 92, 5, 5 ]
 let s:_manatee      = [ '#8787af', 103, 4, 4 ]
 let s:_ziggurat     = [ '#87afaf', 109, 4, 4 ]
 let s:_maya         = [ '#87afff', 111, 4, 4 ]
 let s:_mantis       = [ '#87d75f', 113, 10, 2 ]
-let s:_lightgreen = [ '#87ff87', 120, 10, 2 ]
+let s:_lightgreen   = [ '#87ff87', 120, 10, 2 ]
+let s:_aquamarine   = [ '#87ffd7', 122, 6, 6 ]
 let s:_freespeech   = [ '#af0000', 124, 9, 1 ]
 let s:_darkviolet   = [ '#af00d7', 128, 5, 5 ]
 let s:_goldenbrown  = [ '#af5f00', 130, 13, 5 ]
 let s:_tapestry     = [ '#af5f87', 132, 13, 5 ]
+let s:_mediumorchid = [ '#af5fd7', 134, 13, 5 ]
 let s:_londonhue    = [ '#af87af', 139, 5, 5 ]
 let s:_biloba       = [ '#af87d7', 140, 5, 5 ]
 let s:_citrus       = [ '#afaf00', 142, 3, 3 ]
 let s:_olive        = [ '#afaf5f', 143, 10, 2 ]
 let s:_lavender     = [ '#afafd7', 146, 13, 5 ]
+let s:_moss         = [ '#afd7af', 151, 10, 2 ]
 let s:_sinbad       = [ '#afd7d7', 152, 4, 4 ]
+let s:_columbia     = [ '#afd7ff', 153, 12, 4 ]
 let s:_mint         = [ '#afff87', 156, 10, 2 ]
+let s:_celadon      = [ '#afffaf', 157, 10, 2 ]
+let s:_paleturquoise = [ '#afffff', 159, 12, 4 ]
 let s:_venetian     = [ '#d70000', 160, 9, 1 ]
+let s:_roman        = [ '#d75f5f', 167, 1, 1 ]
+let s:_thistle      = [ '#d7afd7', 182, 13, 5 ]
 let s:_mauve        = [ '#d7afff', 183, 13, 5 ]
 let s:_quartz       = [ '#d7d7ff', 189, 13, 5 ]
+let s:_lightcyan    = [ '#d7ffff', 195, 14, 6 ]
 let s:_bittersweet  = [ '#ff5f5f', 203, 9, 1 ]
 let s:_darkorange   = [ '#ff8700', 208, 3, 3 ]
 let s:_salmon       = [ '#ff8787', 210, 13, 5 ]
 let s:_orange       = [ '#ffaf00', 214, 3, 3 ]
+let s:_rajah        = [ '#ffaf5f', 215, 3, 3 ]
+let s:_sundown      = [ '#ffafaf', 217, 9, 1 ]
 let s:_lavenderrose = [ '#ffafff', 219, 13, 5 ]
 let s:_gold         = [ '#ffd700', 220, 11, 3 ]
 let s:_cosmos       = [ '#ffd7d7', 224, 13, 5 ]
-let s:_aquamarine = [ '#87ffd7', 122, 6, 6 ]
-let s:_canary     = [ '#ffffaf', 229, 11, 3 ]
-let s:_columbia   = [ '#afd7ff', 153, 12, 4 ]
-let s:_cornflower   = [ '#5f87ff', 69, 4, 4 ]
-let s:_darkviolet = [ '#8700df', 92, 5, 5 ]
-let s:_laurel     = [ '#5f875f', 65, 2, 2 ]
-let s:_lightcyan  = [ '#d7ffff', 195, 14, 6 ]
-let s:_moss       = [ '#afd7af', 151, 10, 2 ]
-let s:_rajah      = [ '#ffaf5f', 215, 3, 3 ]
-let s:_roman      = [ '#d75f5f', 167, 1, 1 ]
-let s:_sundown    = [ '#ffafaf', 217, 9, 1 ]
-let s:_thistle      = [ '#d7afd7', 182, 13, 5 ]
+let s:_shalimar       = [ '#ffffaf', 229, 11, 3 ]
 
 " }}}
 
@@ -210,37 +217,31 @@ let s:_thistle      = [ '#d7afd7', 182, 13, 5 ]
 
 " --- Palette {{{
 
-let s:lightfg      = s:_white
-let s:fg           = s:_gray21
-let s:darkfg       = s:_gray19
+let s:lightfg  = s:_white      " #eeeeee
+let s:fg       = s:_gray21     " #dadada
+let s:darkfg   = s:_gray10 " #808080
 
-let s:lightbg      = s:_gray4
-let s:bg           = s:_gray2
-let s:darkbg       = s:_gray0
+let s:lightbg  = s:_gray4      " #3a3a3a
+let s:bg       = s:_gray2      " #262626
+let s:darkbg   = s:_gray0      " #121212
 
-let s:comment      = s:_gray10
+let s:darkred  = s:_darkred " #870000
+let s:lightred = s:_roman " #d75f5f
 
-let s:darkred      = s:_roman
-let s:lightred     = s:_sundown
+let s:green    = s:_moss " #afd7af
 
-let s:darkgreen    = s:_laurel
-let s:lightgreen   = s:_moss
+let s:orange   = s:_orange " #ffaf00
+let s:yellow   = s:_shalimar " #ffffaf
 
-let s:orange       = s:_rajah
-let s:yellow       = s:_canary
+let s:blue     = s:_cornflower " #5f87ff 
 
-let s:darkblue     = s:_cornflower
-let s:lightblue    = s:_columbia
+let s:magenta  = s:_mediumorchid " #af5fd7
 
-let s:darkmagenta  = s:_darkviolet
-let s:lightmagenta = s:_thistle
+let s:cyan     = s:_paleturquoise " #afffff
 
-let s:darkcyan     = s:_aquamarine
-let s:lightcyan    = s:_lightcyan
-
-let s:positive     = s:lightgreen
-let s:neutral      = s:lightblue
-let s:negative     = s:lightred
+let s:positive = s:green
+let s:neutral  = s:blue
+let s:negative = s:darkred
 
 "}}}
 
@@ -263,7 +264,7 @@ call s:H("Normal",       s:fg,        s:bg,       "")
 call s:H("ColorColumn",  "",          s:darkbg,  "")
 " set colorcolumn = <column numbers>
 " vertical colored line, used to align text or not go over a certain textwidth
-call s:H("Conceal",      s:darkblue,   "",         "")
+call s:H("Conceal",      s:blue,   "",         "")
 " set conceallevel = <0-3>
 call s:H("Cursor",       s:darkbg,        s:lightfg,       "")
 " blinking cursor
@@ -278,7 +279,7 @@ call s:H("DiffAdd",      s:positive,  s:lightbg,  "")
 call s:H("DiffChange",   s:neutral,   s:lightbg,  "")
 call s:H("DiffDelete",   s:negative,  s:lightbg,  "")
 " diff mode
-call s:H("Directory",    s:lightblue,  "",         "")
+call s:H("Directory",    s:blue,  "",         "")
 " directory names and other special names in listings
 
 call s:H("ErrorMsg",     s:yellow,    s:negative, "")
@@ -287,20 +288,20 @@ call s:H("ErrorMsg",     s:yellow,    s:negative, "")
 call s:H("FoldColumn",   "",          s:lightbg,  "")
 " set foldcolumn = 1
 " gutter for folds
-call s:H("Folded",       s:lightfg,   s:lightbg,  "")
+call s:H("Folded",       s:fg,   s:lightbg,  "")
 " line highlight for closed folds
 
 call s:H("IncSearch",    s:darkbg,     s:orange,         "")
 " set incearch
 " highlight for search queries
 
-call s:H("LineNr",       s:comment,   s:darkbg,   "")
+call s:H("LineNr",       s:darkfg,   s:darkbg,   "")
 " set number, and/or set relativenumber
 " number gutter
 
 call s:H("MatchParen",   s:lightfg,     s:darkbg,   "bold")
-call s:H("ModeMsg",      s:lightblue,  s:darkbg,   "")
-call s:H("MoreMsg",      s:lightblue,  s:darkbg,   "")
+call s:H("ModeMsg",      s:blue,  s:darkbg,   "")
+call s:H("MoreMsg",      s:blue,  s:darkbg,   "")
 call s:H("NonText",      s:orange,     "",         "")
 " set showbreak = <char>
 " characters that visualize linebreaks, tabs etc.
@@ -314,7 +315,7 @@ call s:H("PmenuSel",     s:orange,     s:lightbg,  "")
 call s:H("PmenuThumb",   "",          "",         "")
 " popup menu thumb of scrollbar
 
-call s:H("Question",     s:lightcyan, s:darkbg,   "bold")
+call s:H("Question",     s:cyan, s:darkbg,   "bold")
 " 'hit-enter' prompt and yes/no questions
 
 call s:H("Search",       s:darkbg,    s:orange,         "")
@@ -330,7 +331,7 @@ call s:H("SpelBad",      s:negative,  "",         "undercurl")
 " unrecognized by spellchecker
 call s:H("SpellRare",    s:neutral,   "",         "undercurl")
 " rare word
-call s:H("SpellCap",     s:darkmagenta, "",         "undercurl")
+call s:H("SpellCap",     s:magenta, "",         "undercurl")
 " should be starting with a capital letter
 call s:H("SpellLocal",   s:yellow,    "",         "undercurl")
 " recognized as from another locale
@@ -350,12 +351,12 @@ call s:H("Title",        s:orange,     "",         "bold")
 " titles, i guess? no idea
 " doc says 'titles for output from :set all, :autocmd etc.'
 
-call s:H("VertSplit",    s:comment,   s:darkbg,   "")
+call s:H("VertSplit",    s:darkfg,   s:darkbg,   "")
 " column separating splits
 call s:H("Visual",       s:darkbg,   s:darkfg,  "")
 " visually selected lines
 
-call s:H("WildMenu",     s:lightmagenta,    "",         "")
+call s:H("WildMenu",     s:magenta,    "",         "")
 " current match in wildmenu completion
 call s:H("WarningMsg",   s:negative,  "",         "bold")
 " warning messages
@@ -366,12 +367,11 @@ call s:H("WarningMsg",   s:negative,  "",         "bold")
 " by default, every MINOR inherits its MAJORS values
 " uncomment the function call to specify the MINORS values
 
-call s:H("Comment",        s:comment,        "",         "italic")
+call s:H("Comment",        s:darkfg,        "",         "italic")
 
-call s:H("Constant",       s:darkcyan,     "",         "")
-" --- MINORS of Constant:
+call s:H("Constant",       s:cyan,     "",         "")
 "
-call s:H("String",         s:lightgreen,         "",         "")
+call s:H("String",         s:green,         "",         "")
 " any string
 " inherits constant by default
 "
@@ -380,7 +380,7 @@ hi! link Character String
 " any single character: 'c', '\n'
 " inherits constant by default
 
-call s:H("Number",         s:lightcyan,      "",         "bold")
+call s:H("Number",         s:cyan,      "",         "bold")
 " any number, including unit
 " inherits constant by default
 
@@ -393,17 +393,15 @@ hi! link Float Number
 " a floating point constant: 2.3e10
 " inherits constant by default
 
-call s:H("Identifier",     s:lightmagenta,        "",         "")
+call s:H("Identifier",     s:magenta,        "",         "")
 " any variable name
-" --- MINORS of Identifier:
 
-call s:H("Function",       s:lightblue,       "",         "")
+call s:H("Function",       s:blue,       "",         "")
 " any function, method, class
 " inherits identifier by default
 
-call s:H("Statement",      s:darkblue,         "",         "")
+call s:H("Statement",      s:blue,         "",         "")
 " any statement
-" --- MINORS of Identifier: 
 
 " call s:H("Conditional",    s:statement,      "",         "")
 " if, then, else, endif, switch, etc.
@@ -429,9 +427,8 @@ call s:H("Statement",      s:darkblue,         "",         "")
 " try, catch, throw
 " inherits statement by default
 
-call s:H("PreProc",        s:lightcyan,      "",         "italic")
+call s:H("PreProc",        s:cyan,      "",         "italic")
 " generic preprocessor
-" --- MINORS of PreProc:
 
 " call s:H("Include",        s:include,        "",         "")
 " inherits preproc by default
@@ -447,7 +444,6 @@ call s:H("PreProc",        s:lightcyan,      "",         "italic")
 
 call s:H("Type",           s:yellow,         "",         "")
 " int, long, char, etc.
-" --- MINORS of Type:
 
 " call s:H("StorageClass",   s:storageclass,   "",         "")
 " static, register, volatile, etc.
@@ -463,7 +459,6 @@ call s:H("Type",           s:yellow,         "",         "")
 
 call s:H("Special",        s:orange,          "",         "")
 " any special symbol
-" --- MINORS of Special
 
 " call s:H("SpecialChar",    s:specialchar,    "",         "")
 " inherits special by default
@@ -471,7 +466,7 @@ call s:H("Special",        s:orange,          "",         "")
 " call s:H("Tag",            s:tag,            "",         "")
 " inherits special by default
 
-call s:H("Delimiter",      s:darkred,      "",         "")
+call s:H("Delimiter",      s:lightred,      "",         "")
 " inherits special by default
 
 " call s:H("SpecialComment", s:specialcomment, "",         "")
@@ -480,7 +475,7 @@ call s:H("Delimiter",      s:darkred,      "",         "")
 call s:H("Debug",          s:neutral,          "",         "")
 " inherits special by default
 
-call s:H("Underlined",     s:lightmagenta,         "",         "")
+call s:H("Underlined",     s:magenta,         "",         "")
 
 call s:H("Ignore",         "",               "",         "")
 
@@ -497,8 +492,9 @@ hi! link vimSetEqual Normal
 hi! link vimVar Identifier
 hi! link vimFunc Function
 hi! link vimUserFunc Function
-hi! link vimIsCommand Statement
-hi! link vimOperParen Identifier
+hi! link vimIsCommand Function
+hi! link vimOper Operator
+hi! link vimOperParen Statement
 hi! link helpSpecial Special
 hi! link vimCommentString String
 hi! link vimCommentTitle Title
@@ -653,6 +649,16 @@ hi! link cssUnitDecorators Delimiter
 "HiLink atKeyword PreProc
 
 " }}}
+" JavaScript {{{
+" ------------------------------------------------------------------------------
+hi! link jsFuncCall Function
+hi! link jsFunction Function
+hi! link javaScriptValue Constant
+hi! link javaScriptTemplateVar StringDelim
+hi! link javaScriptTemplateDelim Identifier
+hi! link javaScriptTemplateString String
+
+" }}}
 " Autohotkey {{{
 " hi def link autohotkeyHotkey              Type
 " hi def link autohotkeyKey                 Type
@@ -683,8 +689,6 @@ hi! link cssUnitDecorators Delimiter
 "}}}
 " diff highlighting "{{{
 " ---------------------------------------------------------------------
-hi! link diffAdded Statement
-hi! link diffLine Identifier
 "}}}
 " git & gitcommit highlighting "{{{
 
