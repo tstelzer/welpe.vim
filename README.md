@@ -6,33 +6,41 @@
 Dark colorscheme for vim, with a mixture of bright, saturated highlights
 and pale, low-key colors for non-keyword syntax groups.
 
-Currently I am still testing the harmonies, and adding support
-for filetype specific syntax, as well as inbuilt lightline support.
-**Note, that 8 and 16 color support may or may not be broken for now,
-I am on to fixing it**
+### INSTALLATION
+----------------
 
-As the theme is still in flux, things might still radically change.
+###### via vundle
 
-### TODO
---------
+`Plugin 'tstelzer/welpe.vim'`
 
-###### plugin
+`:PluginInstall`
 
-- [X] Lightline
-- [ ] better NERDtree colors
-- [ ] readable diff colors (native + fugitive)
+###### via vimplug
 
-###### shortterm
+`Plug 'tstelzer/welpe.vim'`
 
-- [ ] HTML
-- [ ] CSS / SASS
-- [ ] JS
+`:PlugInstall`
 
-###### longterm
-*as I'm not coding in these, might take a while ...*
+###### manual download
 
-- [ ] C-family
-- [ ] Python
+- place [welpe.vim/master/colors/welpe.vim](https://raw.githubusercontent.com/tstelzer/welpe.vim/master/colors/welpe.vim) in `~/<yourvimdir>/colors/`
+- if you want lightline support, place [welpe.vim/master/autoload/lightline/colorscheme/welpe.vim](https://raw.githubusercontent.com/tstelzer/welpe.vim/master/autoload/lightline/colorscheme/welpe.vim) in `~/<yourvimdir>/autoload/`
+
+###### enable colorscheme
+
+add the following line *after* `:syntax on`
+
+`colorscheme welpe`
+
+###### using lightline?
+
+find your lightline settings and add `'colorscheme': 'welpe',` to the top, like:
+
+```
+let g:lightline = {
+    \ 'colorscheme': 'welpe',
+    // more lightline settings
+```
 
 ### PALETTE
 -----------
@@ -74,3 +82,29 @@ As the theme is still in flux, things might still radically change.
 
 ![GVIM preview 1](img/welpeGVIM_preview.jpg)
 ![GVIM preview 2](img/welpeGVIM_preview2.jpg)
+
+### KNOWN 'BUGS'
+
+1. 8 and 16 terminal colors might not work for now
+2. vim / fugitive diff unreadable
+
+### TODO
+--------
+
+###### plugin
+
+- [X] Lightline
+- [ ] better NERDtree colors
+- [ ] readable diff colors (native + fugitive)
+
+###### shortterm
+
+- [ ] HTML
+- [ ] CSS / SASS
+- [ ] JS
+
+###### longterm
+*as I'm not coding in these, might take a while ...*
+
+- [ ] C-family
+- [ ] Python
