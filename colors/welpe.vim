@@ -12,10 +12,9 @@
 " Author: Timm Stelzer <timmstelzer@gmail.com>
 " Source: https://github.com/tstelzer/welpe.vim
 " ------------------------------------------------------------------------------
-"  TODO make hlsearch orange
-"  TODO error unreadable !!!
-"  TODO differentiate operators 
-"  TODO t16 and t8 cursorcolor (fg)
+"  TODO fix 8 and 16 colors
+"  TODO fix diff colors
+"  TODO function, integer and statement suck
 
 set background=dark
 
@@ -270,9 +269,9 @@ call s:H("CursorLine",   "",          s:lightbg,  "")
 call s:H("CursorLineNr", s:lightfg,   s:darkbg,   "bold")
 " linenumber of cursor position
 
-call s:H("DiffAdd",      s:positive,  s:lightbg,  "")
-call s:H("DiffChange",   s:neutral,   s:lightbg,  "")
-call s:H("DiffDelete",   s:negative,  s:lightbg,  "")
+call s:H("DiffAdd",      "",  s:lightbg,  "")
+call s:H("DiffChange",   "",   s:lightbg,  "")
+call s:H("DiffDelete",   "",  s:lightbg,  "")
 " diff mode
 call s:H("Directory",    s:blue,  "",         "")
 " directory names and other special names in listings
@@ -342,7 +341,7 @@ call s:H("TabLine",      s:lightfg,   s:lightbg,  "")
 " nonactive tabpage label
 call s:H("TabLineFill",  s:fg,    s:darkbg,  "")
 " background of tabline, no labels
-call s:H("Title",        "",     "",         "bold")
+call s:H("Title",        "",     "",         "")
 " titles, i guess? no idea
 " doc says 'titles for output from :set all, :autocmd etc.'
 

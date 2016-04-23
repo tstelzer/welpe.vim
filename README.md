@@ -9,12 +9,33 @@ and pale, low-key colors for non-keyword syntax groups.
 Currently I am still testing the harmonies, and adding support
 for filetype specific syntax, as well as inbuilt lightline support.
 **Note, that 8 and 16 color support may or may not be broken for now,
-I am on to fix it**
+I am on to fixing it**
 
-As it is still in development, things might still radically change.
+As the theme is still in flux, things might still radically change.
 
-## PALETTE
-----------
+### TODO
+--------
+
+###### plugin
+
+- [X] Lightline
+- [ ] better NERDtree colors
+- [ ] readable diff colors (native + fugitive)
+
+###### shortterm
+
+- [ ] HTML
+- [ ] CSS / SASS
+- [ ] JS
+
+###### longterm
+*as I'm not coding in these, might take a while ...*
+
+- [ ] C-family
+- [ ] Python
+
+### PALETTE
+-----------
 
 ![black](img/_black.png) `black #080808 (232)`
 
@@ -48,8 +69,8 @@ As it is still in development, things might still radically change.
 
 ![truewhite](img/_truewhite.png) `truewhite #ffffff (15)`
 
-# PREVIEW
----------
+### PREVIEW
+-----------
 
 ![GVIM preview 1](img/welpeGVIM_preview.jpg)
 ![GVIM preview 2](img/welpeGVIM_preview2.jpg)
