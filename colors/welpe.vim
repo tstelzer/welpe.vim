@@ -340,13 +340,13 @@ call s:H("StatusLine",   s:lightfg,   s:lightbg,  "")
 call s:H("StatusLineNC", s:darkfg,    s:darkbg,   "")
 " statusline of non-current window
 
-call s:H("TabLineSel",   s:lightfg,   s:darkbg,   "bold")
+call s:H("TabLineSel",   s:bg,   s:cyan,   "")
 " active tabpage label
 call s:H("TabLine",      s:lightfg,   s:lightbg,  "")
 " nonactive tabpage label
-call s:H("TabLineFill",  s:darkfg,    s:lightbg,  "")
+call s:H("TabLineFill",  s:fg,    s:darkbg,  "")
 " background of tabline, no labels
-call s:H("Title",        s:orange,     "",         "bold")
+call s:H("Title",        "",     "",         "bold")
 " titles, i guess? no idea
 " doc says 'titles for output from :set all, :autocmd etc.'
 
