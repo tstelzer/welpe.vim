@@ -16,7 +16,7 @@ As it is still in development, things might still radically change.
 ## PALETTE
 ----------
 
-```html
+```css
 black          #080808 (232)
 
 gray0          #121212 (233)
