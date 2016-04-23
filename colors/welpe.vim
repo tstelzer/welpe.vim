@@ -12,14 +12,10 @@
 " Author: Timm Stelzer <timmstelzer@gmail.com>
 " Source: https://github.com/tstelzer/welpe.vim
 " ------------------------------------------------------------------------------
-"  TODO make sel tab brighter
 "  TODO make hlsearch orange
-"  TODO lighter foreground
 "  TODO error unreadable !!!
-"  TODO statusline too bright
 "  TODO differentiate operators 
 "  TODO t16 and t8 cursorcolor (fg)
-"  TODO lightline colorscheme
 
 set background=dark
 
@@ -284,7 +280,7 @@ call s:H("Directory",    s:blue,  "",         "")
 call s:H("ErrorMsg",     s:yellow,    s:negative, "")
 " generic error message
 
-call s:H("FoldColumn",   "",          s:lightbg,  "")
+call s:H("FoldColumn",   "",          s:bg,  "")
 " set foldcolumn = 1
 " gutter for folds
 call s:H("Folded",       s:fg,   s:lightbg,  "")
@@ -326,13 +322,13 @@ call s:H("SignColumn",   "",          s:darkbg,   "")
 call s:H("SpecialKey",   s:orange,     "",         "bold")
 " :help listchars
 " non-text chars like mappings, eol-characters, nbsp etc.
-call s:H("SpelBad",      s:negative,  "",         "undercurl")
+call s:H("SpelBad",      s:yellow,  s:darkred,         "undercurl")
 " unrecognized by spellchecker
 call s:H("SpellRare",    s:neutral,   "",         "undercurl")
 " rare word
 call s:H("SpellCap",     s:magenta, "",         "undercurl")
 " should be starting with a capital letter
-call s:H("SpellLocal",   s:yellow,    "",         "undercurl")
+call s:H("SpellLocal",   s:green,    "",         "undercurl")
 " recognized as from another locale
 call s:H("StatusLine",   s:lightfg,   s:lightbg,  "")
 " set lastshow = <0-2>
@@ -350,7 +346,7 @@ call s:H("Title",        "",     "",         "bold")
 " titles, i guess? no idea
 " doc says 'titles for output from :set all, :autocmd etc.'
 
-call s:H("VertSplit",    s:darkfg,   s:darkbg,   "")
+call s:H("VertSplit",    "",   s:darkbg,   "")
 " column separating splits
 call s:H("Visual",       s:darkbg,   s:darkfg,  "")
 " visually selected lines
