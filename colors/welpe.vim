@@ -12,10 +12,9 @@
 " Author: Timm Stelzer <timmstelzer@gmail.com>
 " Source: https://github.com/tstelzer/welpe.vim
 " ------------------------------------------------------------------------------
-"  TODO fix 8 and 16 colors
-"  TODO lighter blue maybe
-"  TODO orange too bright
-"  TODO function, integer and statement suck
+"  TODO fix 8 and 16 colors!!!
+"  TODO orange too bright???
+"  TODO cursor line in diff broken
 
 set background=dark
 
@@ -212,25 +211,25 @@ let s:_shalimar       = [ '#ffffaf', 229, 11, 3 ]
 
 " --- Palette {{{
 
-let s:lightfg  = s:_white      " #eeeeee
-let s:fg       = s:_gray21     " #dadada
-let s:darkfg   = s:_gray10 " #808080
+let s:lightfg  = s:_white         " #eeeeee
+let s:fg       = s:_gray21        " #dadada
+let s:darkfg   = s:_gray10        " #808080
 
-let s:lightbg  = s:_gray4      " #3a3a3a
-let s:bg       = s:_gray2      " #262626
-let s:darkbg   = s:_gray1      " #121212
+let s:lightbg  = s:_gray3         " #3a3a3a
+let s:bg       = s:_gray2         " #262626
+let s:darkbg   = s:_gray1         " #121212
 
-let s:darkred  = s:_darkred " #870000
-let s:lightred = s:_roman " #d75f5f
+let s:darkred  = s:_darkred       " #870000
+let s:lightred = s:_roman         " #d75f5f
 
-let s:green    = s:_moss " #afd7af
+let s:green    = s:_moss          " #afd7af
 
-let s:orange   = s:_orange " #ffaf00
-let s:yellow   = s:_shalimar " #ffffaf
+let s:orange   = s:_orange        " #ffaf00
+let s:yellow   = s:_shalimar      " #ffffaf
 
-let s:blue     = s:_maya
+let s:blue     = s:_maya          " #87afff
 
-let s:magenta  = s:_mediumorchid " #af5fd7
+let s:magenta  = s:_mediumorchid  " #af5fd7
 
 let s:cyan     = s:_paleturquoise " #afffff
 
@@ -256,7 +255,7 @@ call s:H("Normal",       s:fg,        s:bg,       "")
 " default values
 " omitted values inherit this 
 
-call s:H("ColorColumn",  "",          s:darkbg,  "")
+call s:H("ColorColumn",  "",          s:lightbg,  "")
 " set colorcolumn = <column numbers>
 " vertical colored line, used to align text or not go over a certain textwidth
 call s:H("Conceal",      s:blue,   "",         "")
@@ -304,14 +303,14 @@ call s:H("NonText",      s:orange,     "",         "")
 
 call s:H("Pmenu",        "",          "",         "")
 " popup menu
-call s:H("PmenuSbar",    "",          s:darkbg,   "")
+call s:H("PmenuSbar",    "",          s:lightbg,   "")
 " popup menu scrollbar
 call s:H("PmenuSel",     s:orange,     s:lightbg,  "")
 " popup menu selected text
 call s:H("PmenuThumb",   "",          "",         "")
 " popup menu thumb of scrollbar
 
-call s:H("Question",     s:cyan, s:darkbg,   "bold")
+call s:H("Question",     s:cyan, s:lightbg,   "bold")
 " 'hit-enter' prompt and yes/no questions
 
 call s:H("Search",       s:darkbg,    s:orange,         "")
@@ -331,25 +330,25 @@ call s:H("SpellCap",     s:magenta, "",         "undercurl")
 " should be starting with a capital letter
 call s:H("SpellLocal",   s:green,    "",         "undercurl")
 " recognized as from another locale
-call s:H("StatusLine",   s:lightfg,   s:lightbg,  "")
+call s:H("StatusLine",   s:lightfg,   s:darkbg,  "")
 " set lastshow = <0-2>
 " statusline of current window
-call s:H("StatusLineNC", s:darkfg,    s:darkbg,   "")
+call s:H("StatusLineNC", s:darkfg,    s:bg,   "")
 " statusline of non-current window
 
 call s:H("TabLineSel",   s:bg,   s:cyan,   "")
 " active tabpage label
-call s:H("TabLine",      s:lightfg,   s:lightbg,  "")
+call s:H("TabLine",      s:lightfg,   s:darkbg,  "")
 " nonactive tabpage label
-call s:H("TabLineFill",  s:fg,    s:darkbg,  "")
+call s:H("TabLineFill",  s:fg,    s:bg,  "")
 " background of tabline, no labels
 call s:H("Title",        "",     "",         "bold")
 " titles, i guess? no idea
 " doc says 'titles for output from :set all, :autocmd etc.'
 
-call s:H("VertSplit",    "",   s:darkbg,   "")
+call s:H("VertSplit",    "",   s:bg,   "")
 " column separating splits
-call s:H("Visual",       s:darkbg,   s:darkfg,  "")
+call s:H("Visual",       s:lightfg,   s:blue,  "") 
 " visually selected lines
 
 call s:H("WildMenu",     s:magenta,    "",         "")
@@ -683,9 +682,6 @@ hi! link javaScriptTemplateString String
 " hi def link autohotkeyType                Type
 " hi def link autohotkeyBoolean             Boolean
 "}}}
-" diff highlighting "{{{
-" ---------------------------------------------------------------------
-"}}}
 " git & gitcommit highlighting "{{{
 
 " gitDateHeader
@@ -740,7 +736,12 @@ hi! link javaScriptTemplateString String
 " ------------------------------------------------------------------------------
 
 " }}}
+" gitgutter {{{
+" ------------------------------------------------------------------------------
+call s:H("GitGutterAdd",s:positive,    s:darkbg,"")
+call s:H("GitGutterChange",s:neutral,  s:darkbg,"")
+call s:H("GitGutterDelete",s:negative, s:darkbg,"")
+hi! link GitGutterChangeDelete GitGutterDelete
 " }}}
-
-delf s:H
+" delf s:H
 " delete highlight function
