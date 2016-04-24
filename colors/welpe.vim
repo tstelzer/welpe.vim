@@ -14,6 +14,7 @@
 " ------------------------------------------------------------------------------
 "  TODO fix 8 and 16 colors
 "  TODO lighter blue maybe
+"  TODO orange too bright
 "  TODO function, integer and statement suck
 
 set background=dark
@@ -227,7 +228,7 @@ let s:green    = s:_moss " #afd7af
 let s:orange   = s:_orange " #ffaf00
 let s:yellow   = s:_shalimar " #ffffaf
 
-let s:blue     = s:_cornflower " #5f87ff 
+let s:blue     = s:_maya
 
 let s:magenta  = s:_mediumorchid " #af5fd7
 
@@ -294,7 +295,7 @@ call s:H("LineNr",       s:darkfg,   s:darkbg,   "")
 " set number, and/or set relativenumber
 " number gutter
 
-call s:H("MatchParen",   s:lightfg,     s:darkbg,   "bold")
+call s:H("MatchParen",   s:darkbg,     s:lightfg,   "bold")
 call s:H("ModeMsg",      s:blue,  s:darkbg,   "")
 call s:H("MoreMsg",      s:blue,  s:darkbg,   "")
 call s:H("NonText",      s:orange,     "",         "")
@@ -342,7 +343,7 @@ call s:H("TabLine",      s:lightfg,   s:lightbg,  "")
 " nonactive tabpage label
 call s:H("TabLineFill",  s:fg,    s:darkbg,  "")
 " background of tabline, no labels
-call s:H("Title",        "",     "",         "")
+call s:H("Title",        "",     "",         "bold")
 " titles, i guess? no idea
 " doc says 'titles for output from :set all, :autocmd etc.'
 
@@ -375,7 +376,7 @@ hi! link Character String
 " any single character: 'c', '\n'
 " inherits constant by default
 
-call s:H("Number",         s:cyan,      "",         "bold")
+call s:H("Number",         s:orange,      "",         "bold")
 " any number, including unit
 " inherits constant by default
 
