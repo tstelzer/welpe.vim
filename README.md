@@ -12,11 +12,11 @@ and pale, low-key colors for non-keyword syntax groups. Uses excusively colors f
 
 ![gray0](img/_gray0.png) `gray0 #121212 (233)`
 
-![gray2](img/_gray2.png) `gray2 #262626 (235)`
+![gray1](img/_gray1.png) `gray1 #1c1c1c (234)`
 
 ![gray4](img/_gray4.png) `gray4 #3a3a3a (237)`
 
-![cornflower](img/_cornflower.png) `cornflower #5f87ff (69)`
+![maya](img/_maya.png) `maya #87afff (111)`
 
 ![darkred](img/_darkred.png) `darkred #870000 (88)`
 
