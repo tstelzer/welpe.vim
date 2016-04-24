@@ -216,7 +216,7 @@ let s:darkfg   = s:_gray10 " #808080
 
 let s:lightbg  = s:_gray4      " #3a3a3a
 let s:bg       = s:_gray2      " #262626
-let s:darkbg   = s:_gray0      " #121212
+let s:darkbg   = s:_gray1      " #121212
 
 let s:darkred  = s:_darkred " #870000
 let s:lightred = s:_roman " #d75f5f
