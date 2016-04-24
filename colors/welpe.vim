@@ -269,9 +269,10 @@ call s:H("CursorLine",   "",          s:lightbg,  "")
 call s:H("CursorLineNr", s:lightfg,   s:darkbg,   "bold")
 " linenumber of cursor position
 
-call s:H("DiffAdd",      "",  s:lightbg,  "")
-call s:H("DiffChange",   "",   s:lightbg,  "")
-call s:H("DiffDelete",   "",  s:lightbg,  "")
+call s:H("DiffAdd",    s:positive, s:lightbg, "")
+call s:H("DiffChange", s:neutral,  s:lightbg, "")
+call s:H("DiffDelete", s:negative, s:lightbg, "")
+call s:H("DiffText",   s:magenta,  s:lightbg, "bold")
 " diff mode
 call s:H("Directory",    s:blue,  "",         "")
 " directory names and other special names in listings
@@ -352,7 +353,7 @@ call s:H("Visual",       s:darkbg,   s:darkfg,  "")
 
 call s:H("WildMenu",     s:magenta,    "",         "")
 " current match in wildmenu completion
-call s:H("WarningMsg",   s:negative,  "",         "bold")
+call s:H("WarningMsg",   s:yellow,  s:negative,         "bold")
 " warning messages
 " }}}
 " --- Default Syntax Groups {{{
