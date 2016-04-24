@@ -62,7 +62,7 @@ let s:darkfg    = s:_gray10
 let s:lighterbg = s:_gray6
 let s:lightbg   = s:_gray4
 let s:bg        = s:_gray2
-let s:darkbg    = s:_gray0
+let s:darkbg    = s:_gray1
 " }}}
 
 let s:p                 = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}

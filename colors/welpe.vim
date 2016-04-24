@@ -13,6 +13,7 @@
 " Source: https://github.com/tstelzer/welpe.vim
 " ------------------------------------------------------------------------------
 "  TODO fix 8 and 16 colors
+"  TODO lighter blue maybe
 "  TODO function, integer and statement suck
 
 set background=dark
