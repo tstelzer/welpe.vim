@@ -13,7 +13,6 @@
 " Source: https://github.com/tstelzer/welpe.vim
 " ------------------------------------------------------------------------------
 "  TODO fix 8 and 16 colors
-"  TODO fix diff colors
 "  TODO function, integer and statement suck
 
 set background=dark
@@ -391,7 +390,7 @@ hi! link Float Number
 call s:H("Identifier",     s:magenta,        "",         "")
 " any variable name
 
-call s:H("Function",       s:blue,       "",         "")
+call s:H("Function",       s:lightred,       "",         "")
 " any function, method, class
 " inherits identifier by default
 
