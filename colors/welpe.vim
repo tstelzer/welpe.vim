@@ -260,7 +260,7 @@ call s:H("ColorColumn",  "",          s:lightbg,  "")
 " vertical colored line, used to align text or not go over a certain textwidth
 call s:H("Conceal",      s:blue,   "",         "")
 " set conceallevel = <0-3>
-call s:H("Cursor",       s:darkbg,        s:lightfg,       "")
+call s:H("Cursor",       s:darkbg,        s:darkfg,       "")
 " blinking cursor
 call s:H("CursorColumn", "",          s:lightbg,  "")
 " vertical highlight of current cursor position
@@ -294,7 +294,8 @@ call s:H("LineNr",       s:darkfg,   s:darkbg,   "")
 " set number, and/or set relativenumber
 " number gutter
 
-call s:H("MatchParen",   s:darkbg,     s:lightfg,   "bold")
+call s:H("MatchParen",   "",     s:darkfg,   "bold")
+" matching parenthesis
 call s:H("ModeMsg",      s:blue,  s:darkbg,   "")
 call s:H("MoreMsg",      s:blue,  s:darkbg,   "")
 call s:H("NonText",      s:orange,     "",         "")
