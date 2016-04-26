@@ -376,7 +376,7 @@ hi! link Character String
 " any single character: 'c', '\n'
 " inherits constant by default
 
-call s:H("Number",         s:orange,      "",         "bold")
+call s:H("Number",         s:cyan,      "",         "bold")
 " any number, including unit
 " inherits constant by default
 
