@@ -260,8 +260,9 @@ call s:H("ColorColumn",  "",          s:lightbg,  "")
 " vertical colored line, used to align text or not go over a certain textwidth
 call s:H("Conceal",      s:blue,   "",         "")
 " set conceallevel = <0-3>
-call s:H("Cursor",       s:darkbg,        s:darkfg,       "")
-" blinking cursor
+call s:H("Cursor",  s:darkbg, s:fg,       "")
+call s:H("iCursor", s:darkbg, s:fg,       "")
+" Cursor
 call s:H("CursorColumn", "",          s:lightbg,  "")
 " vertical highlight of current cursor position
 call s:H("CursorLine",   "",          s:lightbg,  "")
