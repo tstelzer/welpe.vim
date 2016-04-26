@@ -294,7 +294,7 @@ call s:H("LineNr",       s:darkfg,   s:darkbg,   "")
 " set number, and/or set relativenumber
 " number gutter
 
-call s:H("MatchParen",   "",     s:darkfg,   "bold")
+call s:H("MatchParen",   s:orange,     s:lightbg,   "bold")
 " matching parenthesis
 call s:H("ModeMsg",      s:blue,  s:darkbg,   "")
 call s:H("MoreMsg",      s:blue,  s:darkbg,   "")
