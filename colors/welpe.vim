@@ -13,8 +13,8 @@
 " Source: https://github.com/tstelzer/welpe.vim
 " ------------------------------------------------------------------------------
 "  TODO fix 8 and 16 colors!!!
-"  TODO orange too bright???
-"  TODO cursor line in diff broken
+"  TODO differenciate between splits
+"  TODO use orange exclusively for special/search
 
 set background=dark
 
@@ -666,9 +666,9 @@ hi! link javaScriptTemplateString String
 " hi def link autohotkeyHotstringOptions    Special
 " hi def link autohotkeyString              String
 " hi def link autohotkeyStringDelimiter     autohotkeyString
-" hi def link autohotkeyVariable            Identifier
-" hi def link autohotkeyVariableDelimiter   autohotkeyVariable
-" hi def link autohotkeyBuiltinVariable     Macro
+hi def link autohotkeyVariable            Identifier
+hi def link autohotkeyVariableDelimiter   Delimiter
+hi def link autohotkeyBuiltinVariable     autohotkeyVariable            
 " hi def link autohotkeyCommand             Keyword
 " hi def link autohotkeyFunction            Function
 " hi def link autohotkeyStatement           autohotkeyCommand
