@@ -645,8 +645,12 @@ hi! link cssUnitDecorators Delimiter
 "HiLink cssNoise Noise
 "HiLink atKeyword PreProc
 
-" }}}
-" JavaScript {{{
+ 
+" --- Php
+" ------------------------------------------------------------------------------
+hi! link phpParent Delimiter
+
+" JavaScript 
 " ------------------------------------------------------------------------------
 hi! link jsFuncCall Function
 hi! link jsFunction Function
