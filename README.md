@@ -16,9 +16,9 @@ and pale, low-key colors for non-keyword syntax groups. Uses excusively colors f
 
 ![gray3](img/_gray3.png) `gray3 #3a3a3a (233)`
 
-![maya](img/_maya.png) `maya #87afff (111)`
-
 ![darkred](img/_darkred.png) `darkred #870000 (88)`
+
+![maya](img/_maya.png) `maya #87afff (111)`
 
 ![mediumorchid](img/_mediumorchid.png) `medium orchid #af5fd7 (134)`
 
