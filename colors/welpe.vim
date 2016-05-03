@@ -32,7 +32,7 @@ if !exists('g:welpe_use_italics')
     let g:welpe_use_italics = 0
 endif
 
-function! s:H(group,fg,bg,style) "{{{
+function! s:H(group,fg,bg,style) 
 " group = Syntax Group
 " :help syntax
 " fg = Foreground Color
@@ -102,15 +102,13 @@ else
                 \ " ctermbg=".l:cbg." gui=".l:gstyle." term=".l:cstyle
 endif
 endfun
-"}}}
 
-" ##############################################################################
 " ### #GENERIC COLORNAMES
 " ##############################################################################
 " Important: DO NOT CHANGE THESE VALUES, ONLY ADD NEW ONES
 " Schema: s:<name> = [ '<hex>', <256term>, <16term>, <8term> ]
 
-" --- Grayscale"{{{
+" --- Grayscale
 " ------------------------------------------------------------------------------
 
 let s:_trueblack = [ '#000000', 16,  0,  0 ]
@@ -140,8 +138,8 @@ let s:_gray21    = [ '#dadada', 253, 15, 7 ]
 let s:_gray22    = [ '#e4e4e4', 254, 15, 7 ]
 let s:_white     = [ '#eeeeee', 255, 15, 7 ]
 let s:_truewhite = [ '#FFFFFF', 15,  15, 7 ]
-"}}}
-" --- Colors {{{
+
+" --- Colors 
 " ------------------------------------------------------------------------------
 " Important: DON'T USE THE COLORNAMES IN THE SYNTAX GROUPS,
 " use the generic color vars instead
@@ -202,14 +200,13 @@ let s:_gold         = [ '#ffd700', 220, 11, 3 ]
 let s:_cosmos       = [ '#ffd7d7', 224, 13, 5 ]
 let s:_shalimar       = [ '#ffffaf', 229, 11, 3 ]
 
-" }}}
-
-" ##############################################################################
 " ### #PALETTE VARIABLES
 " ##############################################################################
 " change the assigned variables, if you want to change the presented colors
 
-" --- Palette {{{
+" --- Palette 
+" ------------------------------------------------------------------------------
+
 
 let s:lightfg  = s:_white         " #eeeeee
 let s:fg       = s:_gray21        " #dadada
@@ -237,9 +234,6 @@ let s:positive = s:green
 let s:neutral  = s:blue
 let s:negative = s:darkred
 
-"}}}
-
-" ##############################################################################
 " ### #HIGHLIGHTING
 " ##############################################################################
 " Schema: see function s:H()
@@ -248,7 +242,7 @@ let s:negative = s:darkred
 " Note: entirely omitted groups fallback to their parent
 " for example "Function" inherits "Identifier" by default
 
-" --- UI Defaults {{{
+" --- UI Defaults 
 " ------------------------------------------------------------------------------
 
 call s:H("Normal",       s:fg,        s:bg,       "")
@@ -357,8 +351,7 @@ call s:H("WildMenu",     s:magenta,    "",         "")
 " current match in wildmenu completion
 call s:H("WarningMsg",   s:yellow,  s:negative,         "bold")
 " warning messages
-" }}}
-" --- Default Syntax Groups {{{
+" --- Default Syntax Groups 
 " ------------------------------------------------------------------------------
 " VIM classifes MAJOR and MINOR syntax groups
 " by default, every MINOR inherits its MAJORS values
@@ -479,10 +472,11 @@ call s:H("Ignore",         "",               "",         "")
 call s:H("Error",          s:yellow,         s:negative, "bold")
 
 call s:H("Todo",           s:lightfg,        s:lightbg,  "bold")
-" }}}
-" --- Filetype specific Syntax {{{
+
+" --- Filetype specific Syntax 
 " ------------------------------------------------------------------------------
-" Vimscript"{{{
+
+" Vimscript
 "
 hi! link vimSet Normal
 hi! link vimSetEqual Normal
@@ -509,8 +503,8 @@ hi! link vimCommentTitle Title
 " vimHiLink        
 " vimHiGroup       
 " vimGroup         
-"}}}
-" HTML"{{{
+
+" HTML
 call s:H("htmlBold",        "",               "",           "bold")
 call s:H("htmlItalic",      "",               "",           "italic")
 " htmlTag          
@@ -520,8 +514,8 @@ call s:H("htmlItalic",      "",               "",           "italic")
 " htmlSpecialTagName
 " htmlArg          
 " javaScript       
-" }}}
-" CSS / SASS {{{
+" 
+" CSS / SASS 
 " ------------------------------------------------------------------------------
 "HiLink cssComment Comment
 hi! link cssVendor cssProp
@@ -659,8 +653,8 @@ hi! link javaScriptTemplateVar StringDelim
 hi! link javaScriptTemplateDelim Identifier
 hi! link javaScriptTemplateString String
 
-" }}}
-" Autohotkey {{{
+" 
+" Autohotkey 
 " hi def link autohotkeyHotkey              Type
 " hi def link autohotkeyKey                 Type
 " hi def link autohotkeyDelimiter           Delimiter
@@ -687,8 +681,8 @@ hi def link autohotkeyBuiltinVariable     autohotkeyVariable
 " hi def link autohotkeyFloat               autohotkeyNumber
 " hi def link autohotkeyType                Type
 " hi def link autohotkeyBoolean             Boolean
-"}}}
-" git & gitcommit highlighting "{{{
+
+" git & gitcommit highlighting 
 
 " gitDateHeader
 " gitIdentityHeader
@@ -737,17 +731,17 @@ hi def link autohotkeyBuiltinVariable     autohotkeyVariable
 " gitcommitArrow
 " gitcommitOverflow
 " gitcommitBlank
-" }}}
-" NERDTree {{{
+" 
+" NERDTree 
 " ------------------------------------------------------------------------------
 
-" }}}
-" gitgutter {{{
+" 
+" gitgutter 
 " ------------------------------------------------------------------------------
 call s:H("GitGutterAdd",s:positive,    s:darkbg,"")
 call s:H("GitGutterChange",s:neutral,  s:darkbg,"")
-call s:H("GitGutterDelete",s:negative, s:darkbg,"")
+call s:H("GitGutterDelete",s:lightred, s:darkbg,"")
 hi! link GitGutterChangeDelete GitGutterDelete
-" }}}
+" 
 " delf s:H
 " delete highlight function
