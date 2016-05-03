@@ -10,11 +10,11 @@ and pale, low-key colors for non-keyword syntax groups. Uses excusively colors f
 
 ![black](img/_black.png) `black #080808 (232)`
 
-![gray0](img/_gray0.png) `gray0 #121212 (233)`
-
 ![gray1](img/_gray1.png) `gray1 #1c1c1c (234)`
 
-![gray4](img/_gray4.png) `gray4 #3a3a3a (237)`
+![gray2](img/_gray2.png) `gray2 #262626 (237)`
+
+![gray3](img/_gray3.png) `gray3 #3a3a3a (233)`
 
 ![maya](img/_maya.png) `maya #87afff (111)`
 
@@ -93,8 +93,7 @@ use italics
 
 ## KNOWN 'BUGS'
 
-1. 8 and 16 terminal colors might not work for now
-2. vim / fugitive diff unreadable
+- 8 and 16 terminal colors might not work for now
 
 ## TODO
 
@@ -102,12 +101,12 @@ use italics
 
 - [X] Lightline
 - [ ] better NERDtree colors
-- [ ] readable diff colors (native + fugitive)
+- [X] readable diff colors (native + fugitive)
 
 #### shortterm
 
-- [ ] HTML
-- [ ] CSS / SASS
+- [X] HTML
+- [X] CSS / SASS
 - [ ] JS
 
 #### longterm
