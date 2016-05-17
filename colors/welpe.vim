@@ -198,7 +198,7 @@ let s:_gold         = [ '#ffd700', 220, 11, 3 ]
 let s:_cosmos       = [ '#ffd7d7', 224, 13, 5 ]
 let s:_shalimar       = [ '#ffffaf', 229, 11, 3 ]
 
-" ### #PALETTE VARIABLES
+" ### #PALETTE
 " ##############################################################################
 " change the assigned variables, if you want to change the presented colors
 
@@ -250,7 +250,7 @@ call s:H("Normal",       s:fg,        s:bg,       "")
 call s:H("ColorColumn",  "",          s:lightbg,  "")
 " set colorcolumn = <column numbers>
 " vertical colored line, used to align text or not go over a certain textwidth
-call s:H("Conceal",      s:blue,   "",         "")
+call s:H("Conceal",      "",   "",         "")
 " set conceallevel = <0-3>
 call s:H("Cursor",  s:darkbg, s:fg,       "")
 call s:H("iCursor", s:darkbg, s:fg,       "")
@@ -340,7 +340,7 @@ call s:H("Title",        "",     "",         "bold")
 " titles, i guess? no idea
 " doc says 'titles for output from :set all, :autocmd etc.'
 
-call s:H("VertSplit",    "",   s:bg,   "")
+call s:H("VertSplit",    "",   s:darkbg,   "")
 " column separating splits
 call s:H("Visual",       s:lightfg,   s:blue,  "") 
 " visually selected lines
@@ -642,6 +642,14 @@ hi! link cssUnitDecorators Delimiter
 " ------------------------------------------------------------------------------
 hi! link phpParent Delimiter
 
+" vim-sneak
+" ------------------------------------------------------------------------------
+hi! link SneakPluginTarget IncSearch
+hi! link SneakStreakTarget SneakPluginTarget
+hi! link SneakPluginScope SneakPluginTarget
+hi! link SneakStreakMask SneakPluginTarget
+" hi! link SneakStreakStatusLine
+
 " JavaScript 
 " ------------------------------------------------------------------------------
 hi! link jsFuncCall Function
@@ -743,3 +751,4 @@ hi! link GitGutterChangeDelete GitGutterDelete
 " 
 " delf s:H
 " delete highlight function
+
