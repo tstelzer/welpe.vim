@@ -39,20 +39,20 @@ function! s:H(group,fg,bg,style)
 " bg = Background Color
 " style = Font Style
 
-if &t_Co == 8 && exists(a:fg[2]) && exists(a:bg[2])
+" if &t_Co == 8 && exists(a:fg[2]) && exists(a:bg[2])
 
-    let l:cbg = 0
+"     let l:cbg = 0
 
-    if !empty(a:fg)
-        " foreground is NOT empty
-        let l:cfg = a:fg[2]
-    else 
-        "foreground IS empty
-        let l:cfg = "NONE"
-    endif
-    execute "hi ".a:group." ctermfg = ".l:cfg." ctermbg = ".l:cbg
+"     if !empty(a:fg)
+"         " foreground is NOT empty
+"         let l:cfg = a:fg[2]
+"     else 
+"         "foreground IS empty
+"         let l:cfg = "NONE"
+"     endif
+"     execute "hi ".a:group." ctermfg = ".l:cfg." ctermbg = ".l:cbg
 
-else
+" else
 
     if !empty(a:fg)
         " foreground is NOT empty
@@ -100,44 +100,42 @@ else
     " \ gui = "<guistyle>" term = "<termstyle>"
     execute "hi ".a:group." guifg=".l:gfg." ctermfg=".l:cfg." guibg=".l:gbg.
                 \ " ctermbg=".l:cbg." gui=".l:gstyle." term=".l:cstyle
-endif
 endfun
 
-" ### #GENERIC COLORNAMES
+" ### #COLORTABLE
 " ##############################################################################
 " Important: DO NOT CHANGE THESE VALUES, ONLY ADD NEW ONES
 " Schema: s:<name> = [ '<hex>', <256term>, <16term>, <8term> ]
-
 " --- Grayscale
 " ------------------------------------------------------------------------------
 
-let s:_trueblack = [ '#000000', 16,  0,  0 ]
-let s:_black     = [ '#080808', 232, 0,  0 ]
-let s:_gray0     = [ '#121212', 233, 0,  7 ]
-let s:_gray1     = [ '#1c1c1c', 234, 0,  7 ]
-let s:_gray2     = [ '#262626', 235, 0,  7 ]
-let s:_gray3     = [ '#303030', 236, 8,  7 ]
-let s:_gray4     = [ '#3a3a3a', 237, 8,  7 ]
-let s:_gray5     = [ '#444444', 238, 8,  7 ]
-let s:_gray6     = [ '#4e4e4e', 239, 8,  7 ]
-let s:_gray7     = [ '#606060', 241, 8,  7 ]
-let s:_gray8     = [ '#666666', 242, 8,  7 ]
-let s:_gray9     = [ '#767676', 243, 8,  7 ]
-let s:_gray10    = [ '#808080', 244, 8,  7 ]
-let s:_gray11    = [ '#8a8a8a', 245, 7,  7 ]
-let s:_gray12    = [ '#949494', 245, 7,  7 ]
-let s:_gray13    = [ '#9e9e9e', 246, 7,  7 ]
-let s:_gray14    = [ '#9e9e9e', 247, 7,  7 ]
-let s:_gray15    = [ '#a8a8a8', 248, 7,  7 ]
-let s:_gray16    = [ '#b2b2b2', 249, 7,  7 ]
-let s:_gray17    = [ '#bcbcbc', 250, 7,  7 ]
-let s:_gray18    = [ '#c0c0c0', 7,   7,  7 ]
-let s:_gray19    = [ '#c6c6c6', 251, 7,  7 ]
-let s:_gray20    = [ '#d0d0d0', 252, 15, 7 ]
-let s:_gray21    = [ '#dadada', 253, 15, 7 ]
-let s:_gray22    = [ '#e4e4e4', 254, 15, 7 ]
-let s:_white     = [ '#eeeeee', 255, 15, 7 ]
-let s:_truewhite = [ '#FFFFFF', 15,  15, 7 ]
+let s:_trueblack = [ '#000000', 16 ]
+let s:_black     = [ '#080808', 232 ]
+let s:_gray0     = [ '#121212', 233 ]
+let s:_gray1     = [ '#1c1c1c', 234 ]
+let s:_gray2     = [ '#262626', 235 ]
+let s:_gray3     = [ '#303030', 236 ]
+let s:_gray4     = [ '#3a3a3a', 237 ]
+let s:_gray5     = [ '#444444', 238 ]
+let s:_gray6     = [ '#4e4e4e', 239 ]
+let s:_gray7     = [ '#606060', 241 ]
+let s:_gray8     = [ '#666666', 242 ]
+let s:_gray9     = [ '#767676', 243 ]
+let s:_gray10    = [ '#808080', 244 ]
+let s:_gray11    = [ '#8a8a8a', 245 ]
+let s:_gray12    = [ '#949494', 245 ]
+let s:_gray13    = [ '#9e9e9e', 246 ]
+let s:_gray14    = [ '#9e9e9e', 247 ]
+let s:_gray15    = [ '#a8a8a8', 248 ]
+let s:_gray16    = [ '#b2b2b2', 249 ]
+let s:_gray17    = [ '#bcbcbc', 250 ]
+let s:_gray18    = [ '#c0c0c0', 7 ]
+let s:_gray19    = [ '#c6c6c6', 251 ]
+let s:_gray20    = [ '#d0d0d0', 252 ]
+let s:_gray21    = [ '#dadada', 253 ]
+let s:_gray22    = [ '#e4e4e4', 254 ]
+let s:_white     = [ '#eeeeee', 255 ]
+let s:_truewhite = [ '#FFFFFF', 15 ]
 
 " --- Colors 
 " ------------------------------------------------------------------------------
