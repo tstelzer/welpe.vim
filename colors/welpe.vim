@@ -262,10 +262,12 @@ call s:H("CursorLine",   "",          s:lightbg,  "")
 call s:H("CursorLineNr", s:lightfg,   s:darkbg,   "bold")
 " linenumber of cursor position
 
-call s:H("DiffAdd",    s:positive, s:darkbg, "bold")
-call s:H("DiffChange", s:neutral, s:darkbg, "bold")
-call s:H("DiffDelete", s:negative, s:darkbg, "bold")
-call s:H("DiffText",   s:lightfg, s:magenta, "bold")
+call s:H("DiffAdd",    "", s:darkgreen, "")
+" Note: ignoring DiffChange, its irritating
+call s:H("DiffChange", "", "", "")
+call s:H("DiffDelete", "", s:darkred, "")
+" Note: Using DiffText instead of DiffChange
+call s:H("DiffText",   "", s:darkblue, "")
 " diff mode
 call s:H("Directory",    s:blue,  "",         "")
 " directory names and other special names in listings
