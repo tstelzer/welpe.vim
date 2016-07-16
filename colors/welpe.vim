@@ -11,10 +11,8 @@
 " Description: 16color scheme for vim
 " Author: Timm Stelzer <timmstelzer@gmail.com>
 " Source: https://github.com/tstelzer/welpe.vim
+" Version: 0.1.1
 " ------------------------------------------------------------------------------
-"  TODO fix 8 and 16 colors!!!
-"  TODO differenciate between splits
-"  TODO use orange exclusively for special/search
 
 set background=dark
 
@@ -34,28 +32,12 @@ endif
 
 function! s:H(group,fg,bg,style) 
 " group = Syntax Group
-" :help syntax
 " fg = Foreground Color
 " bg = Background Color
 " style = Font Style
 
-" if &t_Co == 8 && exists(a:fg[2]) && exists(a:bg[2])
-
-"     let l:cbg = 0
-
-"     if !empty(a:fg)
-"         " foreground is NOT empty
-"         let l:cfg = a:fg[2]
-"     else 
-"         "foreground IS empty
-"         let l:cfg = "NONE"
-"     endif
-"     execute "hi ".a:group." ctermfg = ".l:cfg." ctermbg = ".l:cbg
-
-" else
-
+    " foreground is NOT empty
     if !empty(a:fg)
-        " foreground is NOT empty
         let l:gfg = a:fg[0]
         let l:cfg = a:fg[1]
     else
@@ -63,41 +45,38 @@ function! s:H(group,fg,bg,style)
         let l:cfg = "NONE"
     endif
 
+    " background is NOT empty
     if !empty(a:bg)
-        " background is NOT empty
         let l:gbg = a:bg[0]
         let l:cbg = a:bg[1]
+    " background IS empty
     else
-        " background IS empty
         let l:gbg = "NONE"
         let l:cbg = "NONE"
     endif
 
+    " all text is rendered bold
     if g:welpe_all_bold == 1
-        " all text is rendered bold
         let l:gstyle = "bold"
         let l:cstyle = "bold"
     else
         if !empty(a:style)
+          " no italics should be used
             if a:style == "italic" && g:welpe_use_italics == 0
-                " no italics should be used
                 let l:gstyle = "NONE"
                 let l:cstyle = "NONE"
+            " style is NOT empty
             else
-                " style is NOT empty
                 let l:gstyle = a:style
                 let l:cstyle = a:style
-                " TODO check if style works in TERM
             endif
+        " style IS empty
         else
-            " style IS empty
             let l:gstyle = "NONE"
             let l:cstyle = "NONE"
         endif
     endif
-    " hi "<Syntax group>" guifg = "<fgcolor>" guibg = "<bgcolor>" 
-    " \ ctermfg = "<termfg>" ctermbg = "<termbg>" 
-    " \ gui = "<guistyle>" term = "<termstyle>"
+
     execute "hi ".a:group." guifg=".l:gfg." ctermfg=".l:cfg." guibg=".l:gbg.
                 \ " ctermbg=".l:cbg." gui=".l:gstyle." term=".l:cstyle
 endfun
@@ -105,98 +84,101 @@ endfun
 " ### #COLORTABLE
 " ##############################################################################
 " Important: DO NOT CHANGE THESE VALUES, ONLY ADD NEW ONES
-" Schema: s:<name> = [ '<hex>', <256term>, <16term>, <8term> ]
 " --- Grayscale
 " ------------------------------------------------------------------------------
+" Because ConEmu is a special snowflake and does not care for 
+" the xterm color sequence, it has an extra bit
+" Schema: s:<name> = [ '<hex>', <256term>, <16term>, <8term> ]
 
-let s:_trueblack = [ '#000000', 16 ]
-let s:_black     = [ '#080808', 232 ]
-let s:_gray0     = [ '#121212', 233 ]
-let s:_gray1     = [ '#1c1c1c', 234 ]
-let s:_gray2     = [ '#262626', 235 ]
-let s:_gray3     = [ '#303030', 236 ]
-let s:_gray4     = [ '#3a3a3a', 237 ]
-let s:_gray5     = [ '#444444', 238 ]
-let s:_gray6     = [ '#4e4e4e', 239 ]
-let s:_gray7     = [ '#606060', 241 ]
-let s:_gray8     = [ '#666666', 242 ]
-let s:_gray9     = [ '#767676', 243 ]
-let s:_gray10    = [ '#808080', 244 ]
-let s:_gray11    = [ '#8a8a8a', 245 ]
-let s:_gray12    = [ '#949494', 245 ]
-let s:_gray13    = [ '#9e9e9e', 246 ]
-let s:_gray14    = [ '#9e9e9e', 247 ]
-let s:_gray15    = [ '#a8a8a8', 248 ]
-let s:_gray16    = [ '#b2b2b2', 249 ]
-let s:_gray17    = [ '#bcbcbc', 250 ]
-let s:_gray18    = [ '#c0c0c0', 7 ]
-let s:_gray19    = [ '#c6c6c6', 251 ]
-let s:_gray20    = [ '#d0d0d0', 252 ]
-let s:_gray21    = [ '#dadada', 253 ]
-let s:_gray22    = [ '#e4e4e4', 254 ]
-let s:_white     = [ '#eeeeee', 255 ]
-let s:_truewhite = [ '#FFFFFF', 15 ]
+let s:_trueblack = [ '#000000', 0, 0, 0]
+let s:_black     = [ '#080808', 232, 0, 0 ]
+let s:_gray0     = [ '#121212', 233, 0, 0]
+let s:_gray1     = [ '#1c1c1c', 234, 0, 0 ]
+let s:_gray2     = [ '#262626', 235, 0, 0]
+let s:_gray3     = [ '#303030', 236, 0, 0 ]
+let s:_gray4     = [ '#3a3a3a', 237, 0, 0]
+let s:_gray5     = [ '#444444', 238, 8, 0 ]
+let s:_gray6     = [ '#4e4e4e', 239, 8, 0 ]
+let s:_gray7     = [ '#606060', 241, 8, 0 ]
+let s:_gray8     = [ '#666666', 242, 8, 0 ]
+let s:_gray9     = [ '#767676', 243, 8, 0 ]
+let s:_gray10    = [ '#808080', 244, 7, 7]
+let s:_gray11    = [ '#8a8a8a', 245, 7, 7 ]
+let s:_gray12    = [ '#949494', 245, 7, 7 ]
+let s:_gray13    = [ '#9e9e9e', 246, 7, 7 ]
+let s:_gray14    = [ '#9e9e9e', 247, 7, 7 ]
+let s:_gray15    = [ '#a8a8a8', 248, 7, 7 ]
+let s:_gray16    = [ '#b2b2b2', 249, 7, 7 ]
+let s:_gray17    = [ '#bcbcbc', 250, 15, 7 ]
+let s:_gray18    = [ '#c0c0c0', 7, 15, 7 ]
+let s:_gray19    = [ '#c6c6c6', 251, 15, 7 ]
+let s:_gray20    = [ '#d0d0d0', 252, 15, 7 ]
+let s:_gray21    = [ '#dadada', 253, 15, 7]
+let s:_gray22    = [ '#e4e4e4', 254, 15, 7 ]
+let s:_white     = [ '#eeeeee', 255, 15, 7]
+let s:_truewhite = [ '#FFFFFF', 15, 15, 7]
 
 " --- Colors 
 " ------------------------------------------------------------------------------
-" Important: DON'T USE THE COLORNAMES IN THE SYNTAX GROUPS,
-" use the generic color vars instead
+" Important: DON'T USE THESE COLORNAMES IN THE SYNTAX GROUPS,
+" use the generic color variables instead
 
-let s:_darkblue     = [ '#000087', 18, 4, 4 ]
-let s:_darkgreen    = [ '#005F00', 22, 2, 2 ]
-let s:_mosque       = [ '#005f5f', 23, 10, 2 ]
-let s:_lagoon       = [ '#005f87', 24, 12, 4 ]
-let s:_green        = [ '#008700', 28, 10, 2 ]
-let s:_forest       = [ '#00875F', 29, 10, 2 ]
-let s:_jade         = [ '#00af5f', 35, 2, 2 ]
-let s:_maroon       = [ '#5f0000', 52, 1, 7 ]
-let s:_richblue     = [ '#5f5faf', 61, 5, 5 ]
-let s:_laurel       = [ '#5f875f', 65, 2, 2 ]
-let s:_chill        = [ '#5f8787', 66, 6, 6 ]
-let s:_cornflower   = [ '#5f87ff', 69, 4, 4 ]
+let s:_darkblue      = [ '#000087', 18, 4, 4 ]
+let s:_navy          = [ '#00005f', 17, 4, 4 ]
+let s:_darkgreen     = [ '#005F00', 22, 2, 2 ]
+let s:_mosque        = [ '#005f5f', 23, 10, 2 ]
+let s:_lagoon        = [ '#005f87', 24, 12, 4 ]
+let s:_green         = [ '#008700', 28, 10, 2 ]
+let s:_forest        = [ '#00875F', 29, 10, 2 ]
+let s:_jade          = [ '#00af5f', 35, 2, 2 ]
+let s:_maroon        = [ '#5f0000', 52, 1, 7 ]
+let s:_richblue      = [ '#5f5faf', 61, 5, 5 ]
+let s:_laurel        = [ '#5f875f', 65, 2, 2 ]
+let s:_chill         = [ '#5f8787', 66, 6, 6 ]
+let s:_cornflower    = [ '#5f87ff', 69, 4, 4 ]
 let s:_fern          = [ '#5faf5f', 71, 10, 2 ]
-let s:_fountain     = [ '#5fafaf', 73, 4, 4 ]
-let s:_turqoise     = [ '#5fd7ff', 81, 14, 6 ]
-let s:_darkred = [ '#870000', 88, 1, 1 ]
-let s:_darkviolet   = [ '#8700df', 92, 5, 5 ]
-let s:_manatee      = [ '#8787af', 103, 4, 4 ]
-let s:_ziggurat     = [ '#87afaf', 109, 4, 4 ]
-let s:_maya         = [ '#87afff', 111, 4, 4 ]
-let s:_mantis       = [ '#87d75f', 113, 10, 2 ]
-let s:_lightgreen   = [ '#87ff87', 120, 10, 2 ]
-let s:_aquamarine   = [ '#87ffd7', 122, 6, 6 ]
-let s:_freespeech   = [ '#af0000', 124, 9, 1 ]
-let s:_darkviolet   = [ '#af00d7', 128, 5, 5 ]
-let s:_goldenbrown  = [ '#af5f00', 130, 13, 5 ]
-let s:_tapestry     = [ '#af5f87', 132, 13, 5 ]
-let s:_mediumorchid = [ '#af5fd7', 134, 13, 5 ]
-let s:_londonhue    = [ '#af87af', 139, 5, 5 ]
-let s:_biloba       = [ '#af87d7', 140, 5, 5 ]
-let s:_citrus       = [ '#afaf00', 142, 3, 3 ]
-let s:_olive        = [ '#afaf5f', 143, 10, 2 ]
-let s:_lavender     = [ '#afafd7', 146, 13, 5 ]
-let s:_moss         = [ '#afd7af', 151, 10, 2 ]
-let s:_sinbad       = [ '#afd7d7', 152, 4, 4 ]
-let s:_columbia     = [ '#afd7ff', 153, 12, 4 ]
-let s:_mint         = [ '#afff87', 156, 10, 2 ]
-let s:_celadon      = [ '#afffaf', 157, 10, 2 ]
-let s:_paleturquoise = [ '#afffff', 159, 12, 4 ]
-let s:_venetian     = [ '#d70000', 160, 9, 1 ]
-let s:_roman        = [ '#d75f5f', 167, 1, 1 ]
-let s:_thistle      = [ '#d7afd7', 182, 13, 5 ]
-let s:_mauve        = [ '#d7afff', 183, 13, 5 ]
-let s:_quartz       = [ '#d7d7ff', 189, 13, 5 ]
-let s:_lightcyan    = [ '#d7ffff', 195, 14, 6 ]
-let s:_bittersweet  = [ '#ff5f5f', 203, 9, 1 ]
-let s:_darkorange   = [ '#ff8700', 208, 3, 3 ]
-let s:_salmon       = [ '#ff8787', 210, 13, 5 ]
-let s:_orange       = [ '#ffaf00', 214, 3, 3 ]
-let s:_rajah        = [ '#ffaf5f', 215, 3, 3 ]
-let s:_sundown      = [ '#ffafaf', 217, 9, 1 ]
-let s:_lavenderrose = [ '#ffafff', 219, 13, 5 ]
-let s:_gold         = [ '#ffd700', 220, 11, 3 ]
-let s:_cosmos       = [ '#ffd7d7', 224, 13, 5 ]
-let s:_shalimar       = [ '#ffffaf', 229, 11, 3 ]
+let s:_fountain      = [ '#5fafaf', 73, 4, 4 ]
+let s:_turqoise      = [ '#5fd7ff', 81, 14, 6 ]
+let s:_darkred       = [ '#870000', 88, 1, 1]
+let s:_darkviolet    = [ '#8700df', 92, 5, 5 ]
+let s:_manatee       = [ '#8787af', 103, 4, 4 ]
+let s:_ziggurat      = [ '#87afaf', 109, 4, 4 ]
+let s:_maya          = [ '#87afff', 111, 4, 4]
+let s:_mantis        = [ '#87d75f', 113, 10, 2 ]
+let s:_lightgreen    = [ '#87ff87', 120, 10, 2 ]
+let s:_aquamarine    = [ '#87ffd7', 122, 6, 6 ]
+let s:_freespeech    = [ '#af0000', 124, 9, 1 ]
+let s:_darkviolet    = [ '#af00d7', 128, 5, 5 ]
+let s:_goldenbrown   = [ '#af5f00', 130, 13, 5 ]
+let s:_tapestry      = [ '#af5f87', 132, 13, 5 ]
+let s:_mediumorchid  = [ '#af5fd7', 134, 13, 5]
+let s:_londonhue     = [ '#af87af', 139, 5, 5 ]
+let s:_biloba        = [ '#af87d7', 140, 5, 5 ]
+let s:_citrus        = [ '#afaf00', 142, 3, 3 ]
+let s:_olive         = [ '#afaf5f', 143, 10, 2 ]
+let s:_lavender      = [ '#afafd7', 146, 13, 5 ]
+let s:_moss          = [ '#afd7af', 151, 10, 2]
+let s:_sinbad        = [ '#afd7d7', 152, 4, 4 ]
+let s:_columbia      = [ '#afd7ff', 153, 12, 4 ]
+let s:_mint          = [ '#afff87', 156, 10, 2 ]
+let s:_celadon       = [ '#afffaf', 157, 10, 2 ]
+let s:_paleturquoise = [ '#afffff', 159, 12, 4]
+let s:_venetian      = [ '#d70000', 160, 9, 1 ]
+let s:_roman         = [ '#d75f5f', 167, 1, 1]
+let s:_thistle       = [ '#d7afd7', 182, 13, 5 ]
+let s:_mauve         = [ '#d7afff', 183, 13, 5 ]
+let s:_quartz        = [ '#d7d7ff', 189, 13, 5 ]
+let s:_lightcyan     = [ '#d7ffff', 195, 14, 6 ]
+let s:_bittersweet   = [ '#ff5f5f', 203, 9, 1 ]
+let s:_darkorange    = [ '#ff8700', 208, 3, 3 ]
+let s:_salmon        = [ '#ff8787', 210, 13, 5 ]
+let s:_orange        = [ '#ffaf00', 214, 3, 3]
+let s:_rajah         = [ '#ffaf5f', 215, 3, 3 ]
+let s:_sundown       = [ '#ffafaf', 217, 9, 1 ]
+let s:_lavenderrose  = [ '#ffafff', 219, 13, 5 ]
+let s:_gold          = [ '#ffd700', 220, 11, 3 ]
+let s:_cosmos        = [ '#ffd7d7', 224, 13, 5 ]
+let s:_shalimar      = [ '#ffffaf', 229, 11, 3]
 
 " ### #PALETTE
 " ##############################################################################
@@ -204,7 +186,6 @@ let s:_shalimar       = [ '#ffffaf', 229, 11, 3 ]
 
 " --- Palette 
 " ------------------------------------------------------------------------------
-
 
 let s:lightfg  = s:_white         " #eeeeee
 let s:fg       = s:_gray21        " #dadada
@@ -217,7 +198,7 @@ let s:darkbg   = s:_gray0         " #121212
 let s:darkred  = s:_maroon        " #5f0000
 let s:lightred = s:_roman         " #d75f5f
 
-let s:darkgreen= s:_darkgreen     " #005F00
+let s:darkgreen= s:_darkgreen     " #005f00
 let s:green    = s:_moss          " #afd7af
 
 let s:orange   = s:_orange        " #ffaf00
@@ -315,7 +296,7 @@ call s:H("Search",       s:darkbg,    s:orange,         "")
 " set hlsearch
 " highlight of last search query
 " also used for current line in quickfix
-call s:H("SignColumn",   "",          s:darkbg,   "")
+call s:H("SignColumn",   s:lightfg,          s:darkbg,   "")
 " sign gutter
 call s:H("SpecialKey",   s:orange,     "",         "bold")
 " :help listchars
@@ -385,7 +366,7 @@ hi! link Float Number
 " a floating point constant: 2.3e10
 " inherits constant by default
 
-call s:H("Identifier",     s:magenta,        "",         "")
+call s:H("Identifier",     s:magenta,        s:bg,         "")
 " any variable name
 
 call s:H("Function",       s:lightred,       "",         "")
@@ -609,7 +590,7 @@ hi! link cssVendor cssProp
 "HiLink cssInclude Include
 "HiLink cssIncludeKeyword atKeyword
 "HiLink cssImportant Special
-hi! link cssBraces Delimiter " test
+hi! link cssBraces Delimiter
 "HiLink cssBraceError Error
 "HiLink cssError Error
 "HiLink cssUnicodeEscape Special
@@ -711,8 +692,8 @@ hi def link autohotkeyBuiltinVariable     autohotkeyVariable
 " gitReference
 " gitStage
 " gitType
-" gitDiffAdded
-" gitDiffRemoved
+hi! link gitDiffAdded DiffAdded
+hi! link gitDiffRemoved DiffDelete
 " gitcommit
 " gitcommitSummary
 " gitcommitComment
@@ -745,7 +726,6 @@ hi def link autohotkeyBuiltinVariable     autohotkeyVariable
 " NERDTree 
 " ------------------------------------------------------------------------------
 
-" 
 " gitgutter 
 " ------------------------------------------------------------------------------
 call s:H("GitGutterAdd",s:positive,    s:darkbg,"")
