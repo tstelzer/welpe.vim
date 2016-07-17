@@ -4,19 +4,27 @@ WELPE.vim
 ===========
 
 Dark colorscheme for vim, with a mixture of bright, saturated highlights
-and pale, low-key colors for non-keyword syntax groups. Uses excusively colors from the 256-color-range, so it should look identical in gvim and vim.
+and pale, low-key colors. Uses excusively colors from the 256-color-range, so it should look identical in gvim and vim.
+
+CHANGELOG
+---------
+
+v0.1.1
+Adds readable diff colors
 
 ## PALETTE
 
-![black](img/_black.png) `black #080808 (232)`
-
-![gray1](img/_gray1.png) `gray1 #1c1c1c (234)`
+![gray0](img/_gray0.png) `gray0 #121212 (233)`
 
 ![gray2](img/_gray2.png) `gray2 #262626 (237)`
 
-![gray3](img/_gray3.png) `gray3 #3a3a3a (233)`
+![gray4](img/_gray4.png) `gray4 #3a3a3a (237)`
 
-![darkred](img/_darkred.png) `darkred #870000 (88)`
+![darkblue](img/_darkblue.png) `darkblue #000087 (18)`
+
+![darkgreen](img/_darkgreen.png) `darkgreen #005f00 (22)`
+
+![maroon](img/_maroon.png) `maroon #5f0000 (52)`
 
 ![maya](img/_maya.png) `maya #87afff (111)`
 
@@ -38,13 +46,10 @@ and pale, low-key colors for non-keyword syntax groups. Uses excusively colors f
 
 ![white](img/_white.png) `white #eeeeee (255)`
 
-![truewhite](img/_truewhite.png) `truewhite #ffffff (15)`
-
 ## PREVIEW
 
-![GVIM preview 1](img/welpeGVIM_preview.jpg)
-![GVIM preview 2](img/welpeGVIM_preview2.jpg)
-
+![GVIM preview 1](img/gvim-welpe-preview-1.jpg)
+![GVIM preview 2](img/gvim-welpe-preview-2.jpg)
 
 ## INSTALLATION
 
@@ -91,26 +96,23 @@ use italics
 
 `let g:welpe_use_italics = 1`
 
-## KNOWN 'BUGS'
+## KNOWN PROBLEMS
 
-- 8 and 16 terminal colors might not work for now
+- Diffs are still a bit iffy, mostly due to my own restriction to the 256-color-range; 
+might use a wider range in the future
+- Tried to make it work with ConEmu (windows), but the hassle is not worth the mediocre result
 
-## TODO
+## TESTED PLUGINS
 
-#### plugin
+- [x] *Lightline* (see screenshots for reference, if your setup doesnt work, feel free to open an issue)
 
-- [X] Lightline
-- [ ] better NERDtree colors
-- [X] readable diff colors (native + fugitive)
+- [x] GitGutter
 
-#### shortterm
+- [x] Diff (finally readable, see screenshots)
 
-- [X] HTML
-- [X] CSS / SASS
-- [ ] JS
+## TESTED FILETYPES
 
-#### longterm
-*as I'm not coding in these, might take a while ...*
-
-- [ ] C-family
-- [ ] Python
+- [x] HTML
+- [x] PHP
+- [x] CSS / SCSS (any problems here are mostly comming from runtimefiles, not highlighting)
+- [ ] JS (works, but currently not coding enough to properly judge the quality )
