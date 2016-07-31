@@ -298,7 +298,7 @@ call s:H("Search",       s:darkbg,    s:orange,         "")
 " also used for current line in quickfix
 call s:H("SignColumn",   s:lightfg,          s:darkbg,   "")
 " sign gutter
-call s:H("SpecialKey",   s:orange,     "",         "bold")
+call s:H("SpecialKey",   s:orange,     "",         "")
 " :help listchars
 " non-text chars like mappings, eol-characters, nbsp etc.
 call s:H("SpelBad",      s:yellow,  s:darkred,         "undercurl")
@@ -629,10 +629,10 @@ hi! link phpParent Delimiter
 
 " vim-sneak
 " ------------------------------------------------------------------------------
-hi! link SneakPluginTarget IncSearch
-hi! link SneakStreakTarget SneakPluginTarget
-hi! link SneakPluginScope SneakPluginTarget
-hi! link SneakStreakMask SneakPluginTarget
+hi link SneakPluginTarget IncSearch
+hi link SneakStreakTarget SpecialKey
+hi link SneakPluginScope IncSearch
+hi link SneakStreakMask SpecialKey
 " hi! link SneakStreakStatusLine
 
 " JavaScript 
