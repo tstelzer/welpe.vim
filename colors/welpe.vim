@@ -630,10 +630,18 @@ hi link phpParent Delimiter
 " vim-sneak
 " ------------------------------------------------------------------------------
 hi link SneakPluginTarget IncSearch
-hi link SneakStreakTarget SpecialKey
+hi link SneakStreakTarget Identifier
 hi link SneakPluginScope IncSearch
 hi link SneakStreakMask SpecialKey
 " hi! link SneakStreakStatusLine
+
+" incsearch
+" ------------------------------------------------------------------------------
+" hi link IncSearchMatch
+" hi link IncSearchMatchReverse
+" hi link IncSearchOnCursor Search
+hi link IncSearchCursor Visual
+" hi link IncSearchUnderline
 
 " JavaScript 
 " ------------------------------------------------------------------------------
@@ -732,7 +740,49 @@ call s:H("GitGutterAdd",s:positive,    s:darkbg,"")
 call s:H("GitGutterChange",s:neutral,  s:darkbg,"")
 call s:H("GitGutterDelete",s:lightred, s:darkbg,"")
 hi link GitGutterChangeDelete GitGutterDelete
-" 
+
+" CtrlP
+" ------------------------------------------------------------------------------
+" the prompt's cursor when moving over the text
+hi link CtrlPPrtCursor SpecialKey
+" the matched pattern
+hi link CtrlPMatch SpecialKey
+" For the CtrlP buffer:
+" CtrlPNoEntries : the message when no match is found (Error)
+" CtrlPMatch     : the matched pattern (Identifier)
+" CtrlPLinePre   : the line prefix '>' in the match window
+" CtrlPPrtBase   : the prompt's base (Comment)
+" CtrlPPrtText   : the prompt's text (|hl-Normal|)
+" CtrlPPrtCursor : the prompt's cursor when moving over the text (Constant)
+
+" Buffer explorer mode:
+" CtrlPBufferNr     : buffer number
+" CtrlPBufferInd    : '+', '-', '=' and '#' indicators (see |:buffers|)
+" CtrlPBufferHid    : hidden buffer
+" CtrlPBufferHidMod : hidden and modified buffer
+" CtrlPBufferVis    : visible buffer
+" CtrlPBufferVisMod : visible and modified buffer
+" CtrlPBufferCur    : current buffer
+" CtrlPBufferCurMod : current and modified buffer
+" CtrlPBufferPath   : buffer path
+
+" In extensions:
+" CtrlPTabExtra  : the part of each line that's not matched against (Comment)
+" CtrlPBufName   : the buffer name an entry belongs to (|hl-Directory|)
+" CtrlPTagKind   : the kind of the tag in buffer-tag mode (|hl-Title|)
+" CtrlPqfLineCol : the line and column numbers in quickfix mode (Comment)
+" CtrlPUndoT     : the elapsed time in undo mode (|hl-Directory|)
+" CtrlPUndoBr    : the square brackets [] in undo mode (Comment)
+" CtrlPUndoNr    : the undo number inside [] in undo mode (String)
+" CtrlPUndoSv    : the point where the file was saved (Comment)
+" CtrlPUndoPo    : the current position in the undo tree (|hl-Title|)
+" CtrlPBookmark  : the name of the bookmark (Identifier)
+
+" Highlight groups:
+" CtrlPMode1 : 'file' or 'path' or 'line', and the current mode (Character)
+" CtrlPMode2 : 'prt' or 'win', 'regex', the working directory (|hl-LineNr|)
+" CtrlPStats : the scanning status (Function)
+    
 " delf s:H
 " delete highlight function
 
