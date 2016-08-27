@@ -274,13 +274,13 @@ call s:H("NonText",      s:orange,     "",         "")
 " set showbreak = <char>
 " characters that visualize linebreaks, tabs etc.
 
-call s:H("Pmenu",        "",          "",         "")
+call s:H("Pmenu",     s:blue,     s:lightbg,  "")
 " popup menu
 call s:H("PmenuSbar",    "",          s:lightbg,   "")
 " popup menu scrollbar
 call s:H("PmenuSel",     s:orange,     s:lightbg,  "")
 " popup menu selected text
-call s:H("PmenuThumb",   "",          "",         "")
+call s:H("PmenuThumb",   s:green,          "",         "")
 " popup menu thumb of scrollbar
 
 call s:H("Question",     s:cyan, s:lightbg,   "bold")
