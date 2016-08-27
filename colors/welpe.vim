@@ -281,7 +281,7 @@ call s:H("PmenuSbar",    "",          s:lightbg,   "")
 call s:H("PmenuSel",     s:orange,     s:lightbg,  "")
 " popup menu selected text
 call s:H("PmenuThumb",   s:green,          "",         "")
-" popup menu thumb of scrollbar
+" popup menu thumb of scrollbar 
 
 call s:H("Question",     s:cyan, s:lightbg,   "bold")
 " 'hit-enter' prompt and yes/no questions
@@ -678,7 +678,7 @@ hi link scssMixinParams Delimiter
 " hi link scssTodo      Todo
 " hi link scssAtRoot    Keyword
 " hi link scssMapParens Delimiter
-" 
+"
 " Autohotkey 
 " ------------------------------------------------------------------------------
 " hi def link autohotkeyHotkey              Type
@@ -827,9 +827,8 @@ hi link CtrlPBufferCurMod Title
 " CtrlPMode1 : 'file' or 'path' or 'line', and the current mode (Character)
 " CtrlPMode2 : 'prt' or 'win', 'regex', the working directory (|hl-LineNr|)
 " CtrlPStats : the scanning status (Function)
-    
+
 " cleanup
 " ------------------------------------------------------------------------------
 " delf s:H
 " delete highlight function
-
