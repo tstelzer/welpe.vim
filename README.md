@@ -9,9 +9,15 @@ and pale, low-key colors. Uses exclusively colors from the 256-color-range, so i
 CHANGELOG
 ---------
 
-v0.1.2  Adds consistent colors for dirvish, syntastic, incsearch
+v0.1.2  
+
+        Adds consistent colors for dirvish, syntastic, incsearch
+
         Various cleanups, some miniscule changes
-v0.1.1  Adds readable diff colors
+
+v0.1.1  
+
+        Adds readable diff colors
 
 ## PALETTE
 
