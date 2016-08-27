@@ -295,9 +295,9 @@ call s:H("SignColumn",   s:lightfg,          s:darkbg,   "")
 call s:H("SpecialKey",   s:orange,     "",         "")
 " :help listchars
 " non-text chars like mappings, eol-characters, nbsp etc.
-call s:H("SpelBad",      s:yellow,  s:darkred,         "undercurl")
+call s:H("SpelBad",      s:negative,  "",         "undercurl")
 " unrecognized by spellchecker
-call s:H("SpellRare",    s:neutral,   "",         "undercurl")
+call s:H("SpellRare",    s:yellow,   "",         "undercurl")
 " rare word
 call s:H("SpellCap",     s:magenta, "",         "undercurl")
 " should be starting with a capital letter
@@ -439,7 +439,7 @@ call s:H("Delimiter",      s:lightred,      "",         "")
 " call s:H("SpecialComment", s:specialcomment, "",         "")
 " inherits special by default
 
-call s:H("Debug",          s:neutral,          "",         "")
+call s:H("Debug",          s:yellow,          "",         "")
 " inherits special by default
 
 call s:H("Underlined",     s:magenta,         "",         "")
@@ -709,6 +709,8 @@ hi def link autohotkeyBuiltinVariable     autohotkeyVariable
 " hi def link autohotkeyBoolean             Boolean
 
 
+" git
+" ------------------------------------------------------------------------------
 " gitDateHeader
 " gitIdentityHeader
 " gitIdentityKeyword
