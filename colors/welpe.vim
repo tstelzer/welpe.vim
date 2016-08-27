@@ -764,6 +764,9 @@ hi link SyntasticStyleWarningLine Debug
 hi link CtrlPPrtCursor SpecialKey
 " the matched pattern
 hi link CtrlPMatch SpecialKey
+hi link CtrlPBufferPath Directory
+hi link CtrlPBufferCurMod Title
+
 " For the CtrlP buffer:
 " CtrlPNoEntries : the message when no match is found (Error)
 " CtrlPMatch     : the matched pattern (Identifier)
