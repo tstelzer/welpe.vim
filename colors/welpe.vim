@@ -652,6 +652,42 @@ hi link javaScriptTemplateVar StringDelim
 hi link javaScriptTemplateDelim Identifier
 hi link javaScriptTemplateString String
 
+" scss
+" hi link scssNestedProperty cssProp
+" hi link scssVariable  Identifier
+" hi link scssGlobal    Special
+" hi link scssNull      Constant
+" hi link scssBoolean   Constant
+" hi link scssBooleanOp Operator
+" hi link scssMixin     PreProc
+" hi link scssMixinName Function
+hi link scssMixinParams Delimiter
+" hi link scssContent   PreProc
+" hi link scssFunctionDefinition  PreProc
+" hi link scssFunctionName Function
+" hi link scssReturn    Statement
+" hi link scssInclude   PreProc
+" hi link scssExtend    PreProc
+" hi link scssOptional  Special
+" hi link scssComment   Comment
+" hi link scssStickyCommentChar Special
+" hi link scssSelectorChar Special
+" hi link scssSelectorName Identifier
+" hi link scssAmpersand Character
+" hi link scssDebug     Debug
+" hi link scssWarn      Debug
+" hi link scssError     Debug
+" hi link scssDefault   Special
+" hi link scssIf        Conditional
+" hi link scssElse      Conditional
+" hi link scssWhile     Repeat
+" hi link scssForKeyword  Repeat
+" hi link scssEachKeyword Repeat
+" hi link scssInterpolationDelimiter Delimiter
+" hi link scssImport    Include
+" hi link scssTodo      Todo
+" hi link scssAtRoot    Keyword
+" hi link scssMapParens Delimiter
 " 
 " Autohotkey 
 " hi def link autohotkeyHotkey              Type
