@@ -741,6 +741,23 @@ call s:H("GitGutterChange",s:neutral,  s:darkbg,"")
 call s:H("GitGutterDelete",s:lightred, s:darkbg,"")
 hi link GitGutterChangeDelete GitGutterDelete
 
+" dirvish
+" ------------------------------------------------------------------------------
+hi link DirvishPathTail Directory
+hi link DirvishPathHead Comment
+
+" syntastic
+" ------------------------------------------------------------------------------
+hi link SyntasticErrorSign ErrorMsg
+hi link SyntasticWarningSign Debug
+hi link SyntasticStyleErrorSign ErrorMsg
+hi link SyntasticStyleWarningSign Debug
+
+hi link SyntasticErrorLine ErrorMsg
+hi link SyntasticWarningLine Debug
+hi link SyntasticStyleErrorLine ErrorMsg
+hi link SyntasticStyleWarningLine Debug
+
 " CtrlP
 " ------------------------------------------------------------------------------
 " the prompt's cursor when moving over the text
