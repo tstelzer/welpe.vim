@@ -14,6 +14,8 @@
 " Version: 0.1.1
 " ------------------------------------------------------------------------------
 
+" global settings
+" ------------------------------------------------------------------------------
 set background=dark
 
 hi clear
@@ -30,6 +32,8 @@ if !exists('g:welpe_use_italics')
     let g:welpe_use_italics = 0
 endif
 
+" highlighting function
+" ------------------------------------------------------------------------------
 function! s:H(group,fg,bg,style) 
 " group = Syntax Group
 " fg = Foreground Color
@@ -81,10 +85,7 @@ function! s:H(group,fg,bg,style)
                 \ " ctermbg=".l:cbg." gui=".l:gstyle." term=".l:cstyle
 endfun
 
-" ### #COLORTABLE
-" ##############################################################################
-" Important: DO NOT CHANGE THESE VALUES, ONLY ADD NEW ONES
-" --- Grayscale
+" Grayscale
 " ------------------------------------------------------------------------------
 " Because ConEmu is a special snowflake and does not care for 
 " the xterm color sequence, it has an extra bit
@@ -118,7 +119,7 @@ let s:_gray22    = [ '#e4e4e4', 254, 15, 7 ]
 let s:_white     = [ '#eeeeee', 255, 15, 7]
 let s:_truewhite = [ '#FFFFFF', 15, 15, 7]
 
-" --- Colors 
+" Colors 
 " ------------------------------------------------------------------------------
 " Important: DON'T USE THESE COLORNAMES IN THE SYNTAX GROUPS,
 " use the generic color variables instead
@@ -180,11 +181,7 @@ let s:_gold          = [ '#ffd700', 220, 11, 3 ]
 let s:_cosmos        = [ '#ffd7d7', 224, 13, 5 ]
 let s:_shalimar      = [ '#ffffaf', 229, 11, 3]
 
-" ### #PALETTE
-" ##############################################################################
-" change the assigned variables, if you want to change the presented colors
-
-" --- Palette 
+" Palette 
 " ------------------------------------------------------------------------------
 
 let s:lightfg  = s:_white         " #eeeeee
@@ -215,16 +212,13 @@ let s:positive = s:green
 let s:neutral  = s:blue
 let s:negative = s:darkred
 
-" ### #HIGHLIGHTING
-" ##############################################################################
+" UI Defaults 
+" ------------------------------------------------------------------------------
 " Schema: see function s:H()
 " s:h(<SyntaxGroup>!, <foreground>, <background>, <style>)
 " Note: if you ommit fields with "", the default fg / bg will be inherited
 " Note: entirely omitted groups fallback to their parent
 " for example "Function" inherits "Identifier" by default
-
-" --- UI Defaults 
-" ------------------------------------------------------------------------------
 
 call s:H("Normal",       s:fg,        s:bg,       "")
 " default values
@@ -334,7 +328,7 @@ call s:H("WildMenu",     s:magenta,    "",         "")
 " current match in wildmenu completion
 call s:H("WarningMsg",   s:yellow,  s:negative,         "bold")
 " warning messages
-" --- Default Syntax Groups 
+" Default Syntax Groups 
 " ------------------------------------------------------------------------------
 " VIM classifes MAJOR and MINOR syntax groups
 " by default, every MINOR inherits its MAJORS values
@@ -456,11 +450,8 @@ call s:H("Error",          s:yellow,         s:negative, "bold")
 
 call s:H("Todo",           s:lightfg,        s:lightbg,  "bold")
 
-" --- Filetype specific Syntax 
+" vimscript
 " ------------------------------------------------------------------------------
-
-" Vimscript
-"
 hi link vimSet Normal
 hi link vimSetEqual Normal
 hi link vimVar Identifier
@@ -622,8 +613,7 @@ hi link cssUnitDecorators Delimiter
 "HiLink cssNoise Noise
 "HiLink atKeyword PreProc
 
- 
-" --- Php
+" Php
 " ------------------------------------------------------------------------------
 hi link phpParent Delimiter
 
@@ -690,6 +680,7 @@ hi link scssMixinParams Delimiter
 " hi link scssMapParens Delimiter
 " 
 " Autohotkey 
+" ------------------------------------------------------------------------------
 " hi def link autohotkeyHotkey              Type
 " hi def link autohotkeyKey                 Type
 " hi def link autohotkeyDelimiter           Delimiter
@@ -717,7 +708,6 @@ hi def link autohotkeyBuiltinVariable     autohotkeyVariable
 " hi def link autohotkeyType                Type
 " hi def link autohotkeyBoolean             Boolean
 
-" git & gitcommit highlighting 
 
 " gitDateHeader
 " gitIdentityHeader
@@ -766,9 +756,6 @@ hi link gitDiffRemoved DiffDelete
 " gitcommitArrow
 " gitcommitOverflow
 " gitcommitBlank
-" 
-" NERDTree 
-" ------------------------------------------------------------------------------
 
 " gitgutter 
 " ------------------------------------------------------------------------------
@@ -839,6 +826,8 @@ hi link CtrlPBufferCurMod Title
 " CtrlPMode2 : 'prt' or 'win', 'regex', the working directory (|hl-LineNr|)
 " CtrlPStats : the scanning status (Function)
     
+" cleanup
+" ------------------------------------------------------------------------------
 " delf s:H
 " delete highlight function
 
