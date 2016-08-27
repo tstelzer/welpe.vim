@@ -4,13 +4,14 @@ WELPE.vim
 ===========
 
 Dark colorscheme for vim, with a mixture of bright, saturated highlights
-and pale, low-key colors. Uses excusively colors from the 256-color-range, so it should look identical in gvim and vim.
+and pale, low-key colors. Uses exclusively colors from the 256-color-range, so it should look identical in gvim and vim.
 
 CHANGELOG
 ---------
 
-v0.1.1
-Adds readable diff colors
+v0.1.2  Adds consistent colors for dirvish, syntastic, incsearch
+        Various cleanups, some miniscule changes
+v0.1.1  Adds readable diff colors
 
 ## PALETTE
 
@@ -103,16 +104,37 @@ might use a wider range in the future
 - Tried to make it work with ConEmu (windows), but the hassle is not worth the mediocre result
 
 ## TESTED PLUGINS
+*other plugins might very well still work, depending on what highlight groups
+they are using; the listed are simply the ones that I have tested and / or
+modified*
 
-- [x] *Lightline* (see screenshots for reference, if your setup doesnt work, feel free to open an issue)
+- [x] [Lightline](https://github.com/itchyny/lightline.vim)
+see screenshots for reference, if your setup doesnt work, feel free to open an issue
 
-- [x] GitGutter
+- [x] [GitGutter](https://github.com/airblade/vim-gitgutter)
 
-- [x] Diff (finally readable, see screenshots)
+- [x] Diffs: finally readable, see screenshots
+
+- [x] [vim-sneak](https://github.com/justinmk/vim-sneak) colors consistent with
+  search, specifically streak-mode and overlay colors
+
+- [x] [incsearch](https://github.com/haya14busa/incsearch.vim) colors consistent
+  with search
+
+- [x] [syntastic](https://github.com/scrooloose/syntastic) made the inline-error
+messages less obnoxious
+
+- [x] [dirvish](https://github.com/justinmk/vim-dirvish) 
+
+- [  ] [ctrlp](https://github.com/ctrlpvim/ctrlp.vim) would still prefer more
+  color, to differenciate folder, file and filetype
 
 ## TESTED FILETYPES
+*other filetypes might very well still work, depending on what highlight groups
+they are using; the listed are simply the ones that I have tested and / or
+modified*
 
 - [x] HTML
 - [x] PHP
-- [x] CSS / SCSS (any problems here are mostly comming from runtimefiles, not highlighting)
+- [x] CSS / SCSS (any problems here are mostly coming from runtimefiles, not highlighting)
 - [ ] JS (works, but currently not coding enough to properly judge the quality )
