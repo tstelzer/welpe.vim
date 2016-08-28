@@ -55,8 +55,33 @@ v0.1.1
 
 ## PREVIEW
 
-![GVIM preview 1](img/gvim-welpe-preview-1.jpg)
-![GVIM preview 2](img/gvim-welpe-preview-2.jpg)
+#### win64 gvim +lightline plugin
+(off the top of my head) relevant settings: 
+
+      set number relativenumber 
+      set cursorline
+
+###### in splits, with tab open
+
+![preview splits and tabs](img/gvim01.jpg)
+
+###### visual selection
+
+![preview visual selection](img/gvim02.jpg)
+
+###### search, incsearch
+
+![preview searching](img/gvim03.jpg)
+
+###### sneak plugin
+
+![preview sneak plugin](img/gvim04.gif)
+
+###### ctrlp plugin
+
+![preview ctrlp plugin](img/gvim05.jpg)
+
+*todo: add console preview*
 
 ## INSTALLATION
 
