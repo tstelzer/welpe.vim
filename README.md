@@ -63,15 +63,15 @@ v0.1.1
 
 ###### in splits, with tab open
 
-![preview splits and tabs](img/gvim01.jpg)
+![preview splits and tabs](img/gvim01.png)
 
 ###### visual selection
 
-![preview visual selection](img/gvim02.jpg)
+![preview visual selection](img/gvim02.png)
 
 ###### search, incsearch
 
-![preview searching](img/gvim03.jpg)
+![preview searching](img/gvim03.png)
 
 ###### sneak plugin
 
@@ -79,7 +79,7 @@ v0.1.1
 
 ###### ctrlp plugin
 
-![preview ctrlp plugin](img/gvim05.jpg)
+![preview ctrlp plugin](img/gvim05.png)
 
 *todo: add console preview*
 
@@ -157,7 +157,7 @@ messages less obnoxious
 
 - [x] [dirvish](https://github.com/justinmk/vim-dirvish) 
 
-- [  ] [ctrlp](https://github.com/ctrlpvim/ctrlp.vim) would still prefer more
+- [ ] [ctrlp](https://github.com/ctrlpvim/ctrlp.vim) would still prefer more
   color, to differenciate folder, file and filetype
 
 ## TESTED FILETYPES
