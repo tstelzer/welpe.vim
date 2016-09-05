@@ -444,7 +444,7 @@ call s:H("Delimiter", s:lightred, "", "")
 call s:H("Debug", s:yellow, "", "")
 " inherits special by default
 
-call s:H("Underlined", s:magenta, "", "")
+call s:H("Underlined", s:blue, "", "underline")
 
 call s:H("Ignore", "", "", "")
 
