@@ -166,7 +166,12 @@ messages less obnoxious
 they are using; the listed are simply the ones that I have tested and / or
 modified*
 
-- [x] HTML
+**Important:** The effect of colorschemes is depending on the runtimefiles *you* are using. If colors are flawed,
+chances are, you are using "bad" runtimefiles, many defaults are not up-to-date.
+
+- [x] HTML (recommended: [othree/html5.vim](https://github.com/othree/html5.vim))
 - [x] PHP
-- [x] CSS / SCSS (any problems here are mostly coming from runtimefiles, not highlighting)
-- [ ] JS (works, but currently not coding enough to properly judge the quality )
+- [x] CSS (recommended: [JulesWang/css.vim](https://github.com/JulesWang/css.vim) and [hail2u/vim-css3-syntax](https://github.com/hail2u/vim-css3-syntax))
+- [x] SCSS (recommended:
+  [cakebaker/scss-syntax.vim](https://github.com/cakebaker/scss-syntax.vim))
+- [x] JS (recommended: [pangloss/vim-javascript](https://github.com/pangloss/vim-javascript))
