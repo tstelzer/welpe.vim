@@ -489,7 +489,16 @@ call s:H("htmlItalic",      "",               "",           "italic")
 " htmlSpecialTagName
 " htmlArg          
 " javaScript       
-" 
+
+" markdown
+" ------------------------------------------------------------------------------
+hi link markdownCode Identifier
+call s:H("markdownItalic", "", "", "italic")
+ 
+" asciidoc
+hi link asciidocQuotedEmphasized2 String
+hi link asciidocQuotedEmphasized1 String
+
 " CSS / SASS 
 " ------------------------------------------------------------------------------
 "HiLink cssComment Comment
