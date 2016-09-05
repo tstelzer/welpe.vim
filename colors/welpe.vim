@@ -65,7 +65,7 @@ function! s:H(group,fg,bg,style)
         let l:cstyle = "bold"
     else
         if !empty(a:style)
-          " no italics should be used
+            " no italics should be used
             if a:style == "italic" && g:welpe_use_italics == 0
                 let l:gstyle = "NONE"
                 let l:cstyle = "NONE"
@@ -220,113 +220,113 @@ let s:negative = s:darkred
 " Note: entirely omitted groups fallback to their parent
 " for example "Function" inherits "Identifier" by default
 
-call s:H("Normal",       s:fg,        s:bg,       "")
+call s:H("Normal", s:fg, s:bg, "")
 " default values
 " omitted values inherit this 
 
-call s:H("ColorColumn",  "",          s:lightbg,  "")
+call s:H("ColorColumn", "", s:lightbg, "")
 " set colorcolumn = <column numbers>
 " vertical colored line, used to align text or not go over a certain textwidth
-call s:H("Conceal",      "",   "",         "")
+call s:H("Conceal", "", "", "")
 " set conceallevel = <0-3>
-call s:H("Cursor",  s:darkbg, s:fg,       "")
-call s:H("iCursor", s:darkbg, s:fg,       "")
+call s:H("Cursor", s:darkbg, s:fg, "")
+call s:H("iCursor", s:darkbg, s:fg, "")
 " Cursor
-call s:H("CursorColumn", "",          s:lightbg,  "")
+call s:H("CursorColumn", "", s:lightbg, "")
 " vertical highlight of current cursor position
-call s:H("CursorLine",   "",          s:lightbg,  "")
+call s:H("CursorLine", "", s:lightbg, "")
 " horizontal highlight of current cursor position
-call s:H("CursorLineNr", s:lightfg,   s:darkbg,   "bold")
+call s:H("CursorLineNr", s:lightfg, s:darkbg, "bold")
 " linenumber of cursor position
 
-call s:H("DiffAdd",    "", s:darkgreen, "")
+call s:H("DiffAdd", "", s:darkgreen, "")
 " Note: ignoring DiffChange, its irritating
 call s:H("DiffChange", "", "", "")
 call s:H("DiffDelete", "", s:darkred, "")
 " Note: Using DiffText instead of DiffChange
-call s:H("DiffText",   "", s:darkblue, "")
+call s:H("DiffText", "", s:darkblue, "")
 " diff mode
-call s:H("Directory",    s:blue,  "",         "")
+call s:H("Directory", s:blue, "", "")
 " directory names and other special names in listings
 
-call s:H("ErrorMsg",     s:yellow,    s:negative, "")
+call s:H("ErrorMsg", s:yellow, s:negative, "")
 " generic error message
 
-call s:H("FoldColumn",   "",          s:bg,  "")
+call s:H("FoldColumn", "", s:bg, "")
 " set foldcolumn = 1
 " gutter for folds
-call s:H("Folded",       s:fg,   s:lightbg,  "")
+call s:H("Folded", s:fg, s:lightbg, "")
 " line highlight for closed folds
 
-call s:H("IncSearch",    s:darkbg,     s:orange,         "")
+call s:H("IncSearch", s:darkbg, s:orange, "")
 " set incearch
 " highlight for search queries
 
-call s:H("LineNr",       s:darkfg,   s:darkbg,   "")
+call s:H("LineNr", s:darkfg, s:darkbg, "")
 " set number, and/or set relativenumber
 " number gutter
 
-call s:H("MatchParen",   s:orange,     s:lightbg,   "bold")
+call s:H("MatchParen", s:orange, s:lightbg, "bold")
 " matching parenthesis
-call s:H("ModeMsg",      s:blue,  s:darkbg,   "")
-call s:H("MoreMsg",      s:blue,  s:darkbg,   "")
-call s:H("NonText",      s:orange,     "",         "")
+call s:H("ModeMsg", s:blue, s:darkbg, "")
+call s:H("MoreMsg", s:blue, s:darkbg, "")
+call s:H("NonText", s:orange, "", "")
 " set showbreak = <char>
 " characters that visualize linebreaks, tabs etc.
 
-call s:H("Pmenu",     s:blue,     s:lightbg,  "")
+call s:H("Pmenu", s:blue, s:lightbg, "")
 " popup menu
-call s:H("PmenuSbar",    "",          s:lightbg,   "")
+call s:H("PmenuSbar", "", s:lightbg, "")
 " popup menu scrollbar
-call s:H("PmenuSel",     s:orange,     s:lightbg,  "")
+call s:H("PmenuSel", s:orange, s:lightbg, "")
 " popup menu selected text
-call s:H("PmenuThumb",   s:green,          "",         "")
+call s:H("PmenuThumb", s:green, "", "")
 " popup menu thumb of scrollbar 
 
-call s:H("Question",     s:cyan, s:lightbg,   "bold")
+call s:H("Question", s:cyan, s:lightbg, "bold")
 " 'hit-enter' prompt and yes/no questions
 
-call s:H("Search",       s:darkbg,    s:orange,         "")
+call s:H("Search", s:darkbg, s:orange, "")
 " set hlsearch
 " highlight of last search query
 " also used for current line in quickfix
-call s:H("SignColumn",   s:lightfg,          s:darkbg,   "")
+call s:H("SignColumn", s:lightfg, s:darkbg, "")
 " sign gutter
-call s:H("SpecialKey",   s:orange,     "",         "")
+call s:H("SpecialKey", s:orange, "", "")
 " :help listchars
 " non-text chars like mappings, eol-characters, nbsp etc.
-call s:H("SpelBad",      s:negative,  "",         "undercurl")
+call s:H("SpelBad", s:negative, "", "undercurl")
 " unrecognized by spellchecker
-call s:H("SpellRare",    s:yellow,   "",         "undercurl")
+call s:H("SpellRare", s:yellow, "", "undercurl")
 " rare word
-call s:H("SpellCap",     s:magenta, "",         "undercurl")
+call s:H("SpellCap", s:magenta, "", "undercurl")
 " should be starting with a capital letter
-call s:H("SpellLocal",   s:green,    "",         "undercurl")
+call s:H("SpellLocal", s:green, "", "undercurl")
 " recognized as from another locale
-call s:H("StatusLine",   s:lightfg,   s:darkbg,  "")
+call s:H("StatusLine", s:lightfg, s:darkbg, "")
 " set lastshow = <0-2>
 " statusline of current window
-call s:H("StatusLineNC", s:darkfg,    s:bg,   "")
+call s:H("StatusLineNC", s:darkfg, s:bg, "")
 " statusline of non-current window
 
-call s:H("TabLineSel",   s:bg,   s:cyan,   "")
+call s:H("TabLineSel", s:bg, s:cyan, "")
 " active tabpage label
-call s:H("TabLine",      s:lightfg,   s:darkbg,  "")
+call s:H("TabLine", s:lightfg, s:darkbg, "")
 " nonactive tabpage label
-call s:H("TabLineFill",  s:fg,    s:bg,  "")
+call s:H("TabLineFill", s:fg, s:bg, "")
 " background of tabline, no labels
-call s:H("Title",        "",     "",         "bold")
+call s:H("Title", "", "", "bold")
 " titles, i guess? no idea
 " doc says 'titles for output from :set all, :autocmd etc.'
 
-call s:H("VertSplit",    "",   s:darkbg,   "")
+call s:H("VertSplit", "", s:darkbg, "")
 " column separating splits
-call s:H("Visual",       s:lightfg,   s:blue,  "") 
+call s:H("Visual", s:lightfg, s:blue, "") 
 " visually selected lines
 
-call s:H("WildMenu",     s:magenta,    "",         "")
+call s:H("WildMenu", s:magenta, "", "")
 " current match in wildmenu completion
-call s:H("WarningMsg",   s:yellow,  s:negative,         "bold")
+call s:H("WarningMsg", s:yellow, s:negative, "bold")
 " warning messages
 " Default Syntax Groups 
 " ------------------------------------------------------------------------------
@@ -334,121 +334,121 @@ call s:H("WarningMsg",   s:yellow,  s:negative,         "bold")
 " by default, every MINOR inherits its MAJORS values
 " uncomment the function call to specify the MINORS values
 
-call s:H("Comment",        s:darkfg,        "",         "italic")
+call s:H("Comment", s:darkfg, "", "italic")
 
-call s:H("Constant",       s:cyan,     "",         "")
+call s:H("Constant", s:cyan, "", "")
 "
-call s:H("String",         s:green,         "",         "")
+call s:H("String", s:green, "", "")
 " any string
 " inherits constant by default
 "
 hi! link Character String
-" call s:H("Character",      s:character,      "",         "")
+" call s:H("Character", s:character, "", "")
 " any single character: 'c', '\n'
 " inherits constant by default
 
-call s:H("Number",         s:cyan,      "",         "bold")
+call s:H("Number", s:cyan, "", "bold")
 " any number, including unit
 " inherits constant by default
 
-" call s:H("Boolean",        s:boolean,        "",         "")
+" call s:H("Boolean", s:boolean, "", "")
 " any boolean: TRUE, false
 " inherits constant by default
 
-" call s:H("Float",          s:float,          "",         "")
+" call s:H("Float", s:float, "", "")
 hi! link Float Number
 " a floating point constant: 2.3e10
 " inherits constant by default
 
-call s:H("Identifier",     s:magenta,        s:bg,         "")
+call s:H("Identifier", s:magenta, s:bg, "")
 " any variable name
 
-call s:H("Function",       s:lightred,       "",         "")
+call s:H("Function", s:lightred, "", "")
 " any function, method, class
 " inherits identifier by default
 
-call s:H("Statement",      s:blue,         "",         "")
+call s:H("Statement", s:blue, "", "")
 " any statement
 
-" call s:H("Conditional",    s:statement,      "",         "")
+" call s:H("Conditional", s:statement, "", "")
 " if, then, else, endif, switch, etc.
 " inherits statement by default
 
-" call s:H("Repeat",         s:repeat,         "",         "")
+" call s:H("Repeat", s:repeat, "", "")
 " for, do, while, etc.
 " inherits statement by default
 
-" call s:H("Label",          s:label,          "",         "")
+" call s:H("Label", s:label, "", "")
 " case, default, etc.
 " inherits statement by default
 
-" call s:H("Operator",       s:operator,       "",         "")
+" call s:H("Operator", s:operator, "", "")
 " "sizeof", "+", "*", etc.
 " inherits statement by default
 
-" call s:H("Keyword",        s:keyword,        "",         "")
+" call s:H("Keyword", s:keyword, "", "")
 " any other keyword
 " inherits statement by default
 
-" call s:H("Exception",      s:exception,      "",         "")
+" call s:H("Exception", s:exception, "", "")
 " try, catch, throw
 " inherits statement by default
 
-call s:H("PreProc",        s:cyan,      "",         "italic")
+call s:H("PreProc", s:cyan, "", "italic")
 " generic preprocessor
 
-" call s:H("Include",        s:include,        "",         "")
+" call s:H("Include", s:include, "", "")
 " inherits preproc by default
 
-" call s:H("Define",         s:define,         "",         "")
+" call s:H("Define", s:define, "", "")
 " inherits preproc by default
 
-" call s:H("Macro",          s:macro,          "",         "")
+" call s:H("Macro", s:macro, "", "")
 " inherits preproc by default
 
-" call s:H("PreCondit",      s:precondit,      "",         "")
+" call s:H("PreCondit", s:precondit, "", "")
 " inherits preproc by default
 
-call s:H("Type",           s:yellow,         "",         "")
+call s:H("Type", s:yellow, "", "")
 " int, long, char, etc.
 
-" call s:H("StorageClass",   s:storageclass,   "",         "")
+" call s:H("StorageClass", s:storageclass, "", "")
 " static, register, volatile, etc.
 " inherits type by default
 
-" call s:H("Structure",      s:structure,      "",         "")
+" call s:H("Structure", s:structure, "", "")
 " struct, union, enum, etc.
 " inherits type by default
 
-" call s:H("Typedef",        s:typedef,        "",         "")
+" call s:H("Typedef", s:typedef, "", "")
 " A typedef
 " inherits type by default
 
-call s:H("Special",        s:orange,          "",         "")
+call s:H("Special", s:orange, "", "")
 " any special symbol
 
-" call s:H("SpecialChar",    s:specialchar,    "",         "")
+" call s:H("SpecialChar", s:specialchar, "", "")
 " inherits special by default
 
-" call s:H("Tag",            s:tag,            "",         "")
+" call s:H("Tag", s:tag, "", "")
 " inherits special by default
 
-call s:H("Delimiter",      s:lightred,      "",         "")
+call s:H("Delimiter", s:lightred, "", "")
 " inherits special by default
 
-" call s:H("SpecialComment", s:specialcomment, "",         "")
+" call s:H("SpecialComment", s:specialcomment, "", "")
 " inherits special by default
 
-call s:H("Debug",          s:yellow,          "",         "")
+call s:H("Debug", s:yellow, "", "")
 " inherits special by default
 
-call s:H("Underlined",     s:magenta,         "",         "")
+call s:H("Underlined", s:magenta, "", "")
 
-call s:H("Ignore",         "",               "",         "")
+call s:H("Ignore", "", "", "")
 
-call s:H("Error",          s:yellow,         s:negative, "bold")
+call s:H("Error", s:yellow, s:negative, "bold")
 
-call s:H("Todo",           s:lightfg,        s:lightbg,  "bold")
+call s:H("Todo", s:lightfg, s:lightbg, "bold")
 
 " vimscript
 " ------------------------------------------------------------------------------
@@ -480,8 +480,8 @@ hi link vimCommentTitle Title
 
 " HTML
 " ------------------------------------------------------------------------------
-call s:H("htmlBold",        "",               "",           "bold")
-call s:H("htmlItalic",      "",               "",           "italic")
+call s:H("htmlBold", "", "", "bold")
+call s:H("htmlItalic", "", "", "italic")
 " htmlTag          
 " htmlEndTag       
 " htmlTagN         
