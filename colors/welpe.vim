@@ -328,6 +328,7 @@ call s:H("WildMenu", s:magenta, "", "")
 " current match in wildmenu completion
 call s:H("WarningMsg", s:yellow, s:negative, "bold")
 " warning messages
+
 " Default Syntax Groups 
 " ------------------------------------------------------------------------------
 " Note: By default, unspecified syntax groups inherit their 'parents' values
@@ -457,12 +458,14 @@ hi link vimSet Normal
 hi link vimSetEqual Normal
 hi link vimVar Identifier
 hi link vimFunc Function
+hi link vimFuncSID vimFunc
+hi link vimFunction vimFunc
 hi link vimUserFunc Function
 hi link vimIsCommand Function
 hi link vimOper Operator
 hi link vimOperParen Statement
 hi link helpSpecial Special
-hi link vimCommentString String
+hi link vimCommentString vimComment
 hi link vimCommentTitle Title
 " vimCommand       
 " vimCmdSep        
