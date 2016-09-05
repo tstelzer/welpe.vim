@@ -365,7 +365,8 @@ hi! link Float Number
 call s:H("Identifier", s:magenta, s:bg, "")
 " any variable name
 
-call s:H("Function", s:lightred, "", "")
+hi! link Function Special
+" call s:H("Function", s:lightred, "", "")
 " any function, method, class
 " inherits identifier by default
 
