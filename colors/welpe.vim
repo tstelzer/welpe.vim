@@ -331,10 +331,9 @@ call s:H("WarningMsg", s:yellow, s:negative, "bold")
 
 " Default Syntax Groups 
 " ------------------------------------------------------------------------------
-" Note: By default, unspecified syntax groups inherit their 'parents' values
-" (TODO I am using 'parent' and 'child' for lack of fitting words)
+" Note: By default, unspecified syntax groups inherit values of the preferred group
+" see :help syntax for further explanation
 " Who inherits what is outlined in the accompanying comments
-" uncomment the function call to specify the "childs" values
 
 call s:H("Comment", s:darkfg, "", "italic")
 
