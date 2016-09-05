@@ -384,6 +384,7 @@ call s:H("Statement", s:blue, "", "")
 " case, default, etc.
 " inherits statement by default
 
+hi! link Operator Normal
 " call s:H("Operator", s:operator, "", "")
 " "sizeof", "+", "*", etc.
 " inherits statement by default
@@ -455,19 +456,21 @@ call s:H("Todo", s:lightfg, s:lightbg, "bold")
 " vimscript
 " ------------------------------------------------------------------------------
 hi! link vimSet Normal
-hi! link vimSetEqual Normal
-hi! link vimVar Identifier
+hi! link vimSetSep Delimiter
 hi! link vimFunc Function
 hi! link vimFuncSID vimFunc
 hi! link vimFunction vimFunc
 hi! link vimUserFunc vimFunc
-hi! link vimIsCommand vimFunc
-hi! link vimOper Operator
+hi! link vimIsCommand Statement
 hi! link vimOperParen Identifier
-hi! link helpSpecial Special
-hi! link vimCommentString vimComment
 hi! link vimCommentTitle Title
-hi! link vimHiBang Delimiter
+hi! link vimHiBang Special
+hi! link vimCmdSep Delimiter
+" hi! link vimSet Operator
+" hi! link vimSetEqual Normal
+" hi! link vimOper Operator
+" hi! link vimCommentString vimComment
+" hi! link helpSpecial Special
 " vimCommand       
 " vimCmdSep        
 " helpExample      
