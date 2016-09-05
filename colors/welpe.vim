@@ -661,6 +661,7 @@ hi! link javaScriptTemplateDelim Identifier
 hi! link javaScriptTemplateString String
 
 " scss
+" ------------------------------------------------------------------------------
 " hi link scssNestedProperty cssProp
 " hi link scssVariable  Identifier
 " hi link scssGlobal    Special
@@ -696,7 +697,7 @@ hi! link scssMixinParams Delimiter
 " hi link scssTodo      Todo
 " hi link scssAtRoot    Keyword
 " hi link scssMapParens Delimiter
-"
+
 " Autohotkey 
 " ------------------------------------------------------------------------------
 " hi def link autohotkeyHotkey              Type
