@@ -464,7 +464,7 @@ hi! link vimFunction vimFunc
 hi! link vimUserFunc vimFunc
 hi! link vimIsCommand vimFunc
 hi! link vimOper Operator
-hi! link vimOperParen Statement
+hi! link vimOperParen Identifier
 hi! link helpSpecial Special
 hi! link vimCommentString vimComment
 hi! link vimCommentTitle Title
