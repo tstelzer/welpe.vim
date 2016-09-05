@@ -461,13 +461,14 @@ hi! link vimVar Identifier
 hi! link vimFunc Function
 hi! link vimFuncSID vimFunc
 hi! link vimFunction vimFunc
-hi! link vimUserFunc Function
-hi! link vimIsCommand Function
+hi! link vimUserFunc vimFunc
+hi! link vimIsCommand vimFunc
 hi! link vimOper Operator
 hi! link vimOperParen Statement
 hi! link helpSpecial Special
 hi! link vimCommentString vimComment
 hi! link vimCommentTitle Title
+hi! link vimHiBang Delimiter
 " vimCommand       
 " vimCmdSep        
 " helpExample      
