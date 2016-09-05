@@ -479,6 +479,7 @@ hi link vimCommentTitle Title
 " vimGroup         
 
 " HTML
+" ------------------------------------------------------------------------------
 call s:H("htmlBold",        "",               "",           "bold")
 call s:H("htmlItalic",      "",               "",           "italic")
 " htmlTag          
