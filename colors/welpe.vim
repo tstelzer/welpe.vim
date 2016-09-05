@@ -330,9 +330,10 @@ call s:H("WarningMsg", s:yellow, s:negative, "bold")
 " warning messages
 " Default Syntax Groups 
 " ------------------------------------------------------------------------------
-" VIM classifes MAJOR and MINOR syntax groups
-" by default, every MINOR inherits its MAJORS values
-" uncomment the function call to specify the MINORS values
+" Note: By default, unspecified syntax groups inherit their 'parents' values
+" (TODO I am using 'parent' and 'child' for lack of fitting words)
+" Who inherits what is outlined in the accompanying comments
+" uncomment the function call to specify the "childs" values
 
 call s:H("Comment", s:darkfg, "", "italic")
 
