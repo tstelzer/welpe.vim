@@ -133,6 +133,7 @@ use italics
 - Diffs are still a bit iffy, mostly due to my own restriction to the 256-color-range; 
 might use a wider range in the future
 - Tried to make it work with ConEmu (windows), but the hassle is not worth the mediocre result
+- `g:welpe_use_italics` and `g:welpe_all_bold` broke somewhere along the way
 
 ## TESTED PLUGINS
 *other plugins might very well still work, depending on what highlight groups
