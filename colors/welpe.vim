@@ -454,19 +454,19 @@ call s:H("Todo", s:lightfg, s:lightbg, "bold")
 
 " vimscript
 " ------------------------------------------------------------------------------
-hi link vimSet Normal
-hi link vimSetEqual Normal
-hi link vimVar Identifier
-hi link vimFunc Function
-hi link vimFuncSID vimFunc
-hi link vimFunction vimFunc
-hi link vimUserFunc Function
-hi link vimIsCommand Function
-hi link vimOper Operator
-hi link vimOperParen Statement
-hi link helpSpecial Special
-hi link vimCommentString vimComment
-hi link vimCommentTitle Title
+hi! link vimSet Normal
+hi! link vimSetEqual Normal
+hi! link vimVar Identifier
+hi! link vimFunc Function
+hi! link vimFuncSID vimFunc
+hi! link vimFunction vimFunc
+hi! link vimUserFunc Function
+hi! link vimIsCommand Function
+hi! link vimOper Operator
+hi! link vimOperParen Statement
+hi! link helpSpecial Special
+hi! link vimCommentString vimComment
+hi! link vimCommentTitle Title
 " vimCommand       
 " vimCmdSep        
 " helpExample      
@@ -496,17 +496,17 @@ call s:H("htmlItalic", "", "", "italic")
 
 " markdown
 " ------------------------------------------------------------------------------
-hi link markdownCode Identifier
+hi! link markdownCode Identifier
 call s:H("markdownItalic", "", "", "italic")
  
 " asciidoc
-hi link asciidocQuotedEmphasized2 String
-hi link asciidocQuotedEmphasized1 String
+hi! link asciidocQuotedEmphasized2 String
+hi! link asciidocQuotedEmphasized1 String
 
 " CSS / SASS 
 " ------------------------------------------------------------------------------
 "HiLink cssComment Comment
-hi link cssVendor cssProp
+hi! link cssVendor cssProp
 "HiLink cssHacks Comment
 "HiLink cssTagName Statement
 "HiLink cssDeprecated Error
@@ -595,7 +595,7 @@ hi link cssVendor cssProp
 "HiLink cssInclude Include
 "HiLink cssIncludeKeyword atKeyword
 "HiLink cssImportant Special
-hi link cssBraces Delimiter
+hi! link cssBraces Delimiter
 "HiLink cssBraceError Error
 "HiLink cssError Error
 "HiLink cssUnicodeEscape Special
@@ -623,20 +623,20 @@ hi link cssBraces Delimiter
 "HiLink cssClassNameDot Function
 "HiLink cssProp StorageClass
 "HiLink cssAttr Constant
-hi link cssUnitDecorators Delimiter
+hi! link cssUnitDecorators Delimiter
 "HiLink cssNoise Noise
 "HiLink atKeyword PreProc
 
 " Php
 " ------------------------------------------------------------------------------
-hi link phpParent Delimiter
+hi! link phpParent Delimiter
 
 " vim-sneak
 " ------------------------------------------------------------------------------
-hi link SneakPluginTarget IncSearch
-hi link SneakStreakTarget Identifier
-hi link SneakPluginScope IncSearch
-hi link SneakStreakMask SpecialKey
+hi! link SneakPluginTarget IncSearch
+hi! link SneakStreakTarget Identifier
+hi! link SneakPluginScope IncSearch
+hi! link SneakStreakMask SpecialKey
 " hi! link SneakStreakStatusLine
 
 " incsearch
@@ -644,17 +644,17 @@ hi link SneakStreakMask SpecialKey
 " hi link IncSearchMatch
 " hi link IncSearchMatchReverse
 " hi link IncSearchOnCursor Search
-hi link IncSearchCursor Visual
+hi! link IncSearchCursor Visual
 " hi link IncSearchUnderline
 
 " JavaScript 
 " ------------------------------------------------------------------------------
-hi link jsFuncCall Function
-hi link jsFunction Function
-hi link javaScriptValue Constant
-hi link javaScriptTemplateVar StringDelim
-hi link javaScriptTemplateDelim Identifier
-hi link javaScriptTemplateString String
+hi! link jsFuncCall Function
+hi! link jsFunction Function
+hi! link javaScriptValue Constant
+hi! link javaScriptTemplateVar StringDelim
+hi! link javaScriptTemplateDelim Identifier
+hi! link javaScriptTemplateString String
 
 " scss
 " hi link scssNestedProperty cssProp
@@ -665,7 +665,7 @@ hi link javaScriptTemplateString String
 " hi link scssBooleanOp Operator
 " hi link scssMixin     PreProc
 " hi link scssMixinName Function
-hi link scssMixinParams Delimiter
+hi! link scssMixinParams Delimiter
 " hi link scssContent   PreProc
 " hi link scssFunctionDefinition  PreProc
 " hi link scssFunctionName Function
@@ -704,9 +704,9 @@ hi link scssMixinParams Delimiter
 " hi def link autohotkeyHotstringOptions    Special
 " hi def link autohotkeyString              String
 " hi def link autohotkeyStringDelimiter     autohotkeyString
-hi def link autohotkeyVariable            Identifier
-hi def link autohotkeyVariableDelimiter   Delimiter
-hi def link autohotkeyBuiltinVariable     autohotkeyVariable            
+hi! def link autohotkeyVariable            Identifier
+hi! def link autohotkeyVariableDelimiter   Delimiter
+hi! def link autohotkeyBuiltinVariable     autohotkeyVariable            
 " hi def link autohotkeyCommand             Keyword
 " hi def link autohotkeyFunction            Function
 " hi def link autohotkeyStatement           autohotkeyCommand
@@ -742,8 +742,8 @@ hi def link autohotkeyBuiltinVariable     autohotkeyVariable
 " gitReference
 " gitStage
 " gitType
-hi link gitDiffAdded DiffAdded
-hi link gitDiffRemoved DiffDelete
+hi! link gitDiffAdded DiffAdded
+hi! link gitDiffRemoved DiffDelete
 " gitcommit
 " gitcommitSummary
 " gitcommitComment
@@ -778,33 +778,33 @@ hi link gitDiffRemoved DiffDelete
 call s:H("GitGutterAdd",s:positive,    s:darkbg,"")
 call s:H("GitGutterChange",s:neutral,  s:darkbg,"")
 call s:H("GitGutterDelete",s:lightred, s:darkbg,"")
-hi link GitGutterChangeDelete GitGutterDelete
+hi! link GitGutterChangeDelete GitGutterDelete
 
 " dirvish
 " ------------------------------------------------------------------------------
-hi link DirvishPathTail Directory
-hi link DirvishPathHead Comment
+hi! link DirvishPathTail Directory
+hi! link DirvishPathHead Comment
 
 " syntastic
 " ------------------------------------------------------------------------------
-hi link SyntasticErrorSign ErrorMsg
-hi link SyntasticWarningSign Debug
-hi link SyntasticStyleErrorSign ErrorMsg
-hi link SyntasticStyleWarningSign Debug
+hi! link SyntasticErrorSign ErrorMsg
+hi! link SyntasticWarningSign Debug
+hi! link SyntasticStyleErrorSign ErrorMsg
+hi! link SyntasticStyleWarningSign Debug
 
-hi link SyntasticErrorLine ErrorMsg
-hi link SyntasticWarningLine Debug
-hi link SyntasticStyleErrorLine ErrorMsg
-hi link SyntasticStyleWarningLine Debug
+hi! link SyntasticErrorLine ErrorMsg
+hi! link SyntasticWarningLine Debug
+hi! link SyntasticStyleErrorLine ErrorMsg
+hi! link SyntasticStyleWarningLine Debug
 
 " CtrlP
 " ------------------------------------------------------------------------------
 " the prompt's cursor when moving over the text
-hi link CtrlPPrtCursor SpecialKey
+hi! link CtrlPPrtCursor SpecialKey
 " the matched pattern
-hi link CtrlPMatch SpecialKey
-hi link CtrlPBufferPath Directory
-hi link CtrlPBufferCurMod Title
+hi! link CtrlPMatch SpecialKey
+hi! link CtrlPBufferPath Directory
+hi! link CtrlPBufferCurMod Title
 
 " For the CtrlP buffer:
 " CtrlPNoEntries : the message when no match is found (Error)
