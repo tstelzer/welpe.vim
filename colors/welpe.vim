@@ -326,13 +326,24 @@ call s:H("StatusLine", s:lightfg, s:darkbg, "")
 " statusline of current window
 call s:H("StatusLineNC", s:darkfg, s:bg, "")
 " statusline of non-current window
+call s:H("StatusLineNC", s:darkfg, s:darkbg, "")
 
-call s:H("TabLineSel", s:bg, s:cyan, "")
+if exists('g:welpe_statusline')
+  " mirrors Special, gets attention
+  call s:H("User1", s:orange, s:darkbg, "")
+  " mirros Comment, unintrusive information
+  call s:H("User2", s:darkfg, s:darkbg, "")
+  " active
+  call s:H("User3", s:cyan, s:darkbg, "")
+endif
+
 " active tabpage label
-call s:H("TabLine", s:lightfg, s:darkbg, "")
+call s:H("TabLineSel", s:lightfg, s:darkbg, "")
 " nonactive tabpage label
-call s:H("TabLineFill", s:fg, s:bg, "")
+call s:H("TabLine", s:darkfg, s:darkbg, "")
 " background of tabline, no labels
+call s:H("TabLineFill", s:fg, s:darkbg, "")
+" titles for output from :set all, :autocmd etc.
 call s:H("Title", "", "", "bold")
 " titles, i guess? no idea
 " doc says 'titles for output from :set all, :autocmd etc.'
