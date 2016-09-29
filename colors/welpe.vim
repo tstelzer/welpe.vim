@@ -482,6 +482,11 @@ call s:H("Error", s:yellow, s:negative, "bold")
 
 call s:H("Todo", s:lightfg, s:lightbg, "bold")
 
+" misc Syntax groups
+" ------------------------------------------------------------------------------
+hi link Noise Normal
+
+
 " vimscript
 " ------------------------------------------------------------------------------
 hi! link vimSet Normal
@@ -546,9 +551,9 @@ hi! link cssVendor cssProp
 "HiLink cssHacks Comment
 "HiLink cssTagName Statement
 "HiLink cssDeprecated Error
-"HiLink cssSelectorOp Special
-"HiLink cssSelectorOp2 Special
-"HiLink cssAttrComma Special
+hi! link cssSelectorOp cssNoise
+hi! link cssSelectorOp2 cssNoise
+hi! link cssAttrComma cssNoise
 
 "HiLink cssAnimationProp cssProp
 "HiLink cssBackgroundProp cssProp
@@ -631,7 +636,7 @@ hi! link cssVendor cssProp
 "HiLink cssInclude Include
 "HiLink cssIncludeKeyword atKeyword
 "HiLink cssImportant Special
-hi! link cssBraces Delimiter
+hi! link cssBraces cssNoise
 "HiLink cssBraceError Error
 "HiLink cssError Error
 "HiLink cssUnicodeEscape Special
@@ -687,6 +692,8 @@ hi! link IncSearchCursor Visual
 " ------------------------------------------------------------------------------
 hi! link jsFuncCall Function
 hi! link jsFunction Function
+hi! link jsParens Delimiter
+hi! link jsVariableDef Identifier
 hi! link javaScriptValue Constant
 hi! link javaScriptTemplateVar StringDelim
 hi! link javaScriptTemplateDelim Identifier
@@ -712,9 +719,9 @@ hi! link scssMixinParams Delimiter
 " hi link scssOptional  Special
 " hi link scssComment   Comment
 " hi link scssStickyCommentChar Special
-" hi link scssSelectorChar Special
+hi link scssSelectorChar Noise
 " hi link scssSelectorName Identifier
-" hi link scssAmpersand Character
+hi! link scssAmpersand Noise
 " hi link scssDebug     Debug
 " hi link scssWarn      Debug
 " hi link scssError     Debug
