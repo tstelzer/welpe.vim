@@ -814,6 +814,12 @@ call s:H("GitGutterChange",s:neutral,  s:darkbg,"")
 call s:H("GitGutterDelete",s:lightred, s:darkbg,"")
 hi! link GitGutterChangeDelete GitGutterDelete
 
+" pug
+" ------------------------------------------------------------------------------
+hi! link pugClassChar Noise
+hi! link pugAttributesDelimiter Delimiter
+hi! link pugClass Identifier
+
 " dirvish
 " ------------------------------------------------------------------------------
 hi! link DirvishPathTail Directory
