@@ -214,21 +214,21 @@ let s:darkred  = s:_maroon        " #5f0000
 let s:lightred = s:_roman         " #d75f5f
 
 let s:darkgreen= s:_darkgreen     " #005f00
-let s:green    = s:_moss          " #afd7af
+let s:lightgreen = s:_moss          " #afd7af
 
 let s:orange   = s:_orange        " #ffaf00
 let s:yellow   = s:_shalimar      " #ffffaf
 
 let s:darkblue = s:_darkblue      " #000087
-let s:blue     = s:_maya          " #87afff
+let s:lightblue     = s:_maya          " #87afff
 
 let s:magenta  = s:_mediumorchid  " #af5fd7
 
 let s:cyan     = s:_paleturquoise " #afffff
 
-let s:positive = s:green
-let s:neutral  = s:blue
-let s:negative = s:darkred
+let s:positive = s:lightgreen
+let s:neutral  = s:lightblue
+let s:negative = s:lightred
 
 " UI Defaults 
 " ------------------------------------------------------------------------------
