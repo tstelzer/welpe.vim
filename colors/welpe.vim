@@ -364,7 +364,7 @@ call s:H("WarningMsg", s:yellow, s:negative, "bold")
 " see :help syntax for further explanation
 " Who inherits what is outlined in the accompanying comments
 
-call s:H("Comment", s:darkfg, "", "italic")
+call s:H("Comment", s:darkfg, "", "")
 
 call s:H("Constant", s:cyan, "", "")
 "
