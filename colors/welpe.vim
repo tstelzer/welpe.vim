@@ -25,8 +25,8 @@ if exists("syntax_on")
 endif
 
 let colors_name = "welpe"
-if !exists('g:welpe_all_bold')
-    let g:welpe_all_bold = 0
+if !exists('g:welpe_statusline')
+  let g:welpe_statusline = 1
 endif
 if !exists('g:welpe_use_italics')
     let g:welpe_use_italics = 0
@@ -318,7 +318,7 @@ call s:H("StatusLine", s:lightfg, s:darkbg, "")
 " statusline of non-current window
 call s:H("StatusLineNC", s:darkfg, s:darkbg, "")
 
-if exists('g:welpe_statusline')
+if exists('g:welpe_statusline') && g:welpe_statusline == 1
   " mirrors Special, gets attention
   call s:H("User1", s:orange, s:darkbg, "")
   " mirros Comment, unintrusive information
