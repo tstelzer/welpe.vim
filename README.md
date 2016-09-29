@@ -1,23 +1,7 @@
-![Welpe Colorwheel](img/colorwheel.png)
-
 WELPE.vim 
 ===========
 
-Dark colorscheme for vim, with a mixture of bright, saturated highlights
-and pale, low-key colors. Uses exclusively colors from the 256-color-range, so it should look identical in gvim and vim.
-
-CHANGELOG
----------
-
-v0.1.2  
-
-        Adds consistent colors for dirvish, syntastic, incsearch
-
-        Various cleanups, some miniscule changes
-
-v0.1.1  
-
-        Adds readable diff colors
+Dark color scheme for [vim](https://www.vim.org).
 
 ## PALETTE
 
@@ -100,7 +84,6 @@ v0.1.1
 #### manual download
 
 - place [tstelzer/welpe.vim/master/colors/welpe.vim](https://raw.githubusercontent.com/tstelzer/welpe.vim/master/colors/welpe.vim) in `~/<yourvimdir>/colors/`
-- if you want lightline support, place [tstelzer/welpe.vim/master/autoload/lightline/colorscheme/welpe.vim](https://raw.githubusercontent.com/tstelzer/welpe.vim/master/autoload/lightline/colorscheme/welpe.vim) in `~/<yourvimdir>/autoload/`
 
 #### enable colorscheme
 
@@ -108,70 +91,101 @@ add the following line *after* `:syntax enable`
 
 `colorscheme welpe`
 
-#### using lightline?
-
-find your lightline settings and add `'colorscheme': 'welpe',` to the top, like:
-
-```
-let g:lightline = {
-    \ 'colorscheme': 'welpe',
-    // more lightline settings
-```
-
-#### additional options
-
-all-bold
-
-`let g:welpe_all_bold = 1`
-
-use italics
-
-`let g:welpe_use_italics = 1`
-
-## KNOWN PROBLEMS
-
-- Diffs are still a bit iffy, mostly due to my own restriction to the 256-color-range; 
-might use a wider range in the future
-- Tried to make it work with ConEmu (windows), but the hassle is not worth the mediocre result
-- `g:welpe_use_italics` and `g:welpe_all_bold` broke somewhere along the way
-
 ## TESTED PLUGINS
-*other plugins might very well still work, depending on what highlight groups
+
+*legend*
+- [x] **tested || works well**
+- [ ] **to-be-tested || awful**
+
+*unlisted plugins might very well still work, depending on what highlight groups
 they are using; the listed are simply the ones that I have tested and / or
 modified*
-
-- [x] [Lightline](https://github.com/itchyny/lightline.vim)
-see screenshots for reference, if your setup doesnt work, feel free to open an issue
 
 - [x] [GitGutter](https://github.com/airblade/vim-gitgutter)
-
 - [x] Diffs: finally readable, see screenshots
-
 - [x] [vim-sneak](https://github.com/justinmk/vim-sneak) colors consistent with
-  search, specifically streak-mode and overlay colors
-
+search, specifically streak-mode and overlay colors
 - [x] [incsearch](https://github.com/haya14busa/incsearch.vim) colors consistent
-  with search
-
+with search
 - [x] [syntastic](https://github.com/scrooloose/syntastic) made the inline-error
 messages less obnoxious
-
 - [x] [dirvish](https://github.com/justinmk/vim-dirvish) 
-
 - [ ] [ctrlp](https://github.com/ctrlpvim/ctrlp.vim) would still prefer more
-  color, to differenciate folder, file and filetype
+color, to differentiate folder, file and file type
+
+#### note on lightline support
+
+I have removed the lightline config for the following reasons:
+
+- It is a very specific implementation of a statusline, other plugins get left out
+so I would rather not support any than all of them.
+- I stopped using it myself, so updates would be half-arsed and infrequent.
+- The additional files in the repo could lead to confusion. This is a colorscheme and 
+should only consist of the colorscheme file itself.
+
+On the same note, if you are interested in making your own statusline without using any
+plugin dependencies, check out [this blog post](http://got-ravings.blogspot.de/2008/08/vim-pr0n-making-statuslines-that-own.html).
 
 ## TESTED FILETYPES
-*other filetypes might very well still work, depending on what highlight groups
+
+*legend*
+- [x] **tested** and/or **works well**
+- [ ] **to-be-tested** and/or **awful**
+
+*unlisted filetypes might very well still work, depending on what highlight groups
 they are using; the listed are simply the ones that I have tested and / or
 modified*
 
-**Important:** The effect of colorschemes is depending on the runtimefiles *you* are using. If colors are flawed,
-chances are, you are using "bad" runtimefiles, many defaults are not up-to-date.
+**Important:** The effect of color schemes is depending on the runtime files *you* are using. If colors are flawed,
+chances are, you are using "bad" runtime files, many defaults are not up-to-date.
 
 - [x] HTML (recommended: [othree/html5.vim](https://github.com/othree/html5.vim))
 - [x] PHP
 - [x] CSS (recommended: [JulesWang/css.vim](https://github.com/JulesWang/css.vim) and [hail2u/vim-css3-syntax](https://github.com/hail2u/vim-css3-syntax))
 - [x] SCSS (recommended:
   [cakebaker/scss-syntax.vim](https://github.com/cakebaker/scss-syntax.vim))
-- [x] JS (recommended: [pangloss/vim-javascript](https://github.com/pangloss/vim-javascript))
+- [x] JavaScript (recommended: [pangloss/vim-javascript](https://github.com/pangloss/vim-javascript))
+- [ ] Pug (formerly Jade)
+- [x] Markdown
+
+## KNOWN PROBLEMS && NOTES
+
+- Diffs are still a bit iffy, largely due to my own restriction to the 256-color-range.
+- My second attempt at making the color scheme work with
+  [ConEmu](https://github.com/Maximus5/ConEmu) was partially successful, but
+  relies on importing the colors. I will supply the relevant file once I feel
+  happy publishing it.
+
+CHANGELOG
+---------
+
+v0.2.0
+
+    add markdown support
+
+    modify javascript
+
+    de-emphasizing delimiters
+
+    remove italic styling entirely
+    remove all-bold option
+    remove lightline support
+
+    add statusline usercolor option
+
+    heat up by swapping out mediumorchid (rich purple) for palepink (hot & pale
+    pink)
+
+    use roman (lightred) for Identifiers
+
+    simplify colorscheme file
+
+v0.1.2
+
+    add consistent colors for dirvish, syntastic, incsearch
+
+    various cleanups, some miniscule changes
+
+v0.1.1
+
+    add readable diff colors
