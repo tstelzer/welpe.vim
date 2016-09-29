@@ -31,7 +31,7 @@ endif
 
 " highlighting function
 " ------------------------------------------------------------------------------
-function! s:H(group,fg,bg,style) 
+function! s:H(group,fg,bg,style)
 
   if empty(a:fg)
     let l:guifg = "NONE"
@@ -63,8 +63,6 @@ endfunction
 
 " Grayscale
 " ------------------------------------------------------------------------------
-" Because ConEmu is a special snowflake and does not care for 
-" the xterm color sequence, it has an extra bit
 " Schema: s:<name> = [ '<hex>', <256term>, <16term>, <8term> ]
 
 let s:_trueblack = [ '#000000', 0, 0, 0]
@@ -95,10 +93,8 @@ let s:_gray22    = [ '#e4e4e4', 254, 15, 7 ]
 let s:_white     = [ '#eeeeee', 255, 15, 7]
 let s:_truewhite = [ '#FFFFFF', 15, 15, 7]
 
-" Colors 
+" Color Library
 " ------------------------------------------------------------------------------
-" Important: DON'T USE THESE COLORNAMES IN THE SYNTAX GROUPS,
-" use the generic color variables instead
 
 let s:_maroon        = [ '#5f0000', 52,  1,  1 ]
 let s:_darkred       = [ '#870000', 88,  1,  1 ]
@@ -163,7 +159,7 @@ let s:_cosmos        = [ '#ffd7d7', 224, 13, 5 ]
 let s:_turqoise      = [ '#5fd7ff', 81,  14, 6 ]
 let s:_lightcyan     = [ '#d7ffff', 195, 14, 6 ]
 
-" Palette 
+" Palette
 " ------------------------------------------------------------------------------
 
 let s:lightfg  = s:_white         " #eeeeee
@@ -194,101 +190,57 @@ let s:positive = s:lightgreen
 let s:neutral  = s:lightblue
 let s:negative = s:lightred
 
-" UI Defaults 
+" UI
 " ------------------------------------------------------------------------------
-" Schema: see function s:H()
-" s:h(<SyntaxGroup>!, <foreground>, <background>, <style>)
-" Note: if you ommit fields with "", the default fg / bg will be inherited
-" Note: entirely omitted groups fallback to their parent
-" for example "Function" inherits "Identifier" by default
 
-" default values
-" omitted values inherit this
 call s:H("Normal", s:fg, s:bg, "")
 
-" set colorcolumn = <column numbers>
-" vertical colored line, used to align text or not go over a certain textwidth
 call s:H("ColorColumn", "", s:lightbg, "")
-" set conceallevel = <0-3>
 call s:H("Conceal", "", "", "")
-" Cursor
 call s:H("Cursor", s:darkbg, s:fg, "")
 call s:H("iCursor", s:darkbg, s:fg, "")
-" vertical highlight of current cursor position
 call s:H("CursorColumn", "", s:lightbg, "")
-" horizontal highlight of current cursor position
 call s:H("CursorLine", "", s:lightbg, "")
-" linenumber of cursor position
 call s:H("CursorLineNr", s:lightfg, s:darkbg, "")
 
-" diff mode
 call s:H("DiffAdd", "", s:darkgreen, "")
-" Note: Using DiffText instead of DiffChange
 call s:H("DiffChange", "", "", "")
 call s:H("DiffDelete", "", s:darkred, "")
 call s:H("DiffText", "", s:darkblue, "")
 
-" directory names and other special names in listings
 call s:H("Directory", s:lightblue, "", "")
 
-" generic error message
 call s:H("ErrorMsg", s:yellow, s:negative, "")
 
-" set foldcolumn = 1
-" gutter for folds
 call s:H("FoldColumn", "", s:bg, "")
-" line highlight for closed folds
 call s:H("Folded", s:fg, s:lightbg, "")
 
-" set incearch
-" highlight for search queries
 call s:H("IncSearch", s:darkbg, s:orange, "")
 
-" set number, and/or set relativenumber
-" number gutter
 call s:H("LineNr", s:darkfg, s:darkbg, "")
 
-" matching parenthesis
 call s:H("MatchParen", s:orange, s:lightbg, "bold")
 call s:H("ModeMsg", s:lightblue, s:darkbg, "")
 call s:H("MoreMsg", s:lightblue, s:darkbg, "")
 
-" characters that visualize linebreaks, tabs etc.
 call s:H("NonText", s:orange, "", "")
 
-" popup menu
 call s:H("Pmenu", s:lightblue, s:lightbg, "")
-" popup menu scrollbar
 call s:H("PmenuSbar", "", s:lightbg, "")
-" popup menu selected text
 call s:H("PmenuSel", s:orange, s:lightbg, "")
-" popup menu thumb of scrollbar 
 call s:H("PmenuThumb", s:lightgreen, "", "")
 
-" 'hit-enter' prompt and yes/no questions
 call s:H("Question", s:cyan, s:lightbg, "bold")
 
-" set hlsearch
-" highlight of last search query
-" also used for current line in quickfix
 call s:H("Search", s:darkbg, s:orange, "")
-" sign gutter
 call s:H("SignColumn", s:lightfg, s:darkbg, "")
-" :help listchars
-" non-text chars like mappings, eol-characters, nbsp etc.
 call s:H("SpecialKey", s:orange, "", "")
-" unrecognized by spellchecker
 call s:H("SpelBad", s:negative, "", "undercurl")
-" rare word
 call s:H("SpellRare", s:yellow, "", "undercurl")
-" should be starting with a capital letter
 call s:H("SpellCap", s:magenta, "", "undercurl")
-" recognized as from another locale
 call s:H("SpellLocal", s:lightgreen, "", "undercurl")
 
-" current buffer statusline
 call s:H("StatusLine", s:lightfg, s:darkbg, "")
-" statusline of non-current window
 call s:H("StatusLineNC", s:darkfg, s:darkbg, "")
 
 if exists('g:welpe_statusline') && g:welpe_statusline == 1
@@ -300,136 +252,63 @@ if exists('g:welpe_statusline') && g:welpe_statusline == 1
   call s:H("User3", s:cyan, s:darkbg, "")
 endif
 
-" active tabpage label
 call s:H("TabLineSel", s:lightfg, s:darkbg, "")
-" nonactive tabpage label
 call s:H("TabLine", s:darkfg, s:darkbg, "")
-" background of tabline, no labels
 call s:H("TabLineFill", s:fg, s:darkbg, "")
-" titles for output from :set all, :autocmd etc.
 call s:H("Title", "", "", "bold")
 
-" column separating splits
 call s:H("VertSplit", "", s:darkbg, "")
-" visually selected lines
 call s:H("Visual", s:lightfg, s:lightblue, "") 
 
-" current match in wildmenu completion
 call s:H("WildMenu", s:magenta, "", "")
-" warning messages
 call s:H("WarningMsg", s:yellow, s:negative, "bold")
 
-" Default Syntax Groups 
+" Syntax
 " ------------------------------------------------------------------------------
-" Note: By default, unspecified syntax groups inherit values of the preferred group
-" see :help syntax for further explanation
-" Who inherits what is outlined in the accompanying comments
 
 call s:H("Comment", s:darkfg, "", "")
 
 call s:H("Constant", s:cyan, "", "")
-"
-" any string
-" inherits constant by default
+" the following groups inherit constant if commented out
 call s:H("String", s:lightgreen, "", "")
-"
-" any single character: 'c', '\n'
-" inherits constant by default
 call s:H("Character", "", "", "bold")
-
-" any number, including unit
-" inherits constant by default
 call s:H("Number", "", "", "bold")
-
-" any boolean: TRUE, false
-" inherits constant by default
 " call s:H("Boolean", s:boolean, "", "")
+call s:H("Float", "", "", "bold")
 
-" call s:H("Float", s:float, "", "")
-hi! link Float Number
-" a floating point constant: 2.3e10
-" inherits constant by default
 
-" any variable name
 call s:H("Identifier", s:lightred, "", "")
-
-" any function, method, class
-" inherits identifier by default
+" the following groups inherit identifier if commented out
 call s:H("Function", s:orange, "", "")
 
-" any statement
 call s:H("Statement", s:lightblue, "", "")
-
-" if, then, else, endif, switch, etc.
-" inherits statement by default
+" the following groups inherit statement if commented out
 " call s:H("Conditional", s:statement, "", "")
-
-" for, do, while, etc.
-" inherits statement by default
 " call s:H("Repeat", s:repeat, "", "")
-
-" case, default, etc.
-" inherits statement by default
 " call s:H("Label", s:label, "", "")
-
-" "sizeof", "+", "*", etc.
-" inherits statement by default
 " call s:H("Operator", s:operator, "", "")
-
-" any other keyword
-" inherits statement by default
 call s:H("Keyword", s:cyan, "", "")
-
-" try, catch, throw
-" inherits statement by default
 " call s:H("Exception", s:exception, "", "")
 
-" generic preprocessor
 call s:H("PreProc", s:cyan, "", "")
-
-" inherits preproc by default
+" the following groups inherit preproc if commented out
 " call s:H("Include", s:include, "", "")
-
-" inherits preproc by default
 " call s:H("Define", s:define, "", "")
-
-" inherits preproc by default
 " call s:H("Macro", s:macro, "", "")
-
-" inherits preproc by default
 " call s:H("PreCondit", s:precondit, "", "")
 
-" int, long, char, etc.
 call s:H("Type", s:yellow, "", "")
-
-" static, register, volatile, etc.
-" inherits type by default
+" the following groups inherit type if commented out
 " call s:H("StorageClass", s:storageclass, "", "")
-
-" struct, union, enum, etc.
-" inherits type by default
 " call s:H("Structure", s:structure, "", "")
-
-" A typedef
-" inherits type by default
 " call s:H("Typedef", s:typedef, "", "")
 
-" any special symbol
 call s:H("Special", s:orange, "", "")
-
-" inherits special by default
+" the following groups inherit special if commented out
 " call s:H("SpecialChar", s:specialchar, "", "")
-
-" inherits special by default
 " call s:H("Tag", s:tag, "", "")
-
-" inherits special by default
 call s:H("Delimiter", "", "", "")
-
-" inherits special by default
 " call s:H("SpecialComment", s:specialcomment, "", "")
-
-" inherits special by default
 call s:H("Debug", s:yellow, "", "")
 
 call s:H("Underlined", s:lightblue, "", "underline")
