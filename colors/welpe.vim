@@ -28,12 +28,6 @@ let colors_name = "welpe"
 if !exists('g:welpe_statusline')
   let g:welpe_statusline = 1
 endif
-if !exists('g:welpe_use_italics')
-    let g:welpe_use_italics = 0
-endif
-" if !exists('g:welpe_statusline')
-"   let g:welpe_statusline
-" endif
 
 " highlighting function
 " ------------------------------------------------------------------------------
