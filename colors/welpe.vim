@@ -222,7 +222,7 @@ let s:yellow   = s:_shalimar      " #ffffaf
 let s:darkblue = s:_darkblue      " #000087
 let s:lightblue     = s:_maya          " #87afff
 
-let s:magenta  = s:_mediumorchid  " #af5fd7
+let s:magenta  = s:_palepink      " #ff87af
 
 let s:cyan     = s:_paleturquoise " #afffff
 
