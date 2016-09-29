@@ -491,7 +491,7 @@ hi! link vimFuncSID vimFunc
 hi! link vimFunction vimFunc
 hi! link vimUserFunc vimFunc
 hi! link vimIsCommand Statement
-hi! link vimOperParen Identifier
+hi! link vimOperParen Delimiter
 hi! link vimCommentTitle Title
 hi! link vimHiBang Special
 hi! link vimCmdSep Delimiter
@@ -529,8 +529,11 @@ call s:H("htmlItalic", "", "", "italic")
 
 " markdown
 " ------------------------------------------------------------------------------
-hi! link markdownCode Identifier
-call s:H("markdownItalic", "", "", "italic")
+call s:H("markdownCode", "", s:lightbg, "")
+hi! link markdownCodeBlock markdownCode
+hi! link markdownItalicDelimiter Noise
+hi! link markdownBoldDelimiter Noise
+hi! link markdownUrl String
  
 " asciidoc
 hi! link asciidocQuotedEmphasized2 String
@@ -811,7 +814,7 @@ hi! link gitDiffRemoved DiffDelete
 " ------------------------------------------------------------------------------
 call s:H("GitGutterAdd",s:positive,    s:darkbg,"")
 call s:H("GitGutterChange",s:neutral,  s:darkbg,"")
-call s:H("GitGutterDelete",s:lightred, s:darkbg,"")
+call s:H("GitGutterDelete",s:negative, s:darkbg,"")
 hi! link GitGutterChangeDelete GitGutterDelete
 
 " pug
