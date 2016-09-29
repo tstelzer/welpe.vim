@@ -524,10 +524,11 @@ hi! link vimCmdSep Delimiter
 " ------------------------------------------------------------------------------
 call s:H("htmlBold", "", "", "bold")
 call s:H("htmlItalic", "", "", "italic")
-" htmlTag          
-" htmlEndTag       
-" htmlTagN         
-" htmlTagName      
+hi! link htmlTag Statement
+hi! link htmlTagName htmlTag
+hi! link htmlTagN htmlTag
+hi! link htmlEndTag htmlTag
+hi! link htmlSpecialChar Character
 " htmlSpecialTagName
 " htmlArg          
 " javaScript       
@@ -670,7 +671,9 @@ hi! link cssUnitDecorators Delimiter
 
 " Php
 " ------------------------------------------------------------------------------
+hi! link phpVarSelector Identifier
 hi! link phpParent Delimiter
+hi! link phpFunction Normal
 
 " vim-sneak
 " ------------------------------------------------------------------------------
