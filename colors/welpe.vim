@@ -32,55 +32,34 @@ endif
 " highlighting function
 " ------------------------------------------------------------------------------
 function! s:H(group,fg,bg,style) 
-" group = Syntax Group
-" fg = Foreground Color
-" bg = Background Color
-" style = Font Style
 
-    " foreground is NOT empty
-    if !empty(a:fg)
-        let l:gfg = a:fg[0]
-        let l:cfg = a:fg[1]
-    else
-        let l:gfg = "NONE"
-        let l:cfg = "NONE"
-    endif
+  if empty(a:fg)
+    let l:guifg = "NONE"
+    let l:ctermfg = "NONE"
+  else
+    let l:guifg = a:fg[0]
+    let l:ctermfg = a:fg[1]
+  endif
 
-    " background is NOT empty
-    if !empty(a:bg)
-        let l:gbg = a:bg[0]
-        let l:cbg = a:bg[1]
-    " background IS empty
-    else
-        let l:gbg = "NONE"
-        let l:cbg = "NONE"
-    endif
+  if empty(a:bg)
+    let l:guibg = "NONE"
+    let l:ctermbg = "NONE"
+  else
+    let l:guibg = a:bg[0]
+    let l:ctermbg = a:bg[1]
+  endif
 
-    " all text is rendered bold
-    if g:welpe_all_bold == 1
-        let l:gstyle = "bold"
-        let l:cstyle = "bold"
-    else
-        if !empty(a:style)
-            " no italics should be used
-            if a:style == "italic" && g:welpe_use_italics == 0
-                let l:gstyle = "NONE"
-                let l:cstyle = "NONE"
-            " style is NOT empty
-            else
-                let l:gstyle = a:style
-                let l:cstyle = a:style
-            endif
-        " style IS empty
-        else
-            let l:gstyle = "NONE"
-            let l:cstyle = "NONE"
-        endif
-    endif
+  if empty(a:style)
+    let l:gstyle = "NONE"
+    let l:cstyle = "NONE"
+  else
+    let l:gstyle = a:style
+    let l:cstyle = a:style
+  endif
 
-    execute "hi ".a:group." guifg=".l:gfg." ctermfg=".l:cfg." guibg=".l:gbg.
-                \ " ctermbg=".l:cbg." gui=".l:gstyle." term=".l:cstyle
-endfun
+  execute "hi ".a:group." guifg=".l:guifg." ctermfg=".l:ctermfg." guibg=".l:guibg.
+        \ " ctermbg=".l:ctermbg." gui=".l:gstyle." cterm=".l:cstyle
+endfunction
 
 " Grayscale
 " ------------------------------------------------------------------------------
