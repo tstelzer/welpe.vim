@@ -186,10 +186,6 @@ let s:magenta  = s:_palepink      " #ff87af
 
 let s:cyan     = s:_paleturquoise " #afffff
 
-let s:positive = s:lightgreen
-let s:neutral  = s:lightblue
-let s:negative = s:lightred
-
 " UI
 " ------------------------------------------------------------------------------
 
@@ -210,7 +206,7 @@ call s:H("DiffText", "", s:darkblue, "")
 
 call s:H("Directory", s:lightblue, "", "")
 
-call s:H("ErrorMsg", "", s:negative, "")
+call s:H("ErrorMsg", "", s:darkred, "")
 
 call s:H("FoldColumn", "", s:bg, "")
 call s:H("Folded", s:fg, s:lightbg, "")
@@ -235,7 +231,7 @@ call s:H("Question", s:cyan, s:lightbg, "bold")
 call s:H("Search", s:darkbg, s:orange, "")
 call s:H("SignColumn", s:lightfg, s:darkbg, "")
 call s:H("SpecialKey", s:orange, "", "")
-call s:H("SpelBad", s:negative, "", "undercurl")
+call s:H("SpelBad", s:darkred, "", "undercurl")
 call s:H("SpellRare", s:yellow, "", "undercurl")
 call s:H("SpellCap", s:magenta, "", "undercurl")
 call s:H("SpellLocal", s:lightgreen, "", "undercurl")
@@ -261,7 +257,7 @@ call s:H("VertSplit", "", s:darkbg, "")
 call s:H("Visual", s:lightfg, s:lightblue, "") 
 
 call s:H("WildMenu", s:magenta, "", "")
-call s:H("WarningMsg", s:yellow, s:negative, "bold")
+call s:H("WarningMsg", s:yellow, s:darkred, "bold")
 
 " Syntax
 " ------------------------------------------------------------------------------
@@ -315,7 +311,7 @@ call s:H("Underlined", s:lightblue, "", "underline")
 
 call s:H("Ignore", "", "", "")
 
-call s:H("Error", s:yellow, s:negative, "bold")
+call s:H("Error", s:yellow, s:darkred, "")
 
 call s:H("Todo", s:lightfg, s:lightbg, "bold")
 
@@ -659,9 +655,9 @@ hi! link gitDiffRemoved DiffDelete
 
 " gitgutter
 " ------------------------------------------------------------------------------
-call s:H("GitGutterAdd",s:positive,    s:darkbg,"")
-call s:H("GitGutterChange",s:neutral,  s:darkbg,"")
-call s:H("GitGutterDelete",s:negative, s:darkbg,"")
+call s:H("GitGutterAdd",s:lightgreen,    s:darkbg,"")
+call s:H("GitGutterChange",s:lightblue,  s:darkbg,"")
+call s:H("GitGutterDelete",s:lightred, s:darkbg,"")
 hi! link GitGutterChangeDelete GitGutterDelete
 
 " pug
