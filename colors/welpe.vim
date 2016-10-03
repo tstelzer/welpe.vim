@@ -210,7 +210,7 @@ call s:H("DiffText", "", s:darkblue, "")
 
 call s:H("Directory", s:lightblue, "", "")
 
-call s:H("ErrorMsg", s:yellow, s:negative, "")
+call s:H("ErrorMsg", "", s:negative, "")
 
 call s:H("FoldColumn", "", s:bg, "")
 call s:H("Folded", s:fg, s:lightbg, "")
