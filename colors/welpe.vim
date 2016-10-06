@@ -56,10 +56,11 @@ function! s:H(group,fg,bg,style,special)
     let l:gstyle = a:style
     let l:cstyle = a:style
   endif
+
   if empty(a:special)
     let l:guisp = s:darkred[0]
   else
-    let l:guisp = a:special
+    let l:guisp = a:special[0]
   endif
 
   execute "hi ".a:group." guifg=".l:guifg." ctermfg=".l:ctermfg." guibg=".l:guibg.
