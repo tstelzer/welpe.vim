@@ -305,7 +305,7 @@ call s:H("Special", s:orange, "", "")
 " call s:H("Tag", s:tag, "", "")
 call s:H("Delimiter", "", "", "")
 " call s:H("SpecialComment", s:specialcomment, "", "")
-call s:H("Debug", s:yellow, "", "")
+call s:H("Debug", "", s:lightbg, "")
 
 call s:H("Underlined", s:lightblue, "", "underline")
 
