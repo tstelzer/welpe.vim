@@ -31,7 +31,7 @@ endif
 
 " highlighting function
 " ------------------------------------------------------------------------------
-function! s:H(group,fg,bg,style)
+function! s:H(group,fg,bg,style,special)
 
   if empty(a:fg)
     let l:guifg = "NONE"
@@ -56,9 +56,14 @@ function! s:H(group,fg,bg,style)
     let l:gstyle = a:style
     let l:cstyle = a:style
   endif
+  if empty(a:special)
+    let l:guisp = s:darkred[0]
+  else
+    let l:guisp = a:special
+  endif
 
   execute "hi ".a:group." guifg=".l:guifg." ctermfg=".l:ctermfg." guibg=".l:guibg.
-        \ " ctermbg=".l:ctermbg." gui=".l:gstyle." cterm=".l:cstyle
+        \ " ctermbg=".l:ctermbg." gui=".l:gstyle." cterm=".l:cstyle." guisp=".l:guisp
 endfunction
 
 " Grayscale
