@@ -368,7 +368,7 @@ hi! link htmlSpecialChar Character
 
 " markdown
 " ------------------------------------------------------------------------------
-call s:H("markdownCode", "", s:lightbg, "")
+call s:H("markdownCode", "", s:darkbg, "")
 hi! link markdownCodeBlock markdownCode
 hi! link markdownItalicDelimiter Noise
 hi! link markdownBoldDelimiter Noise
