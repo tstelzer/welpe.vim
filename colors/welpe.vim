@@ -516,11 +516,9 @@ hi! link phpFunction Normal
 
 " vim-sneak
 " ------------------------------------------------------------------------------
-hi! link SneakPluginTarget IncSearch
-hi! link SneakStreakTarget Identifier
-hi! link SneakPluginScope IncSearch
-hi! link SneakStreakMask SpecialKey
-" hi! link SneakStreakStatusLine
+hi! link Sneak IncSearch
+hi! link SneakScope IncSearch
+hi! link SneakLabel IncSearch
 
 " incsearch
 " ------------------------------------------------------------------------------
