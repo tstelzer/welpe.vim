@@ -63,8 +63,11 @@ function! s:H(group,fg,bg,style,special)
     let l:guisp = a:special[0]
   endif
 
-  execute "hi ".a:group." guifg=".l:guifg." ctermfg=".l:ctermfg." guibg=".l:guibg.
-        \ " ctermbg=".l:ctermbg." gui=".l:gstyle." cterm=".l:cstyle." guisp=".l:guisp
+  execute "hi ".a:group
+        \ ." guifg=".l:guifg." ctermfg=".l:ctermfg
+        \ ." guibg=".l:guibg." ctermbg=".l:ctermbg
+        \ ." gui=".l:gstyle." cterm=".l:cstyle
+        \ ." guisp=".l:guisp
 endfunction
 
 " Grayscale
