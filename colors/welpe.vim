@@ -46,7 +46,7 @@ if !exists("*s:H")
           \ : a:fg[0]
     let l:ctermfg = empty(a:fg) ? "NONE" : a:fg[1]
 
-    let l:guibg = empty(a:bg) ? "NONE" : a:bg[0]
+    let l:guibg   = empty(a:bg) ? "NONE" : a:bg[0]
     let l:ctermbg = empty(a:bg) ? "NONE" : a:bg[1]
 
     let l:gstyle = empty(a:style) ? "NONE" : a:style
@@ -164,30 +164,30 @@ let s:_lightcyan     = [ '#d7ffff', 195, 14, 6 ]
 " PALETTE
 " -------
 
-let s:lightfg  = s:_truewhite " #ffffff
-let s:fg       = s:_gray21        " #dadada
+let s:lightfg    = s:_truewhite     " #ffffff
+let s:fg         = s:_gray21        " #dadada
 
-let s:neutral   = s:_gray10
+let s:neutral    = s:_gray10
 
-let s:lightbg  = s:_gray4         " #3a3a3a
-let s:bg       = s:_gray2         " #262626
-let s:darkbg   = s:_gray1         " #1c1c1c
+let s:lightbg    = s:_gray4         " #3a3a3a
+let s:bg         = s:_gray2         " #262626
+let s:darkbg     = s:_gray1         " #1c1c1c
 
-let s:darkred  = s:_maroon        " #5f0000
-let s:lightred = s:_roman         " #d75f5f
+let s:darkred    = s:_maroon        " #5f0000
+let s:lightred   = s:_roman         " #d75f5f
 
-let s:darkgreen= s:_darkgreen     " #005f00
+let s:darkgreen  = s:_darkgreen     " #005f00
 let s:lightgreen = s:_moss          " #afd7af
 
-let s:orange   = s:_orange        " #ffaf00
-let s:yellow   = s:_shalimar      " #ffffaf
+let s:orange     = s:_orange        " #ffaf00
+let s:yellow     = s:_shalimar      " #ffffaf
 
-let s:darkblue = s:_darkblue      " #000087
-let s:lightblue     = s:_maya          " #87afff
+let s:darkblue   = s:_darkblue      " #000087
+let s:lightblue  = s:_maya          " #87afff
 
-let s:magenta  = s:_palepink      " #ff87af
+let s:magenta    = s:_palepink      " #ff87af
 
-let s:cyan     = s:_paleturquoise " #afffff
+let s:cyan       = s:_paleturquoise " #afffff
 
 " INTERFACE
 " ---------
