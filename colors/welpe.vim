@@ -319,8 +319,17 @@ call s:H("Todo", s:lightfg, s:lightbg, "bold", "")
 hi link Noise Normal
 
 
-" vimscript
-" ------------------------------------------------------------------------------
+" QUICKFIX
+" --------
+
+hi! link qfLineNr LineNr
+hi! link qfFileName Directory
+hi! link qfError ErrorMsg
+hi! link qfSeparator VertSplit
+
+" VIMSCRIPT
+" ---------
+
 hi! link vimSet Normal
 hi! link vimSetSep Delimiter
 hi! link vimFunc Function
