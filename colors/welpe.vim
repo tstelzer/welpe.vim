@@ -171,7 +171,7 @@ let s:neutral   = s:_gray10
 
 let s:lightbg  = s:_gray4         " #3a3a3a
 let s:bg       = s:_gray2         " #262626
-let s:darkbg   = s:_gray0         " #121212
+let s:darkbg   = s:_gray1         " #1c1c1c
 
 let s:darkred  = s:_maroon        " #5f0000
 let s:lightred = s:_roman         " #d75f5f
