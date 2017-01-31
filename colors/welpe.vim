@@ -216,13 +216,13 @@ call s:H("Folded", s:fg, s:lightbg, "", "")
 
 call s:H("IncSearch", s:darkbg, s:orange, "", "")
 
-call s:H("LineNr", s:darkfg, s:darkbg, "", "")
+call s:H("LineNr", s:neutral, s:darkbg, "", "")
 
 call s:H("MatchParen", s:orange, s:lightbg, "bold", "")
-call s:H("ModeMsg", s:lightblue, s:darkbg, "", "")
-call s:H("MoreMsg", s:lightblue, s:darkbg, "", "")
+call s:H("ModeMsg", s:lightblue, s:bg, "", "")
+call s:H("MoreMsg", s:lightblue, s:bg, "", "")
 
-call s:H("NonText", s:orange, "", "", "")
+call s:H("NonText", s:neutral, "", "", "")
 
 call s:H("Pmenu", s:lightblue, s:lightbg, "", "")
 call s:H("PmenuSbar", "", s:lightbg, "", "")
@@ -231,41 +231,33 @@ call s:H("PmenuThumb", s:lightgreen, "", "", "")
 
 call s:H("Question", s:cyan, s:lightbg, "bold", "")
 
-call s:H("Search", s:darkbg, s:orange, "", "")
-call s:H("SignColumn", s:lightfg, s:darkbg, "", "")
+call s:H("Search", s:darkbg, s:yellow, "", "")
+hi link SignColumn CursorLineNr
+" call s:H("SignColumn", s:lightfg, s:darkbg, "", "")
 call s:H("SpecialKey", s:orange, "", "", "")
-call s:H("SpellBad", "", "", "undercurl", s:darkred)
-call s:H("SpellRare", "", "", "undercurl", s:magenta)
-call s:H("SpellCap", "", "", "undercurl", s:lightblue)
-call s:H("SpellLocal", s:lightgreen, "", "undercurl", s:lightgreen)
+call s:H("SpellBad", s:lightred, "", "undercurl", s:lightred)
+call s:H("SpellRare", s:lightgreen, "", "undercurl", s:lightgreen)
+call s:H("SpellCap", s:lightblue, "", "undercurl", s:lightblue)
+call s:H("SpellLocal", "", "", "undercurl", "")
 
-call s:H("StatusLine", s:lightfg, s:darkbg, "", "")
-call s:H("StatusLineNC", s:darkfg, s:darkbg, "", "")
-
-if exists('g:welpe_statusline') && g:welpe_statusline == 1
-  " mirrors Special, gets attention
-  call s:H("User1", s:orange, s:darkbg, "", "")
-  " mirros Comment, unintrusive information
-  call s:H("User2", s:darkfg, s:darkbg, "", "")
-  " active
-  call s:H("User3", s:cyan, s:darkbg, "", "")
-endif
+call s:H("StatusLine", s:darkbg, s:lightgreen, "", "")
+call s:H("StatusLineNC", s:neutral, s:darkbg, "", "")
 
 call s:H("TabLineSel", s:lightfg, s:darkbg, "", "")
-call s:H("TabLine", s:darkfg, s:darkbg, "", "")
+call s:H("TabLine", s:neutral, s:darkbg, "", "")
 call s:H("TabLineFill", s:fg, s:darkbg, "", "")
 call s:H("Title", "", "", "bold", "")
 
-call s:H("VertSplit", "", s:darkbg, "", "")
+call s:H("VertSplit", s:neutral, "", "", "")
 call s:H("Visual", s:lightfg, s:lightblue, "", "")
 
 call s:H("WildMenu", s:magenta, "", "", "")
-call s:H("WarningMsg", s:yellow, s:darkred, "bold", "")
+call s:H("WarningMsg", s:yellow, s:darkred, "", "")
 
 " SYNTAX
 " ------
 
-call s:H("Comment", s:darkfg, "", "", "")
+call s:H("Comment", s:neutral, "", "", "")
 
 call s:H("Constant", s:cyan, "", "", "")
 " the following groups inherit constant if commented out
@@ -304,7 +296,7 @@ call s:H("Type", s:yellow, "", "", "")
 
 call s:H("Special", s:orange, "", "", "")
 " the following groups inherit special if commented out
-" call s:H("SpecialChar", s:specialchar, "", "")
+" call s:H("SpecialChar", s:neutral, "", "")
 " call s:H("Tag", s:tag, "", "")
 call s:H("Delimiter", "", "", "", "")
 " call s:H("SpecialComment", s:specialcomment, "", "")
