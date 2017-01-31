@@ -164,7 +164,7 @@ let s:_lightcyan     = [ '#d7ffff', 195, 14, 6 ]
 " PALETTE
 " -------
 
-let s:lightfg  = s:_white         " #eeeeee
+let s:lightfg  = s:_truewhite " #ffffff
 let s:fg       = s:_gray21        " #dadada
 let s:darkfg   = s:_gray10        " #808080
 
