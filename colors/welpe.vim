@@ -209,7 +209,7 @@ call s:H("DiffText", "", s:darkblue, "", "")
 
 call s:H("Directory", s:lightblue, "", "", "")
 
-call s:H("ErrorMsg", s:yellow, s:darkred, "bold", "")
+call s:H("ErrorMsg", s:lightred, "", "bold", "")
 
 call s:H("FoldColumn", "", s:bg, "", "")
 call s:H("Folded", s:fg, s:lightbg, "", "")
@@ -229,7 +229,7 @@ call s:H("PmenuSbar", "", s:lightbg, "", "")
 call s:H("PmenuSel", s:orange, s:lightbg, "", "")
 call s:H("PmenuThumb", s:lightgreen, "", "", "")
 
-call s:H("Question", s:cyan, s:lightbg, "bold", "")
+call s:H("Question", s:cyan, "", "bold", "")
 
 call s:H("Search", s:darkbg, s:yellow, "", "")
 hi link SignColumn CursorLineNr
@@ -252,7 +252,7 @@ call s:H("VertSplit", s:neutral, "", "", "")
 call s:H("Visual", s:lightfg, s:lightblue, "", "")
 
 call s:H("WildMenu", s:magenta, "", "", "")
-call s:H("WarningMsg", s:yellow, s:darkred, "", "")
+call s:H("WarningMsg", s:lightred, "", "", "")
 
 " SYNTAX
 " ------
@@ -300,7 +300,7 @@ call s:H("Special", s:orange, "", "", "")
 " call s:H("Tag", s:tag, "", "")
 call s:H("Delimiter", "", "", "", "")
 " call s:H("SpecialComment", s:specialcomment, "", "")
-call s:H("Debug", "", s:lightbg, "", "")
+call s:H("Debug", s:yellow, s:darkbg, "", "")
 
 call s:H("Underlined", s:lightblue, "", "underline", "")
 
@@ -476,7 +476,7 @@ hi! link CtrlPBufferCurMod Title
 " -----------
 
 hi! link NeomakeError Error
-hi! link NeomakeWarning WarningMsg
+hi! link NeomakeWarning Debug
 hi! link NeomakeInfo Question
 hi! link NeomakeMessage Normal
 
