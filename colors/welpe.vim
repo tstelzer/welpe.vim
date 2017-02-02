@@ -66,6 +66,7 @@ endif
 " ---------
 
 " Schema: s:<name> = [ '<hex>', <256term>, <16term>, <8term> ]
+" 16 and 8 are currently unused
 
 let s:_trueblack = [ '#000000', 0, 0, 0]
 let s:_black     = [ '#080808', 232, 0, 0 ]
@@ -192,123 +193,124 @@ let s:cyan       = s:_paleturquoise " #afffff
 " INTERFACE
 " ---------
 
-call s:H("Normal", s:fg, s:bg, "", "")
+" call s:H(<Group>,      <foreground>, <background>, <style>,     <special>)
 
-call s:H("ColorColumn", "", s:lightbg, "", "")
-call s:H("Conceal", "", "", "", "")
-call s:H("Cursor", s:darkbg, s:fg, "", "")
-call s:H("iCursor", s:darkbg, s:fg, "", "")
-call s:H("CursorColumn", "", s:lightbg, "", "")
-call s:H("CursorLine", "", s:lightbg, "", "")
-call s:H("CursorLineNr", s:lightfg, s:darkbg, "", "")
+call s:H("Normal",       s:fg,         s:bg,         "",          "")
 
-call s:H("DiffAdd", "", s:darkgreen, "", "")
-call s:H("DiffChange", "", "", "", "")
-call s:H("DiffDelete", "", s:darkred, "", "")
-call s:H("DiffText", "", s:darkblue, "", "")
+call s:H("ColorColumn",  "",           s:lightbg,    "",          "")
+call s:H("Conceal",      "",           "",           "",          "")
+call s:H("Cursor",       s:darkbg,     s:fg,         "",          "")
+call s:H("iCursor",      s:darkbg,     s:fg,         "",          "")
+call s:H("CursorColumn", "",           s:lightbg,    "",          "")
+call s:H("CursorLine",   "",           s:lightbg,    "",          "")
+call s:H("CursorLineNr", s:lightfg,    s:darkbg,     "",          "")
 
-call s:H("Directory", s:lightblue, "", "", "")
+call s:H("DiffAdd",      "",           s:darkgreen,  "",          "")
+call s:H("DiffChange",   "",           "",           "",          "")
+call s:H("DiffDelete",   "",           s:darkred,    "",          "")
+call s:H("DiffText",     "",           s:darkblue,   "",          "")
 
-call s:H("ErrorMsg", s:lightred, "", "bold", "")
+call s:H("Directory",    s:lightblue,  "",           "",          "")
 
-call s:H("FoldColumn", "", s:bg, "", "")
-call s:H("Folded", s:fg, s:lightbg, "", "")
+call s:H("ErrorMsg",     s:lightred,   "",           "bold",      "")
 
-call s:H("IncSearch", s:darkbg, s:orange, "", "")
+call s:H("FoldColumn",   "",           s:bg,         "",          "")
+call s:H("Folded",       s:fg,         s:lightbg,    "",          "")
 
-call s:H("LineNr", s:neutral, s:darkbg, "", "")
+call s:H("IncSearch",    s:darkbg,     s:orange,     "",          "")
 
-call s:H("MatchParen", s:orange, s:lightbg, "bold", "")
-call s:H("ModeMsg", s:lightblue, s:bg, "", "")
-call s:H("MoreMsg", s:lightblue, s:bg, "", "")
+call s:H("LineNr",       s:neutral,    s:darkbg,     "",          "")
 
-call s:H("NonText", s:neutral, "", "", "")
+call s:H("MatchParen",   s:orange,     s:lightbg,    "bold",      "")
+call s:H("ModeMsg",      s:lightblue,  s:bg,         "",          "")
+call s:H("MoreMsg",      s:lightblue,  s:bg,         "",          "")
 
-call s:H("Pmenu", s:lightblue, s:lightbg, "", "")
-call s:H("PmenuSbar", "", s:lightbg, "", "")
-call s:H("PmenuSel", s:orange, s:lightbg, "", "")
-call s:H("PmenuThumb", s:lightgreen, "", "", "")
+call s:H("NonText",      s:neutral,    "",           "",          "")
 
-call s:H("Question", s:cyan, "", "bold", "")
+call s:H("Pmenu",        s:lightblue,  s:lightbg,    "",          "")
+call s:H("PmenuSbar",    "",           s:lightbg,    "",          "")
+call s:H("PmenuSel",     s:orange,     s:lightbg,    "",          "")
+call s:H("PmenuThumb",   s:lightgreen, "",           "",          "")
 
-call s:H("Search", s:darkbg, s:yellow, "", "")
-hi link SignColumn CursorLineNr
-" call s:H("SignColumn", s:lightfg, s:darkbg, "", "")
-call s:H("SpecialKey", s:orange, "", "", "")
-call s:H("SpellBad", s:lightred, "", "undercurl", s:lightred)
-call s:H("SpellRare", s:lightgreen, "", "undercurl", s:lightgreen)
-call s:H("SpellCap", s:lightblue, "", "undercurl", s:lightblue)
-call s:H("SpellLocal", "", "", "undercurl", "")
+call s:H("Question",     s:cyan,       "",           "bold",      "")
 
-call s:H("StatusLine", s:darkbg, s:lightgreen, "", "")
-call s:H("StatusLineNC", s:neutral, s:darkbg, "", "")
+call s:H("Search",       s:darkbg,     s:yellow,     "",          "")
+call s:H("SignColumn",   s:lightfg,    s:darkbg,     "",          "")
+call s:H("SpecialKey",   s:orange,     "",           "",          "")
+call s:H("SpellBad",     s:lightred,   "",           "undercurl", s:lightred)
+call s:H("SpellRare",    s:lightgreen, "",           "undercurl", s:lightgreen)
+call s:H("SpellCap",     s:lightblue,  "",           "undercurl", s:lightblue)
+call s:H("SpellLocal",   "",           "",           "undercurl", "")
 
-call s:H("TabLineSel", s:lightfg, s:darkbg, "", "")
-call s:H("TabLine", s:neutral, s:darkbg, "", "")
-call s:H("TabLineFill", s:fg, s:darkbg, "", "")
-call s:H("Title", "", "", "bold", "")
+call s:H("StatusLine",   s:darkbg,     s:lightgreen, "",          "")
+call s:H("StatusLineNC", s:neutral,    s:darkbg,     "",          "")
 
-call s:H("VertSplit", s:neutral, "", "", "")
-call s:H("Visual", s:lightfg, s:lightblue, "", "")
+call s:H("TabLineSel",   s:lightfg,    s:darkbg,     "",          "")
+call s:H("TabLine",      s:neutral,    s:darkbg,     "",          "")
+call s:H("TabLineFill",  s:fg,         s:darkbg,     "",          "")
+call s:H("Title",        "",           "",           "bold",      "")
 
-call s:H("WildMenu", s:magenta, "", "", "")
-call s:H("WarningMsg", s:lightred, "", "", "")
+call s:H("VertSplit",    s:neutral,    "",           "",          "")
+call s:H("Visual",       s:lightfg,    s:lightblue,  "",          "")
+
+call s:H("WildMenu",     s:magenta,    "",           "",          "")
+call s:H("WarningMsg",   s:lightred,   "",           "",          "")
 
 " SYNTAX
 " ------
 
-call s:H("Comment", s:neutral, "", "", "")
+call s:H("Comment",          s:neutral,        "",        "",          "")
 
-call s:H("Constant", s:cyan, "", "", "")
+call s:H("Constant",         s:cyan,           "",        "",          "")
 " the following groups inherit constant if commented out
-call s:H("String", s:lightgreen, "", "", "")
-call s:H("Character", "", "", "bold", "")
-call s:H("Number", "", "", "bold", "")
-" call s:H("Boolean", s:boolean, "", "")
-call s:H("Float", "", "", "bold", "")
+call s:H("String",           s:lightgreen,     "",        "",          "")
+call s:H("Character",        "",               "",        "bold",      "")
+call s:H("Number",           "",               "",        "bold",      "")
+" call s:H("Boolean",        s:boolean,        "",        "")
+call s:H("Float",            "",               "",        "bold",      "")
 
 
-call s:H("Identifier", s:lightred, "", "", "")
+call s:H("Identifier",       s:lightred,       "",        "",          "")
 " the following groups inherit identifier if commented out
-call s:H("Function", s:orange, "", "", "")
+call s:H("Function",         s:orange,         "",        "",          "")
 
-call s:H("Statement", s:lightblue, "", "", "")
+call s:H("Statement",        s:lightblue,      "",        "",          "")
 " the following groups inherit statement if commented out
-" call s:H("Conditional", s:statement, "", "")
-" call s:H("Repeat", s:repeat, "", "")
-" call s:H("Label", s:label, "", "")
-" call s:H("Operator", s:operator, "", "")
-call s:H("Keyword", s:cyan, "", "", "")
-" call s:H("Exception", s:exception, "", "")
+" call s:H("Conditional",    s:statement,      "",        "")
+" call s:H("Repeat",         s:repeat,         "",        "")
+" call s:H("Label",          s:label,          "",        "")
+" call s:H("Operator",       s:operator,       "",        "")
+call s:H("Keyword",          s:cyan,           "",        "",          "")
+" call s:H("Exception",      s:exception,      "",        "")
 
-call s:H("PreProc", s:cyan, "", "", "")
+call s:H("PreProc",          s:cyan,           "",        "",          "")
 " the following groups inherit preproc if commented out
-" call s:H("Include", s:include, "", "")
-" call s:H("Define", s:define, "", "")
-" call s:H("Macro", s:macro, "", "")
-" call s:H("PreCondit", s:precondit, "", "")
+" call s:H("Include",        s:include,        "",        "")
+" call s:H("Define",         s:define,         "",        "")
+" call s:H("Macro",          s:macro,          "",        "")
+" call s:H("PreCondit",      s:precondit,      "",        "")
 
-call s:H("Type", s:yellow, "", "", "")
+call s:H("Type",             s:yellow,         "",        "",          "")
 " the following groups inherit type if commented out
-" call s:H("StorageClass", s:storageclass, "", "")
-" call s:H("Structure", s:structure, "", "")
-" call s:H("Typedef", s:typedef, "", "")
+" call s:H("StorageClass",   s:storageclass,   "",        "")
+" call s:H("Structure",      s:structure,      "",        "")
+" call s:H("Typedef",        s:typedef,        "",        "")
 
-call s:H("Special", s:orange, "", "", "")
+call s:H("Special",          s:orange,         "",        "",          "")
 " the following groups inherit special if commented out
-" call s:H("SpecialChar", s:neutral, "", "")
-" call s:H("Tag", s:tag, "", "")
-call s:H("Delimiter", "", "", "", "")
-" call s:H("SpecialComment", s:specialcomment, "", "")
-call s:H("Debug", s:yellow, s:darkbg, "", "")
+" call s:H("SpecialChar",    s:neutral,        "",        "")
+" call s:H("Tag",            s:tag,            "",        "")
+call s:H("Delimiter",        "",               "",        "",          "")
+" call s:H("SpecialComment", s:specialcomment, "",        "")
+call s:H("Debug",            s:yellow,         s:darkbg,  "",          "")
 
-call s:H("Underlined", s:lightblue, "", "underline", "")
+call s:H("Underlined",       s:lightblue,      "",        "underline", "")
 
-call s:H("Ignore", "", "", "", "")
+call s:H("Ignore",           "",               "",        "",          "")
 
-call s:H("Error", s:yellow, s:darkred, "", "")
+call s:H("Error",            s:yellow,         s:darkred, "",          "")
 
-call s:H("Todo", s:lightfg, s:lightbg, "bold", "")
+call s:H("Todo",             s:lightfg,        s:lightbg, "bold",      "")
 
 " HELPER SYNTAX
 " -------------
@@ -357,7 +359,7 @@ hi! link markdownCodeBlock markdownCode
 hi! link markdownItalicDelimiter Noise
 hi! link markdownBoldDelimiter Noise
 hi! link markdownUrl String
- 
+
 " --- ASCIIDOC
 " ------------
 
@@ -421,7 +423,7 @@ hi! link scssAmpersand Noise
 
 hi! def link autohotkeyVariable            Identifier
 hi! def link autohotkeyVariableDelimiter   Delimiter
-hi! def link autohotkeyBuiltinVariable     autohotkeyVariable            
+hi! def link autohotkeyBuiltinVariable     autohotkeyVariable
 
 " --- GIT
 " -------
