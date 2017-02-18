@@ -76,64 +76,6 @@ add the following line *after* `:syntax enable`
 
 `colorscheme welpe`
 
-## TESTED PLUGINS
-
-*legend*
-- [x] **tested || works well**
-- [ ] **to-be-tested || awful**
-
-*unlisted plugins might very well still work, depending on what highlight groups
-they are using; the listed are simply the ones that I have tested and / or
-modified*
-
-- [x] [GitGutter](https://github.com/airblade/vim-gitgutter)
-- [x] Diffs: finally readable, see screenshots
-- [x] [vim-sneak](https://github.com/justinmk/vim-sneak) colors consistent with
-search, specifically streak-mode and overlay colors
-- [x] [incsearch](https://github.com/haya14busa/incsearch.vim) colors consistent
-with search
-- [x] [syntastic](https://github.com/scrooloose/syntastic) made the inline-error
-messages less obnoxious
-- [x] [dirvish](https://github.com/justinmk/vim-dirvish) 
-- [ ] [ctrlp](https://github.com/ctrlpvim/ctrlp.vim) would still prefer more
-color, to differentiate folder, file and file type
-
-#### note on lightline support
-
-I have removed the lightline config for the following reasons:
-
-- It is a very specific implementation of a statusline, other plugins get left out
-so I would rather not support any than all of them.
-- I stopped using it myself, so updates would be half-arsed and infrequent.
-- The additional files in the repo could lead to confusion. This is a colorscheme and 
-should only consist of the colorscheme file itself.
-
-On the same note, if you are interested in making your own statusline without using any
-plugin dependencies, check out [this blog post](http://got-ravings.blogspot.de/2008/08/vim-pr0n-making-statuslines-that-own.html).
-
-## TESTED FILETYPES
-
-*legend*
-- [x] **tested** and/or **works well**
-- [ ] **to-be-tested** and/or **awful**
-
-*unlisted filetypes might very well still work, depending on what highlight groups
-they are using; the listed are simply the ones that I have tested and / or
-modified*
-
-**Important:** The effect of color schemes is depending on the runtime files *you* are using. If colors are flawed,
-chances are, you are using "bad" runtime files, many defaults are not up-to-date.
-
-- [x] HTML (recommended: [othree/html5.vim](https://github.com/othree/html5.vim))
-- [x] PHP
-- [x] CSS (recommended: [JulesWang/css.vim](https://github.com/JulesWang/css.vim) and [hail2u/vim-css3-syntax](https://github.com/hail2u/vim-css3-syntax))
-- [x] SCSS (recommended: [cakebaker/scss-syntax.vim](https://github.com/cakebaker/scss-syntax.vim))
-- [x] JavaScript (recommended: [pangloss/vim-javascript](https://github.com/pangloss/vim-javascript))
-- [x] Markdown
-- [ ] Pug (formerly Jade)
-  [ ] Python
-  [ ] Pandoc-things
-
 ## NEXT UP
 
 * fixing python and pandoc
