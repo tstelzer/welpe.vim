@@ -240,8 +240,6 @@ let s:cyan       = s:_paleturquoise " #afffff
 " INTERFACE
 " ---------
 
-" call s:H(<Group>,      <foreground>, <background>, <style>,     <special>)
-
 call s:H("Normal",       s:fg,         s:bg,         "",          "")
 
 call s:H("ColorColumn",  "",           s:lightbg,    "",          "")
@@ -441,10 +439,6 @@ hi! link SneakLabel IncSearch
 " -------------
 
 hi! link IncSearchCursor Visual
-" hi link IncSearchMatch
-" hi link IncSearchMatchReverse
-" hi link IncSearchOnCursor Search
-" hi link IncSearchUnderline
 
 " --- JAVASCRIPT
 " --------------
