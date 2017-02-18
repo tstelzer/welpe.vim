@@ -411,6 +411,11 @@ hi! link markdownUrl String
 hi! link asciidocQuotedEmphasized2 String
 hi! link asciidocQuotedEmphasized1 String
 
+" --- PANDOC
+" ----------
+
+hi! link pandocNoFormatted Function
+
 " --- CSS / SASS
 " --------------
 
