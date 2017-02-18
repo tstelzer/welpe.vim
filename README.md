@@ -30,7 +30,7 @@ Dark color scheme for [vim](https://www.vim.org).
 
 ![#ffffaf](img/SHALIMAR.jpg) `shalimar #ffffaf (229)`
 
-![#808080](img/NEUTRAL.jpg) `neutral #808080 (244)`
+![#808080](img/GRAY10.jpg) `neutral #808080 (244)`
 
 ![#dadada](img/GRAY21.jpg) `gray21 #dadada (253)`
 
