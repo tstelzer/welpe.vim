@@ -1,43 +1,45 @@
 WELPE.vim 
-===========
+==========
 
 Dark color scheme for [vim](https://www.vim.org).
 
-## PALETTE
+PALETTE
+-------
 
-![gray0](img/_gray0.png) `gray0 #121212 (233)`
+![#1c1c1c](http://placehold.it/20/1c1c1c/000000?text=+) `gray1 #121212 (234)`
 
-![gray2](img/_gray2.png) `gray2 #262626 (237)`
+![#262626](http://placehold.it/20/262626/000000?text=+) `gray2 #262626 (237)`
 
-![gray4](img/_gray4.png) `gray4 #3a3a3a (237)`
+![#3a3a3a](http://placehold.it/20/3a3a3a/000000?text=+) `gray4 #262626 (237)`
 
-![darkblue](img/_darkblue.png) `darkblue #000087 (18)`
+![#000087](http://placehold.it/20/000087/000000?text=+) `darkblue #000087 (18)`
 
-![darkgreen](img/_darkgreen.png) `darkgreen #005f00 (22)`
+![#005f00](http://placehold.it/20/005f00/000000?text=+) `darkgreen #005f00 (22)`
 
-![maroon](img/_maroon.png) `maroon #5f0000 (52)`
+![#5f0000](http://placehold.it/20/5f0000/000000?text=+) `maroon #5f0000 (52)`
 
-![maya](img/_maya.png) `maya #87afff (111)`
+![#87afff](http://placehold.it/20/87afff/000000?text=+) `maya #87afff (111)`
 
-![mediumorchid](img/_mediumorchid.png) `medium orchid #af5fd7 (134)`
+![#ff87af ](http://placehold.it/20/ff87af/000000?text=+) `pale pink #ff87af (211)`
 
-![moss](img/_moss.png) `moss #afd7af (151)`
+![#afd7af](http://placehold.it/20/afd7af/000000?text=+) `moss #afd7af (151)`
 
-![paleturqoise](img/_paleturquoise.png) `pale turquoise #afffff (159)`
+![#afffff](http://placehold.it/20/afffff/000000?text=+) `pale turquoise #afffff (159)`
 
-![roman](img/_roman.png) `roman #d75f5f (160)`
+![#d75f5f](http://placehold.it/20/d75f5f/000000?text=+) `roman #d75f5f (160)`
 
-![orange](img/_orange.png) `orange #ffaf00 (214)`
+![#ffaf00](http://placehold.it/20/ffaf00/000000?text=+) `orange #ffaf00 (214)`
 
-![shalimar](img/_shalimar.png) `shalimar #ffffaf (229)`
+![#ffffaf](http://placehold.it/20/ffffaf/000000?text=+) `shalimar #ffffaf (229)`
 
-![gray10](img/_gray10.png) `gray10 #808080 (244)`
+![#808080](http://placehold.it/20/808080/000000?text=+) `neutral #808080 (244)`
 
-![gray21](img/_gray21.png) `gray21 #dadada (253)`
+![#dadada](http://placehold.it/20/dadada/000000?text=+) `gray21 #dadada (253)`
 
-![white](img/_white.png) `white #eeeeee (255)`
+![#ffffff](http://placehold.it/20/ffffff/000000?text=+) `truewhite #ffffff (15)`
 
-## PREVIEW
+PREVIEW
+-------
 
 #### win64 gvim +lightline plugin
 (off the top of my head) relevant settings: 
@@ -67,7 +69,8 @@ Dark color scheme for [vim](https://www.vim.org).
 
 *todo: add console preview*
 
-## INSTALLATION
+INSTALLATION
+------------
 
 #### via vundle
 
@@ -91,7 +94,8 @@ add the following line *after* `:syntax enable`
 
 `colorscheme welpe`
 
-## TESTED PLUGINS
+TESTED PLUGINS
+--------------
 
 *legend*
 - [x] **tested || works well**
@@ -126,7 +130,8 @@ should only consist of the colorscheme file itself.
 On the same note, if you are interested in making your own statusline without using any
 plugin dependencies, check out [this blog post](http://got-ravings.blogspot.de/2008/08/vim-pr0n-making-statuslines-that-own.html).
 
-## TESTED FILETYPES
+TESTED FILETYPES
+----------------
 
 *legend*
 - [x] **tested** and/or **works well**
@@ -142,22 +147,35 @@ chances are, you are using "bad" runtime files, many defaults are not up-to-date
 - [x] HTML (recommended: [othree/html5.vim](https://github.com/othree/html5.vim))
 - [x] PHP
 - [x] CSS (recommended: [JulesWang/css.vim](https://github.com/JulesWang/css.vim) and [hail2u/vim-css3-syntax](https://github.com/hail2u/vim-css3-syntax))
-- [x] SCSS (recommended:
-  [cakebaker/scss-syntax.vim](https://github.com/cakebaker/scss-syntax.vim))
+- [x] SCSS (recommended: [cakebaker/scss-syntax.vim](https://github.com/cakebaker/scss-syntax.vim))
 - [x] JavaScript (recommended: [pangloss/vim-javascript](https://github.com/pangloss/vim-javascript))
-- [ ] Pug (formerly Jade)
 - [x] Markdown
+- [ ] Pug (formerly Jade)
+  [ ] Python
+  [ ] Pandoc-things
 
-## KNOWN PROBLEMS && NOTES
+NEXT UP
+-------
 
-- Diffs are still a bit iffy, largely due to my own restriction to the 256-color-range.
-- My second attempt at making the color scheme work with
-  [ConEmu](https://github.com/Maximus5/ConEmu) was partially successful, but
-  relies on importing the colors. I will supply the relevant file once I feel
-  happy publishing it.
+* fixing python and pandoc
+* everything error/warning
 
 CHANGELOG
 ---------
+
+v0.2.1
+
+    lighten the darkbg color
+    lighten the lightfg color
+
+    remove statusline usergroups
+    colorize statusline with moss green
+
+    make error messages more prevalent
+
+    differentiate search from incsearch
+
+    various smaller fixes
 
 v0.2.0
 
