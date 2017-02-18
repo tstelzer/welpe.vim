@@ -438,7 +438,7 @@ hi! link phpFunction Normal
 
 hi! link Sneak Search
 hi! link SneakLabel IncSearch
-" hi! link SneakScope Comment
+hi! link SneakScope IncSearch
 
 " --- INCSEARCH
 " -------------
