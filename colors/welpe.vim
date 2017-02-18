@@ -14,6 +14,53 @@
 " Version: 0.2.1
 " ------------------------------------------------------------------------------
 
+" ------------------------------------------------------------------------------
+" How this works:
+"
+" Every call to the highlight command is wrapped in the `s:H` function.
+" The function is called like this:
+"
+" call s:H(<Group>, <foreground>, <background>, <style>, <special>)
+"
+"   <Group> is a String, like "Normal". See `:help 'highlight-groups'`.
+"
+"   <foreground> and <background> are names of the welpe palette, like s:bg.
+"     Avoid using direct reference to library colors which start with an
+"     underscore, like s:_darkred; instead bind those to one of the 16 palette
+"     colors.
+"
+"   <style> is one of 'italic', 'bold', 'underline' or 'undercurl'
+"     Note that 'undercurl' is only available in the GUI, and the other three
+"     depend on your choice of font, and your terminal settings.
+"
+"   <special> is the color of 'underline' or 'undercurl' and works only in the
+"     GUI
+"
+" To allow an identical experience between terminal and GUI, this colors
+" scheme limits itself to using exclusively colors from the 256-term palette.
+" For reference, this color chart may be of help:
+" http://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
+"
+" Remembering each of those by hex is silly, so sounding names have been made
+" up, roughly following existing palettes. Hex-values and the corresponding
+" 256-term-values, and additionally 16- and 8-term-values for future
+" reference, are locally available. See Library-section.
+"
+" Note: If you want to change assignments, change the palette by swapping the
+" bound colors with existing colors from the library, or add new colors.
+"
+" For example, to use Venetian Red (#d70000) as a lightred, change the line
+"
+"   let s:lightred = s:_roman
+"
+" to
+"
+"   let s:lightred = s:_venetian
+"
+" Refrain from using library colors directly, to keep the layers separate and
+" sane.
+" ------------------------------------------------------------------------------
+
 " GLOBAL SETTINGS
 " ---------------
 
