@@ -1,76 +1,58 @@
-WELPE.vim 
-==========
+# WELPE.vim
 
 Dark color scheme for [vim](https://www.vim.org).
 
-PALETTE
--------
+## PALETTE
 
-![#1c1c1c](http://placehold.it/20/1c1c1c/000000?text=+) `gray1 #121212 (234)`
+![#1c1c1c](img/GRAY1.jpg) `gray1 #121212 (234)`
 
-![#262626](http://placehold.it/20/262626/000000?text=+) `gray2 #262626 (237)`
+![#262626](img/GRAY2.jpg) `gray2 #262626 (237)`
 
-![#3a3a3a](http://placehold.it/20/3a3a3a/000000?text=+) `gray4 #262626 (237)`
+![#3a3a3a](img/GRAY4.jpg) `gray4 #262626 (237)`
 
-![#000087](http://placehold.it/20/000087/000000?text=+) `darkblue #000087 (18)`
+![#000087](img/DARKBLUE.jpg) `darkblue #000087 (18)`
 
-![#005f00](http://placehold.it/20/005f00/000000?text=+) `darkgreen #005f00 (22)`
+![#005f00](img/DARKGREEN.jpg) `darkgreen #005f00 (22)`
 
-![#5f0000](http://placehold.it/20/5f0000/000000?text=+) `maroon #5f0000 (52)`
+![#5f0000](img/MAROON.jpg) `maroon #5f0000 (52)`
 
-![#87afff](http://placehold.it/20/87afff/000000?text=+) `maya #87afff (111)`
+![#87afff](img/MAYA.jpg) `maya #87afff (111)`
 
-![#ff87af ](http://placehold.it/20/ff87af/000000?text=+) `pale pink #ff87af (211)`
+![#ff87af](img/PALEPINK.jpg) `palepink #ff87af (211)`
 
-![#afd7af](http://placehold.it/20/afd7af/000000?text=+) `moss #afd7af (151)`
+![#afd7af](img/MOSS.jpg) `moss #afd7af (151)`
 
-![#afffff](http://placehold.it/20/afffff/000000?text=+) `pale turquoise #afffff (159)`
+![#afffff](img/PALETURQUOISE.jpg) `paleturquoise #afffff (159)`
 
-![#d75f5f](http://placehold.it/20/d75f5f/000000?text=+) `roman #d75f5f (160)`
+![#d75f5f](img/ROMAN.jpg) `roman #d75f5f (160)`
 
-![#ffaf00](http://placehold.it/20/ffaf00/000000?text=+) `orange #ffaf00 (214)`
+![#ffaf00](img/ORANGE.jpg) `orange #ffaf00 (214)`
 
-![#ffffaf](http://placehold.it/20/ffffaf/000000?text=+) `shalimar #ffffaf (229)`
+![#ffffaf](img/SHALIMAR.jpg) `shalimar #ffffaf (229)`
 
-![#808080](http://placehold.it/20/808080/000000?text=+) `neutral #808080 (244)`
+![#808080](img/NEUTRAL.jpg) `neutral #808080 (244)`
 
-![#dadada](http://placehold.it/20/dadada/000000?text=+) `gray21 #dadada (253)`
+![#dadada](img/GRAY21.jpg) `gray21 #dadada (253)`
 
-![#ffffff](http://placehold.it/20/ffffff/000000?text=+) `truewhite #ffffff (15)`
+![#ffffff](img/TRUEWHITE.jpg) `truewhite #ffffff (15)`
 
-PREVIEW
--------
+## PREVIEW
 
-#### win64 gvim +lightline plugin
-(off the top of my head) relevant settings: 
+    OS: Ubuntu
+    WM: i3wm
+    Terminal: Alacritty, tmux, zsh
 
-      set number relativenumber 
-      set cursorline
+Config: [github.com/tstelzer/dotfiles](https://github.com/tstelzer/dotfiles/blob/master/.vim/vimrc)
 
-###### in splits, with tab open
+* visual mode, with folds
 
-![preview splits and tabs](img/gvim01.png)
+![welpe1](img/welpe1.jpg)
 
-###### visual selection
+* searching, with `incsearch` and `hlsearch`
 
-![preview visual selection](img/gvim02.png)
+![welpe2](img/welpe2.jpg)
 
-###### search, incsearch
-
-![preview searching](img/gvim03.png)
-
-###### sneak plugin
-
-![preview sneak plugin](img/gvim04.gif)
-
-###### ctrlp plugin
-
-![preview ctrlp plugin](img/gvim05.png)
-
-*todo: add console preview*
-
-INSTALLATION
-------------
+## INSTALLATION
 
 #### via vundle
 
@@ -94,8 +76,7 @@ add the following line *after* `:syntax enable`
 
 `colorscheme welpe`
 
-TESTED PLUGINS
---------------
+## TESTED PLUGINS
 
 *legend*
 - [x] **tested || works well**
@@ -130,8 +111,7 @@ should only consist of the colorscheme file itself.
 On the same note, if you are interested in making your own statusline without using any
 plugin dependencies, check out [this blog post](http://got-ravings.blogspot.de/2008/08/vim-pr0n-making-statuslines-that-own.html).
 
-TESTED FILETYPES
-----------------
+## TESTED FILETYPES
 
 *legend*
 - [x] **tested** and/or **works well**
@@ -154,14 +134,12 @@ chances are, you are using "bad" runtime files, many defaults are not up-to-date
   [ ] Python
   [ ] Pandoc-things
 
-NEXT UP
--------
+## NEXT UP
 
 * fixing python and pandoc
 * everything error/warning
 
-CHANGELOG
----------
+## CHANGELOG
 
 v0.2.1
 
