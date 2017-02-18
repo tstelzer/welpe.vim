@@ -40,7 +40,7 @@ Dark color scheme for [vim](https://www.vim.org).
 
     OS: Ubuntu
     WM: i3wm
-    Terminal: Alacritty, tmux, zsh
+    Terminal: Alacritty, tmux + zsh (xterm-256color)
 
 Config: [github.com/tstelzer/dotfiles](https://github.com/tstelzer/dotfiles/blob/master/.vim/vimrc)
 
