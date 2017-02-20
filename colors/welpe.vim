@@ -11,7 +11,6 @@
 " Description: 16color scheme for vim
 " Author: Timm Stelzer <timmstelzer@gmail.com>
 " Source: https://github.com/tstelzer/welpe.vim
-" Version: 0.2.1
 " ------------------------------------------------------------------------------
 
 " ------------------------------------------------------------------------------
