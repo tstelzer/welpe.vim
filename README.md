@@ -32,7 +32,7 @@ Dark color scheme for [vim](https://www.vim.org).
 
 ![#808080](img/GRAY10.jpg) `neutral #808080 (244)`
 
-![#dadada](img/GRAY21.jpg) `gray21 #dadada (253)`
+![#dadada](img/GRAY20.jpg) `gray20 #d0d0d0 (252)`
 
 ![#ffffff](img/TRUEWHITE.jpg) `truewhite #ffffff (15)`
 
