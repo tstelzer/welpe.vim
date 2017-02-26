@@ -205,7 +205,7 @@ let s:_palepink      = [ '#ff87af', 211, 13, 5 ]
 let s:_213           = [ '#ff87ff', 213, 13, 5 ]
 let s:_lavenderrose  = [ '#ffafff', 219, 13, 5 ]
 let s:_cosmos        = [ '#ffd7d7', 224, 13, 5 ]
-let s:_turqoise      = [ '#5fd7ff', 81,  14, 6 ]
+let s:_turquoise     = [ '#5fd7ff', 81,  14, 6 ]
 let s:_lightcyan     = [ '#d7ffff', 195, 14, 6 ]
 
 " PALETTE
