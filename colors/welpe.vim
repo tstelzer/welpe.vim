@@ -457,6 +457,12 @@ hi! link javaScriptTemplateVar StringDelim
 hi! link javaScriptTemplateDelim Identifier
 hi! link javaScriptTemplateString String
 
+" --- PYTHON
+" ----------
+
+hi! link pythonClassVar Keyword
+hi! link pythonStrTemplate String
+
 " --- SCSS
 " --------
 
