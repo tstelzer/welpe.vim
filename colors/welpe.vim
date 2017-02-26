@@ -419,10 +419,10 @@ hi! link pandocNoFormatted Function
 " --------------
 
 hi! link cssVendor cssProp
-hi! link cssSelectorOp cssNoise
-hi! link cssSelectorOp2 cssNoise
-hi! link cssAttrComma cssNoise
-hi! link cssBraces cssNoise
+hi! link cssSelectorOp Noise
+hi! link cssSelectorOp2 Noise
+hi! link cssAttrComma Noise
+hi! link cssBraces Noise
 hi! link cssUnitDecorators Delimiter
 
 " --- PHP
