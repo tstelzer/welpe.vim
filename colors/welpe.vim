@@ -325,7 +325,7 @@ call s:H("Statement",        s:lightblue,      "",        "",          "")
 " call s:H("Label",          s:label,          "",        "")
 hi link Operator Noise
 " call s:H("Operator",       s:operator,       "",        "")
-call s:H("Keyword",          s:cyan,           "",        "",          "")
+call s:H("Keyword",          s:magenta,           "",        "",          "")
 " call s:H("Exception",      s:exception,      "",        "")
 
 call s:H("PreProc",          s:cyan,           "",        "",          "")
@@ -341,7 +341,7 @@ call s:H("Type",             s:yellow,         "",        "",          "")
 " call s:H("Structure",      s:structure,      "",        "")
 " call s:H("Typedef",        s:typedef,        "",        "")
 
-call s:H("Special",          s:orange,         "",        "",          "")
+call s:H("Special",          s:magenta,         "",        "",          "")
 " the following groups inherit special if commented out
 " call s:H("SpecialChar",    s:neutral,        "",        "")
 " call s:H("Tag",            s:tag,            "",        "")
