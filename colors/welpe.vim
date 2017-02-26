@@ -323,8 +323,7 @@ call s:H("Statement",        s:lightblue,      "",        "",          "")
 " call s:H("Conditional",    s:statement,      "",        "")
 " call s:H("Repeat",         s:repeat,         "",        "")
 " call s:H("Label",          s:label,          "",        "")
-hi link Operator Noise
-" call s:H("Operator",       s:operator,       "",        "")
+call s:H("Operator",         "",               "",        "",          "")
 call s:H("Keyword",          s:magenta,           "",        "",          "")
 " call s:H("Exception",      s:exception,      "",        "")
 
