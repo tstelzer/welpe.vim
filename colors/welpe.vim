@@ -212,7 +212,7 @@ let s:_lightcyan     = [ '#d7ffff', 195, 14, 6 ]
 " -------
 
 let s:lightfg    = s:_truewhite     " #ffffff
-let s:fg         = s:_gray21        " #dadada
+let s:fg         = s:_gray20        " #d0d0d0
 
 let s:neutral    = s:_gray10        " #808080
 
