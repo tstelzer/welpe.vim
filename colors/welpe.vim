@@ -386,6 +386,7 @@ hi! link vimCmdSep Delimiter
 
 " --- HTML
 " --------
+" recommended https://github.com/othree/html5.vim
 
 call s:H("htmlBold", "", "", "bold", "")
 call s:H("htmlItalic", "", "", "italic", "")
@@ -412,11 +413,14 @@ hi! link asciidocQuotedEmphasized1 String
 
 " --- PANDOC
 " ----------
+" recommended https://github.com/vim-pandoc/vim-pandoc-syntax
 
 hi! link pandocNoFormatted Function
 
-" --- CSS / SASS
-" --------------
+" --- CSS
+" -------
+" recommended https://github.com/JulesWang/css.vim
+"             hail2u/vim-css3-syntax
 
 hi! link cssVendor cssProp
 hi! link cssSelectorOp Noise
@@ -427,6 +431,8 @@ hi! link cssUnitDecorators Delimiter
 
 " --- PHP
 " -------
+" recommended https://github.com/StanAngeloff/php.vim
+"             https://github.com/Seb-C/better-indent-support-for-php-with-html
 
 hi! link phpVarSelector Identifier
 hi! link phpParent Delimiter
@@ -446,6 +452,7 @@ hi! link IncSearchCursor Visual
 
 " --- JAVASCRIPT
 " --------------
+" recommended https://github.com/pangloss/vim-javascript
 
 hi! link jsFuncCall Function
 hi! link jsFunction Function
@@ -458,12 +465,14 @@ hi! link javaScriptTemplateString String
 
 " --- PYTHON
 " ----------
+" recommended https://github.com/purpleP/python-syntax
 
 hi! link pythonClassVar Keyword
 hi! link pythonStrTemplate String
 
 " --- SCSS
 " --------
+" recommended https://github.com/cakebaker/scss-syntax.vim
 
 hi! link scssMixinParams Delimiter
 hi! link scssSelectorChar Noise
