@@ -467,8 +467,10 @@ hi! link javaScriptTemplateString String
 " ----------
 " recommended https://github.com/purpleP/python-syntax
 
-hi! link pythonClassVar Keyword
 hi! link pythonStrTemplate String
+hi! link pythonInstanceVariable Keyword
+hi! link pythonNone Keyword
+hi! link pythonBoolean Keyword
 
 " --- SCSS
 " --------
