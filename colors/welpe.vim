@@ -360,6 +360,7 @@ call s:H("Todo",             s:lightfg,        s:lightbg, "bold",      "")
 " -------------
 
 hi link Noise Normal
+hi link OptionalParameters Normal
 
 " --- QUICKFIX
 " ------------
