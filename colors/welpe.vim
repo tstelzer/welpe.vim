@@ -546,3 +546,9 @@ hi! link NeomakeMessage Normal
 " -------------
 
 hi! link snipLeadingSpaces Noise
+
+" --- DIFF
+" --------
+
+hi! link DiffAdded DiffAdd
+hi! link diffRemoved DiffDelete
