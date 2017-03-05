@@ -417,6 +417,7 @@ hi! link asciidocQuotedEmphasized1 String
 " recommended https://github.com/vim-pandoc/vim-pandoc-syntax
 
 hi! link pandocNoFormatted Function
+hi! link pandocEmphasis htmlItalic
 
 " --- CSS
 " -------
