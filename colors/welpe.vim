@@ -414,10 +414,10 @@ hi! link asciidocQuotedEmphasized1 String
 
 " --- PANDOC
 " ----------
-" recommended https://github.com/vim-pandoc/vim-pandoc-syntax
 
 hi! link pandocNoFormatted Function
 hi! link pandocEmphasis htmlItalic
+hi! link pandocUListItemBullet Special
 
 " --- CSS
 " -------
