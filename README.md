@@ -68,15 +68,10 @@ Config: [github.com/tstelzer/dotfiles](https://github.com/tstelzer/dotfiles/blob
 
 #### manual download
 
-- place [tstelzer/welpe.vim/master/colors/welpe.vim](https://raw.githubusercontent.com/tstelzer/welpe.vim/master/colors/welpe.vim) in `~/<yourvimdir>/colors/`
+- place [tstelzer/welpe.vim/master/colors/welpe.vim](https://raw.githubusercontent.com/tstelzer/welpe.vim/master/colors/welpe.vim) in `~/.vim/colors/`
 
 #### enable colorscheme
 
 add the following line *after* `:syntax enable`
 
 `colorscheme welpe`
-
-## NEXT UP
-
-* fixing python and pandoc
-* everything error/warning
