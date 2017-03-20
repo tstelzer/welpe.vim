@@ -313,7 +313,6 @@ call s:H("Number",           "",               "",        "bold",      "")
 " call s:H("Boolean",        s:boolean,        "",        "")
 call s:H("Float",            "",               "",        "bold",      "")
 
-
 call s:H("Identifier",       s:lightred,       "",        "",          "")
 " the following groups inherit identifier if commented out
 call s:H("Function",         s:orange,         "",        "",          "")
