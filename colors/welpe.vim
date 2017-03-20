@@ -405,6 +405,7 @@ hi! link markdownCodeBlock markdownCode
 hi! link markdownItalicDelimiter Noise
 hi! link markdownBoldDelimiter Noise
 hi! link markdownUrl String
+hi! link markdownItalic Noise
 
 " --- ASCIIDOC
 " ------------
