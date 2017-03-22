@@ -289,7 +289,7 @@ call s:H("SpellLocal",   "",           "",           "undercurl", "")
 call s:H("StatusLine",   s:darkbg,     s:lightgreen, "",          "")
 call s:H("StatusLineNC", s:neutral,    s:darkbg,     "",          "")
 
-call s:H("TabLineSel",   s:darkbg,     s:fg,         "",          "")
+call s:H("TabLineSel",   s:fg,         s:darkbg,     "",          "")
 call s:H("TabLine",      s:neutral,    s:fg,         "",          "")
 call s:H("TabLineFill",  s:darkbg,     s:fg,         "",          "")
 call s:H("Title",        "",           "",           "bold",      "")
