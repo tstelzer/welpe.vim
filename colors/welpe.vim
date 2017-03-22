@@ -399,12 +399,12 @@ hi! link htmlSpecialChar Character
 " --- MARKDOWN
 " ------------
 
-call s:H("markdownCode", "", s:darkbg, "", "")
+call s:H("markdownCode", s:lightfg, s:lightbg, "", "")
 hi! link markdownCodeBlock markdownCode
 hi! link markdownItalicDelimiter Noise
 hi! link markdownBoldDelimiter Noise
 hi! link markdownUrl String
-hi! link markdownItalic Noise
+hi! link markdownItalic htmlItalic
 
 " --- ASCIIDOC
 " ------------
