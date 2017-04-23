@@ -361,6 +361,9 @@ call s:H("Todo",             s:lightfg,        s:lightbg, "bold",      "")
 hi link Noise Normal
 hi link OptionalParameters Normal
 
+call s:H("User1", s:darkbg, s:yellow, "", "")
+call s:H("User2", s:darkbg, s:lightblue, "", "")
+
 " --- QUICKFIX
 " ------------
 
