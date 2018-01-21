@@ -243,11 +243,11 @@ call s:H("Normal",       s:fg,         s:bg,         "",          "")
 
 call s:H("ColorColumn",  "",           s:lightbg,    "",          "")
 call s:H("Conceal",      "",           "",           "",          "")
-call s:H("Cursor",       s:darkbg,     s:fg,         "",          "")
-call s:H("iCursor",      s:darkbg,     s:fg,         "",          "")
+call s:H("Cursor",       s:darkbg,     s:lightfg,    "",          "")
+call s:H("iCursor",      s:darkbg,     s:lightfg,    "",          "")
 call s:H("CursorColumn", "",           s:lightbg,    "",          "")
 call s:H("CursorLine",   "",           s:lightbg,    "",          "")
-call s:H("CursorLineNr", s:lightfg,    s:darkbg,     "",          "")
+call s:H("CursorLineNr", s:lightfg,    s:bg,     "",          "")
 
 call s:H("DiffAdd",      "",           s:darkgreen,  "",          "")
 call s:H("DiffChange",   "",           "",           "",          "")
@@ -263,7 +263,7 @@ call s:H("Folded",       s:fg,         s:lightbg,    "",          "")
 
 call s:H("IncSearch",    s:darkbg,     s:orange,     "",          "")
 
-call s:H("LineNr",       s:neutral,    s:darkbg,     "",          "")
+call s:H("LineNr",       s:neutral,    s:bg,     "",          "")
 
 call s:H("MatchParen",   s:orange,     s:lightbg,    "bold",      "")
 call s:H("ModeMsg",      s:lightblue,  s:bg,         "",          "")
@@ -279,7 +279,7 @@ call s:H("PmenuThumb",   s:lightgreen, "",           "",          "")
 call s:H("Question",     s:cyan,       "",           "bold",      "")
 
 call s:H("Search",       s:darkbg,     s:yellow,     "",          "")
-call s:H("SignColumn",   s:lightfg,    s:darkbg,     "",          "")
+call s:H("SignColumn",   s:lightfg,    s:bg,     "",          "")
 call s:H("SpecialKey",   s:orange,     "",           "",          "")
 call s:H("SpellBad",     s:lightred,   "",           "undercurl", s:lightred)
 call s:H("SpellRare",    s:lightgreen, "",           "undercurl", s:lightgreen)
@@ -295,7 +295,7 @@ call s:H("TabLineFill",  s:darkbg,     s:fg,         "",          "")
 call s:H("Title",        "",           "",           "bold",      "")
 
 call s:H("VertSplit",    s:neutral,    "",           "",          "")
-call s:H("Visual",       s:lightfg,    s:lightblue,  "",          "")
+call s:H("Visual",       "",    "",  "reverse",          "")
 
 call s:H("WildMenu",     s:magenta,    "",           "",          "")
 call s:H("WarningMsg",   s:lightred,   "",           "",          "")
@@ -351,7 +351,7 @@ call s:H("Underlined",       s:lightblue,      "",        "underline", "")
 
 call s:H("Ignore",           "",               "",        "",          "")
 
-call s:H("Error",            s:yellow,         s:darkred, "",          "")
+call s:H("Error",            s:lightred,         s:darkbg, "",          "")
 
 call s:H("Todo",             s:lightfg,        s:lightbg, "bold",      "")
 
@@ -359,6 +359,7 @@ call s:H("Todo",             s:lightfg,        s:lightbg, "bold",      "")
 " -------------
 
 hi link Noise Normal
+call s:H("Warning", s:yellow, s:darkbg, "", "")
 hi link OptionalParameters Normal
 
 call s:H("User1", s:darkbg, s:yellow, "", "")
@@ -501,9 +502,9 @@ hi! link gitDiffRemoved DiffDelete
 " --- GITGUTTER
 " -------------
 
-call s:H("GitGutterAdd",    s:lightgreen, s:darkbg, "", "")
-call s:H("GitGutterChange", s:lightblue,  s:darkbg, "", "")
-call s:H("GitGutterDelete", s:lightred,   s:darkbg, "", "")
+call s:H("GitGutterAdd",    s:lightgreen, s:bg, "", "")
+call s:H("GitGutterChange", s:lightblue,  s:bg, "", "")
+call s:H("GitGutterDelete", s:lightred,   s:bg, "", "")
 hi! link GitGutterChangeDelete GitGutterDelete
 
 " --- PUG
@@ -530,6 +531,12 @@ hi! link SyntasticErrorLine ErrorMsg
 hi! link SyntasticWarningLine Debug
 hi! link SyntasticStyleErrorLine ErrorMsg
 hi! link SyntasticStyleWarningLine Debug
+
+" --- ALE
+" -------
+
+hi! link ALEErrorSign Error
+hi! link ALEWarningSign Warning
 
 " --- CTRLP
 " ---------
